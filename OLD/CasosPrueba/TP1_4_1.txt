@@ -1,0 +1,5 @@
+_v
+_i
+_var
+_dada
+_NSignificativo

@@ -1,0 +1,6 @@
+usinteger : _v1,
+
+double _f( write _v1 ){ 
+	_v1 := 5_ui,
+	return 4_ui},
+	

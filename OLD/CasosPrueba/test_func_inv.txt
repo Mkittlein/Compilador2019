@@ -1,0 +1,6 @@
+double _f (usinteger _v1 ){ 
+	_v1:=5,
+	return 4_ui},
+
+_v3 := _f( _v2; readonly ) ,
+

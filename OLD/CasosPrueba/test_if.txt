@@ -1,0 +1,22 @@
+usinteger : _v ; _v2,
+
+if (_v <= 4_ui)
+	_v:=77_ui,
+	else
+	_v:=78_ui,
+end_if , 
+
+_v2 := 7_ui,
+
+
+
+
+
+
+
+
+      
+	  
+	  
+	  
+	  

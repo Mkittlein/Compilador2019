@@ -1,0 +1,7 @@
+for
+if
+void
+else
+end_if
+print
+void

@@ -1,0 +1,186 @@
+%{package Kittlein_Gallo;
+import java.io.IOException;%}
+%token READONLY WRITE PASS ID INTEGER USINTEGER DOUBLE CADENA IF ELSE END_IF FOR PRINT CTE DIST '>' MAYOI '<' MENOI ASIG RETURN '=' '+' '-' '/' '*' '(' ')' '[' ']' '{' '}' ',' ';' ':'
+%start PROGRAMA
+
+%%
+
+PROGRAMA : ListaSentencias						{
+												System.out.println("Se encuentra ListaSentencias, reduzco a Programa");
+												System.out.println($1);
+												}	
+
+
+ListaSentencias : SingleSentence ',' ListaSentencias		{
+												System.out.println("Se encuentra ListaSentencias SingleSentence, reduzco a ListaSentencias");
+												System.out.println($1);
+												System.out.println($2);
+												}		
+
+
+				| SingleSentence ','							{
+												System.out.println("Se encuentra SingleSentence, reduzco a ListaSentencias");
+												System.out.println($1);
+												}
+
+SingleSentence : SentenciaEjecutable						{
+										System.out.println("Se encuentra SetenciaEjecutable, reduzco a SingleSentence");
+										System.out.println($1);
+									}
+
+				| SentenciaDeclarativa							{
+													System.out.println("Se encuentra SentenciaDeclarativa, reduzco a SingleSentence");
+													System.out.println($1);
+													}
+													
+
+SentenciaDeclarativa: Tipo ':' ListaID							{System.out.println("Se reconoce Tipo, ; y Lisda ID");
+																System.out.println($1);
+																System.out.println($2);
+																System.out.println($3);}
+																
+					| Tipo ID '(' Tipo ID ')' '{' ListaSentencias RETURN Expresion '}'				{System.out.println("Se encuentra la sentencia que declara una funcion. Se reempleza por SentenciaDeclarativa");}
+					
+					| ID ASIG Expresion 						{System.out.println("Se encuentra Asignacion, se reemplaza por SentenciaDeclarativa");}
+					
+					
+TipoParametro:  READONLY							{System.out.println("Parametro encontrado: READONLY, se reemplaza por TipoParametro");}
+	
+			 |  WRITE								{System.out.println("Parametro encontrado: WRITE, se reemplaza por TipoParametro");}
+			 
+			 |  PASS								{System.out.println("Parametro encontrado: PASS, se reemplaza por TipoParametro");}
+			 
+			 |  WRITE ';' PASS						{System.out.println("Parametro encontrado: WRITE;PASS, se reemplaza por TipoParametro");}
+
+ListaID : ListaID ';' ID										{System.out.println("Se encuentra ListaID e ID,se reduce a ListaID");
+																System.out.println($1);
+																System.out.println($2);}
+																
+		| ID													{System.out.println("Se encuentrauna ID, se reduce a ListaID");
+																System.out.println($1);}
+												
+Tipo : DOUBLE													{System.out.println("Se encuentra Tipo, se decide DOUBLE");
+																System.out.println($1);}	
+																
+Tipo : USINTEGER												{System.out.println("Se encuentra Tipo, se decide USINTEGER");
+																System.out.println($1);}				
+									
+SentenciaEjecutable : BloqueIF									{System.out.println("Se reduce BloqueIF A sentencia");}
+
+					|FOR '(' Asignacion ';' Comparacion ';' Expresion ')' '{' ListaSentencias '}' 		{System.out.println("Se encuentra FOR Asignacion Comparacion Expresion ListaDeSentencias, reduzco a SentenciaEjecutable");}
+					
+					|FOR '(' Asignacion ';' Comparacion ';' Expresion ')' SingleSentence				{System.out.println("Se encuentra FOR Asignacion Comparacion Expresion Sentencia, reduzco a SentenciaEjecutable");}
+					
+					|PRINT '(' ID ')'																	{System.out.println("Se encuentra PRINT ID, reduzco a SentenciaEjecutable");}
+					
+					|PRINT '(' CADENA ')'																{System.out.println("Se encuentra PRINT CADENA, reduzco a SentenciaEjecutable");}
+					
+					
+					
+					
+																
+BloqueIF			:IfConElse END_IF								{System.out.println("Se reemplaza IfConElse por BloqueIF");}
+					 
+					|IfSinElse END_IF								{System.out.println("Se reemplaza IfSinElse por BloqueIF");}					
+																
+IfSinElse 	: IF '('Comparacion')' '{' ListaSentencias '}' {System.out.println("Se reemplaza IF (Comparacion) {ListaSentencias} por IFSINELSE ");}
+
+			
+			| IF '(' Comparacion ')' SingleSentence ','			{System.out.println("Se reemplaza IF (Comparacion) SingleSentence por IFSINELSE ");}
+										
+										
+IfConElse 	: IfSinElse ELSE '{' ListaSentencias '}'		{System.out.println("Se reduce IfSinElse ELSE {ListadeSentecias} por IFConELSE");}
+
+			| IfSinElse ELSE SingleSentence	','				{System.out.println("Se reduce IfSinElse ELSE SingleSentence por IFConELSE");}
+
+																
+																
+Comparacion : Expresion Comparador Expresion			{
+														System.out.println("Se encuentra Expresion Comparador Expresion, reduzco a Comparacion");
+														System.out.println($1);
+														System.out.println($2);
+														System.out.println($3);
+														}
+
+Comparador : '<' | '>' | MENOI | MAYOI | '=' | DIST 	{
+														System.out.println("Se encuentra un Simbolo de Comparacion, reduzco a Comparador");
+														System.out.println($1);
+														}
+
+Asignacion : ID ASIG Expresion			{
+										System.out.println("Se encuentra ID ASIG Expresion, reduzco a Asignacion");
+										System.out.println($1);
+										System.out.println($2);
+										System.out.println($3);
+										}
+
+Expresion : Expresion '+' Termino		{
+										System.out.println("Se encuentra Expresion + Termino, reduzco a Expresion");
+										System.out.println($1);
+										System.out.println($2);
+										}
+										
+		  | Expresion '–' Termino		{
+										System.out.println("Se encuentra Expresion - Termino, reduzco a Expresion");
+										System.out.println($1);
+										System.out.println($2);
+										}
+										
+		  | Termino						{
+										System.out.println("Se encuentra Termino, reduzco a Expresion");
+										System.out.println($1);
+										}
+		  | ID  '(' ID ';' TipoParametro ')' { System.out.println("Se encuentra invocación a funcion ID  (ID;TipoParametro), se reduce a Expresion");}
+		  
+Termino : Termino '*' Factor 			{
+										System.out.println("Se encuentra Termino * Factor, reduzco a Termino");
+										System.out.println($1);
+										System.out.println($2);
+										}
+										
+		| Termino '/' Factor			{
+										System.out.println("Se encuentra Termino / Factor, reduzco a Termino");
+										System.out.println($1);
+										System.out.println($2);
+										}
+
+		| Factor						{
+										System.out.println("Se encuentra Factor, reduzco a Termino");
+										System.out.println($1);
+										}
+		
+		
+Factor : ID								{
+										System.out.println("Se encuentra ID, reduzco a Factor");
+										System.out.println($1);
+										}
+		| CTE							{
+										System.out.println("Se encuentra CTE, reduzco a Factor");
+										System.out.println($1);
+										}
+
+%%
+
+AnalizadorLexico al;
+
+public Parser(AnalizadorLexico AL){
+		yyval =new ParserVal();
+		al=AL;
+}
+
+public int yylex(){
+  Token aux=null;
+  try {
+    aux=al.getToken();
+  } catch (IOException e) {
+    e.printStackTrace();
+  }
+  if (aux!=null){
+    return aux.getCod();
+  }
+  return 0;
+}
+
+private void yyerror(String syntax_error) {
+    System.out.println(syntax_error);
+}

@@ -1,0 +1,11 @@
+usinteger : _vu,
+double : _vd,
+
+
+_vd := 1.0D300 ,
+_vu := 100_ui,
+
+
+
+
+

@@ -1,0 +1,17 @@
+usinteger : _vu,
+double : _vd,
+_vd := 1.0D300 ,
+_vu := 100_ui,
+print (_vd),
+print (_vu),
+print ('EL-
+ PRINT-
+ ANDA-
+ BIEN'),
+ 
+print ('CON O SIN MULTILINEA'),
+
+
+
+
+
