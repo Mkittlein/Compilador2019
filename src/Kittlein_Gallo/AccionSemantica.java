@@ -93,9 +93,9 @@ public class AccionSemantica {
         }
     }
 
-    public class AccionNumero extends AccionSemantica {
+    public class AccionInt extends AccionSemantica {
 
-        public AccionNumero(AnalizadorLexico AL, Parser p) {
+        public AccionInt(AnalizadorLexico AL, Parser p) {
             super(AL, p);
         }
 
@@ -107,6 +107,9 @@ public class AccionSemantica {
             }
             BigInteger valor = new BigInteger(parcial.toString());
             if (valor.compareTo(BigInteger.valueOf(32768)) == 1) {
+
+                //TO DO: si se va de rango pasa a ser float
+
                 AL.warning("Valor de Entero fuera de rango");
                 valor = BigInteger.valueOf(32768);
             }
@@ -146,6 +149,9 @@ public class AccionSemantica {
     }
 
     public class AccionNumeroDouble extends AccionSemantica {
+
+        // TO DO: transformar en float - Cambiar d por e y los rangos
+
         BigDecimal maxMant;
         BigDecimal maxExp;
         BigDecimal maxVal;

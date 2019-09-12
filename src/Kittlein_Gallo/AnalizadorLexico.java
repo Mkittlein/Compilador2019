@@ -28,6 +28,8 @@ public class AnalizadorLexico {
     AccionSemantica [][] MASemanticas;
 
     private void cargarMatrices(){
+        // TO DO Cambiar estados
+
         MTEstados=new int[][]{
                 { 0,  1,  4,  5,  4,  4, 17,  8,  4, 12,  0, 14, 15, 16, 17, 17, 17, 17, 17, 17, 17},
                 {-1,  3,  2,  2,  2,  2, -1, -1,  2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
@@ -49,6 +51,8 @@ public class AnalizadorLexico {
         };
 
         AccionSemantica AS = new AccionSemantica(this,p);
+/*      //TO DO Cambiar AS
+
 
         AccionSemantica.AccionConcatenar ASC= AS.new AccionConcatenar(this,p);
         AccionSemantica.AccionPalabraReservada ASPR= AS.new AccionPalabraReservada(this,p);
@@ -80,6 +84,7 @@ public class AnalizadorLexico {
                 {ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC, ASFTS},
                 {ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC, ERR}
         };
+        */
 
     }
 
