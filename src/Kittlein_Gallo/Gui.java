@@ -8,7 +8,7 @@ import java.nio.file.Files;
 
 public class Gui extends JFrame implements ActionListener {
     JTextArea textTokens, textCode, textPolaca;
-    public boolean error;
+    boolean error;
     //TablaSimbolos TS;
     JButton botonGet, botonSave, botonGetAll, botonTS;
     File f;
@@ -23,7 +23,7 @@ public class Gui extends JFrame implements ActionListener {
         textTokens.setText(tokens.toString());
     }
 
-    ;
+
 
     Gui(File Cod) throws IOException {
 
@@ -65,7 +65,7 @@ public class Gui extends JFrame implements ActionListener {
         texto.add(scrollCode);
         texto.add(scrollPolaca);
         add(botones, BorderLayout.SOUTH);
-        this.setMinimumSize(new Dimension(700, 500));
+        this.setMinimumSize(new Dimension(800, 600));
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
         setVisible(true);

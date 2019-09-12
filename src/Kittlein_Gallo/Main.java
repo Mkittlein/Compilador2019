@@ -10,21 +10,15 @@ public class Main {
             // Set System L&F
             UIManager.setLookAndFeel(
                     UIManager.getSystemLookAndFeelClassName());
-        } catch (UnsupportedLookAndFeelException e) {
-            // handle exception
-        } catch (ClassNotFoundException e) {
-            // handle exception
-        } catch (InstantiationException e) {
-            // handle exception
-        } catch (IllegalAccessException e) {
+        } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             // handle exception
         }
     }
 
 
-    public static void setOut() throws FileNotFoundException {
+    private static void setOut() throws FileNotFoundException {
         // Creating a File object that represents the disk file.
-        PrintStream o = new PrintStream(new File("LOG.txt"));
+        PrintStream o = new PrintStream(new File("./LOG.txt"));
 
         // Store current System.out before assigning a new value
         PrintStream console = System.out;
@@ -39,8 +33,8 @@ public class Main {
         int r = file.showOpenDialog(null);
         File f = file.getSelectedFile();
         if (f!=null){
-            //Gui gui= new Gui(f);
-            //gui.setTitle("Trabajo Compiladores Kittlein-Gallo");
+            Gui gui= new Gui(f);
+            gui.setTitle("Trabajo Compiladores Kittlein-Gallo");
         }
     }
 }
