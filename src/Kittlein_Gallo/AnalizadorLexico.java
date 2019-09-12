@@ -31,29 +31,25 @@ public class AnalizadorLexico {
         // TO DO Cambiar estados
 
         MTEstados=new int[][]{
-                { 0,  1,  4,  5,  4,  4, 17,  8,  4, 12,  0, 14, 15, 16, 17, 17, 17, 17, 17, 17, 17},
-                {-1,  3,  2,  2,  2,  2, -1, -1,  2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
-                {17, 17,  2,  2,  2,  2, 17, 17,  2, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17},
-                { 0,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3},
-                {17,  4,  4, -1,  4,  4, -1, -1,  4, -1, 17, -1, -1, -1, -1, -1, -1, -1, -1, 17, 17},
-                {17,  6, -1,  5, -1, -1, -1,  9, -1, -1, 17, -1, -1, -1, -1, -1, -1, -1, -1, -1, 17},
-                {17, -1, -1, -1,  7, -1, -1, -1, -1, -1, 17, -1, -1, -1, -1, -1, -1, -1, -1, -1, 17},
-                {17, -1, -1, -1, -1, 17, -1, -1, -1, -1, 17, -1, -1, -1, -1, -1, -1, -1, -1, -1, 17},
-                {-1, -1, -1,  9, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
-                {17, -1, -1,  9, -1, -1, -1, -1, 10, -1, 17, -1, -1, -1, -1, -1, -1, -1, -1, -1, 17},
-                {-1, -1, -1, 11, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 11, 11, -1, -1, -1, -1},
-                {17, -1, -1, 11, -1, -1, -1, -1, -1, -1, 17, -1, -1, -1, -1, -1, -1, -1, -1, -1, 17},
-                {-1, 12, 12, 12, 12, 12, 12, 12, 12, 17, 12, 12, 12, 12, 12, 12, 13, 12, 12, 12, 12},
-                {12, 12, 12, 12, 12, 12, 12, 12, 12, 17, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12},
-                {17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, -1},
-                {17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17},
-                {17, -1, -1, -1, -1, -1, -1, -1, -1, -1, 17, -1, -1, -1, 17, -1, -1, -1, -1, -1, 17}
+                { 0,  0, -1,  1,  1,  3,  2,  4,  8,  9, -1, 10, 12, 11, 13, 13},
+                {13, 13,  1,  1,  1,  1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+                { 0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2},
+                {13, 13, -1, -1, -1,  3, -1,  5, -1, -1, -1, -1, -1, -1, -1, -1},
+                {-1, -1, -1, -1, -1,  5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+                {13, 13, -1, -1,  6,  5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+                {-1, -1, -1, -1, -1,  7, -1, -1, -1, -1, -1, -1, -1, -1, -1,  7},
+                {13, 13, -1, -1, -1,  7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+                {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, -1},
+                { 9,  9,  9,  9,  9,  9,  9,  9,  9,  9, 13,  9,  9,  9,  9,  9},
+                {13, 13, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13, 13, -1, -1},
+                {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, -1},
+                {13, 13, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, -1}
         };
 
         AccionSemantica AS = new AccionSemantica(this,p);
-/*      //TO DO Cambiar AS
+      //TO DO Cambiar AS
 
-
+/*
         AccionSemantica.AccionConcatenar ASC= AS.new AccionConcatenar(this,p);
         AccionSemantica.AccionPalabraReservada ASPR= AS.new AccionPalabraReservada(this,p);
         AccionSemantica.AccionConcatenarGuion ASCG= AS.new AccionConcatenarGuion(this,p);
@@ -66,23 +62,19 @@ public class AnalizadorLexico {
         AccionSemantica.AccionString ASFS= AS.new AccionString(this,p);
 
         MASemanticas= new AccionSemantica[][]{
-                {ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASCC,  ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC, ASC},
-                {ASCC,  ASCC,  ASC,  ASC,  ASC,  ASC,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR, ERR},
-                {ASFTS,  ASFTS,  ASC,  ASC,  ASC,  ASC,  ASFTS,  ASFTS,  ASC,  ASFTS,  ASFTS,  ASFTS,  ASFTS,  ASFTS,  ASFTS,  ASFTS,  ASFTS,  ASFTS,  ASFTS,  ASFTS, ASFTS},
-                {ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC, ASCC},
-                {ASPR,  ASC,  ASC,  ERR,  ASC,  ASC,  ERR,  ERR,  ASC,  ERR,  ASPR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASPR, ASPR},
-                {ASN,  ASCC,  ERR,  ASC,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ASN,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR, ASN},
-                {ASNU,  ERR,  ERR,  ERR,  ASCC,  ERR,  ERR,  ERR,  ERR,  ERR,  ASNU,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR, ASNU},
-                {ASNU,  ERR,  ERR,  ERR,  ERR,  ASNU,  ERR,  ERR,  ERR,  ERR,  ASNU,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR, ASNU},
-                {ASCC,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR, ERR},
-                {ASND,  ASCC,  ASCC,  ASC,  ASCC,  ASCC,  ASCC,  ASCC,  ASC,  ASCC,  ASND,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC, ASND},
-                {ASCC,  ASCC,  ASCC,  ASC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASCC,  ASC,  ASC,  ASCC,  ASCC,  ASCC, ERR},
-                {ASND,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASND,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR, ASND},
-                {ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASFS,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASCC,  ASC,  ASC,  ASC, ASC},
-                {ASCC,  ASCG,  ASCG,  ASCG,  ASCG,  ASCG,  ASCG,  ASCG,  ASCG,  ASFS,  ASCG,  ASCG,  ASCG,  ASCG,  ASCG,  ASCG,  ASCG,  ASCG,  ASCG,  ASCG, ASC},
-                {ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC, ERR},
-                {ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC, ASFTS},
-                {ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC, ERR}
+                {ASCC, ASCC,  ERR,  ASC,  ASC,  ASC, ASCC,  ASC,  ASC, ASCC,  ERR,  ASC,  ASC,  ASC,  ASC,  ASC},
+                {ASID, ASID,  ASC,  ASC,  ASC,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR},
+                {ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC},
+                { ASI,  ASI,  ERR,  ERR,  ERR,  ASC,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR},
+                { ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR},
+                { ASF,  ASF,  ERR,  ERR,  ASC,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR},
+                { ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC},
+                { ASF,  ASF,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR},
+                { ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR},
+                {ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC, ASCC,  ASC,  ASC,  ASC,  ASC,  ASC},
+                {ASCC, ASCC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ASC,  ERR,  ERR},
+                { ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR},
+                {ASCC, ASCC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR}
         };
         */
 
