@@ -119,32 +119,28 @@ public class AnalizadorLexico {
         System.out.println(code.toString());
     }
 
-
-
     public void setTipoToken(String T){
         tipoToken=T;
     }
 
-
-
     public int getCodToken(String t){
         switch (t){
-            case "readonly" : return 257;
-            case "write" : return 258;
-            case "pass" : return 259;
-            case "return" : return 276;
-            case "constanteDouble" : return 264;
-            case "constanteUsinteger" : return 265;
+            case "begin" : return 257;
+            case "end" : return 258;
+            case "foreach" : return 259;
+            case "in" : return 276;
+           //case "constanteDouble" : return 264;
+           // case "constanteUsinteger" : return 265;
             case "id" : return 260;
-            case "integer" : return 261;
-            case "usinteger" : return 262;
-            case "double" : return 263;
-            case "string":return  266;
+            case "int" : return 261;
+           // case "usinteger" : return 262;
+            case "float" : return 263;
+           // case "string":return  266;
             case "if" : return 267;
             case "else" : return 268;
             case "end_if" : return 269;
             case "print" : return 271;
-            case "for" : return 270;
+           // case "for" : return 270;
             case "!" : return (int) '!';
             case "!=" : return 272;
             case "," : return (int) ',';
@@ -178,66 +174,60 @@ public class AnalizadorLexico {
 
         if (c==13) //[CR]
             return 0;
-        if (c==59)
-            return 6;
-        if (c==44)
-            return 20;
-        if(c==117)//u
-            return 4;
-        if(c==105)//i
-            return 5;
-        if(c==68)//D
-            return 8;
-        if(c==32)//[ESPACIO]
-            return 10;
-        if(c==9)//[TAB]
-            return 10;
         if(c==10)//[LN]
             return 0;
-        if(c==39)//'
-            return 9;
-        if(c==95)//_
+        if(c==32)//[ESPACIO]
             return 1;
-        if(c==33)//!
-            return 11;
+        if(c==9)//[TAB]
+            return 1;
+        if(c==95)//_
+            return 2;
+        if(c==69)//E
+            return 4;
+        if(c==101)//e
+            return 4;
+        if(c==35)//#
+            return 6;
+        if(c==46)//.
+            return 7;
+        if(c==58)//:
+            return 8;
+        if(c==123)//{
+            return 9;
+        if(c==125)//}
+            return 10;
         if(c==60)//<
-            return 12;
+            return 11;
         if(c==62)//>
             return 12;
-        if(c==58)//:
-            return 13;
         if(c==61)//=
+            return 13;
+        if (c==59)//;
+            return 14;
+        if (c==44)//,
+            return 14;
+        if(c==47)///
+            return 14;
+        if(c==42)//*
+            return 14;
+        if(c==40)//(
+            return 14;
+        if(c==41)//)
+            return 14;
+        if(c==91)//[
+            return 14;
+        if(c==93)//]
             return 14;
         if(c==43)//+
             return 15;
         if(c==45)//-
-            return 16;
-        if(c==46)//.
-            return 7;
-        if(c==47)///
-            return 17;
-        if(c==42)//*
-            return 18;
-        if(c==40)//(
-            return 19;
-        if(c==41)//)
-            return 19;
-        if(c==91)//[
-            return 19;
-        if(c==93)//]
-            return 19;
-        if(c==123)//{
-            return 19;
-        if(c==125)//}
-            return 19;
-        if(c==117)
-            return 4;
+            return 15;
         if((c>=48)&&(c<=57))//numeros
-            return 3;
+            return 5;
         if((c>=65)&&(c<=90))//LETRAS
-            return 2;
+            return 3;
         if((c>=97)&&(c<=122))//letras
-            return 2;
+            return 3;
         gui.addMensaje("CARACTER INVALIDO \""+ch+"\""+"Codigo: "+c);
        return 0;
     }
