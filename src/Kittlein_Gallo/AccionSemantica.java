@@ -19,9 +19,9 @@ public class AccionSemantica {
 
 
 
-    public class AccionPalabraReservada extends AccionSemantica {
+    public class AccionID extends AccionSemantica {
 
-        public AccionPalabraReservada(AnalizadorLexico al, Parser p) {
+        public AccionID(AnalizadorLexico al, Parser p) {
             super(al, p);
         }
 
@@ -30,8 +30,6 @@ public class AccionSemantica {
             boolean esPalabra = false;
             String pr = parcial.toString();
             switch (pr) {
-                case "then":
-                    esPalabra = true;
                 case "if":
                     esPalabra = true;
                 case "else":
@@ -40,44 +38,26 @@ public class AccionSemantica {
                     esPalabra = true;
                 case "print":
                     esPalabra = true;
-                case "usinteger":
+                case "int":
                     esPalabra = true;
-                case "double":
+                case "float":
                     esPalabra = true;
-                case "for":
+                case "begin":
                     esPalabra = true;
-                case "write":
+                case "end":
                     esPalabra = true;
-                case "readonly":
+                case "foreach":
                     esPalabra = true;
-                case "pass":
-                    esPalabra = true;
-                case "return":
+                case "in":
                     esPalabra = true;
             }
-            AL.setRollback(last);
-            // System.out.println("ROLLBACK SETEADO CON :"+last);
-            //   System.out.println(this.getClass());
+            AL.setRollback(last);//Creo que esto no hace falta, porque sólo llamamos a AccionID con caracteres de espacio o salto de linea
             AL.setTipoToken(parcial.toString());
             if (!esPalabra) {
-                AL.setError();
-                AL.warning("\"" + parcial.toString() + "\"" + " no es una palabra reservada");
+                AL.setTipoToken("id");
             }
         }
 
-    }
-
-    public class AccionConcatenarGuion extends AccionSemantica {
-
-        public AccionConcatenarGuion(AnalizadorLexico AL, Parser p) {
-            super(AL, p);
-        }
-
-        public void run(StringBuilder parcial, char last) {
-            //   System.out.println(this.getClass());
-            parcial.append("_").append(last);
-            AL.setTipoToken(parcial.toString());
-        }
     }
 
     public class AccionConcatenar extends AccionSemantica {
@@ -109,46 +89,17 @@ public class AccionSemantica {
             if (valor.compareTo(BigInteger.valueOf(32768)) == 1) {
 
                 //TO DO: si se va de rango pasa a ser float
-
-                AL.warning("Valor de Entero fuera de rango");
-                valor = BigInteger.valueOf(32768);
-            }
+                Float valorF = Float.valueOf(parcial.toString());
+                parcial.setLength(0);
+                parcial.append(valorF.toString());
+            }else{
             parcial.setLength(0);
-            parcial.append(valor.toString());
+            parcial.append(valor.toString());}
         }
     }
 
-    public class AccionNumeroUnsigned extends AccionSemantica {
-        BigInteger maxVal;
 
-        public AccionNumeroUnsigned(AnalizadorLexico AL, Parser p) {
-
-            super(AL, p);
-            maxVal = BigInteger.valueOf(Long.valueOf("65535"));
-        }
-
-
-        public void run(StringBuilder parcial, char last) {
-            //System.out.println(this.getClass());
-            AL.setTipoToken("constanteUsinteger");
-            BigInteger valor = BigInteger.valueOf(Long.valueOf(parcial.toString()));
-            if (valor.compareTo(BigInteger.valueOf(0)) <= 0) {
-                AL.warning("Valor de Unsigned fuera de rango");
-                valor = BigInteger.valueOf(Long.valueOf("0"));
-            }
-            if (valor.compareTo(maxVal) >= 0) {
-                AL.warning("Valor de Unsigned fuera de rango");
-                valor = maxVal;
-            }
-            parcial.setLength(0);
-            parcial.append(valor.toString());
-            //  if (!AL.getTablaDeSimbolos().contains(parcial.toString()+"_ui")){
-            // AL.getTablaDeSimbolos().add(parcial.toString()+"_ui",new Simbolo(262,parcial));}
-
-        }
-    }
-
-    public class AccionNumeroDouble extends AccionSemantica {
+    public class AccionFloat extends AccionSemantica {
 
         // TO DO: transformar en float - Cambiar d por e y los rangos
 
@@ -158,52 +109,51 @@ public class AccionSemantica {
         BigDecimal minMant;
         BigDecimal minExp;
         BigDecimal minVal;
-        boolean positivo;
 
-        public AccionNumeroDouble(AnalizadorLexico AL, Parser p) {
+        public AccionFloat(AnalizadorLexico AL, Parser p) {
             super(AL, p);
             // System.out.println(this.getClass());
-            maxMant = new BigDecimal("1.7976931348623157");
-            maxExp = new BigDecimal(Math.pow(10, 308));
+            maxMant = new BigDecimal("3.40282347");
+            maxExp = new BigDecimal(Math.pow(10, 38));
             maxVal = maxExp.multiply(maxMant);
-            minMant = new BigDecimal("-2.2250738585072014");
-            minExp = new BigDecimal(Math.pow(10, -308));
+            minMant = new BigDecimal("1.17549435");
+            minExp = new BigDecimal(Math.pow(10, -38));
             minVal = minExp.multiply(minMant);
         }
 
         public void run(StringBuilder parcial, char last) {
-            AL.setTipoToken("constanteDouble");
-            positivo = true;
+            AL.setTipoToken("float");
             if (last != '\n' && last != ' ' && last != '\t') {
                 AL.setRollback(last);
             }
-            if (parcial.indexOf("D") != -1) {
-                String[] output = parcial.toString().split("D");
-                if (Math.abs(Double.valueOf(output[0])) < Double.valueOf(0)) {
-                    positivo = false;
+            if ((parcial.indexOf("E") != -1) || (parcial.indexOf("e") != -1) ) {
+                String delimitador;
+                if (parcial.indexOf("E") != -1){
+                    delimitador="E";
+                } else {
+                    delimitador="e";
                 }
-                Double mantiza = Math.abs(Double.valueOf(output[0]));//Hacer los calculos de MANTIZA
+                String[] output = parcial.toString().split(delimitador);
+
+                Float mantiza = Math.abs(Float.valueOf(output[0]));//Hacer los calculos de Mantisa
                 Long exponente = Long.valueOf(output[1]);//Hacer los calculos del Exponente
 
                 BigDecimal bigmantiza = new BigDecimal(mantiza);
                 BigDecimal bigexponente = new BigDecimal(Math.pow(10, exponente));
                 BigDecimal bigvalor = (bigexponente.multiply(bigmantiza));
                 if (bigvalor.compareTo(maxVal) == 1) {
-                    AL.warning("Valor de Double fuera de rango");
+                    AL.warning("Valor de float fuera de rango");
                     bigvalor = maxVal;
                 }
                 if ((bigvalor.compareTo(minVal) == -1) && (bigvalor.compareTo(BigDecimal.valueOf(0))) != 0) {
                     bigvalor = minVal;
-                    AL.warning("Valor de Double fuera de rango");
+                    AL.warning("Valor de float fuera de rango");
                 }
                 parcial.setLength(0);
-                if (!positivo) {
-                    bigvalor = bigvalor.multiply(BigDecimal.valueOf(-1));
-                }
-                double auxD = Double.valueOf(bigvalor.toString());
-                parcial.append(auxD);
+                float auxF = Float.valueOf(bigvalor.toString());
+                parcial.append(auxF);
             } else {
-                Double valor = Double.valueOf(parcial.toString());
+                Float valor = Float.valueOf(parcial.toString());
                 parcial.setLength(0);
                 parcial.append(valor.toString());
             }
@@ -238,21 +188,6 @@ public class AccionSemantica {
                 AL.getTablaDeSimbolos().add("STR_"+parcial.toString().replace(" ","_"),new Simbolo(264,parcial.toString()));}
             }*/
         }
-
-
-        public class AccionFinalTS extends AccionSemantica {
-            public AccionFinalTS(AnalizadorLexico AL, Parser p) {
-                super(AL, p);
-            } //Esta mete token en tabla de simbolos
-
-            public void run(StringBuilder parcial, char last) { //Ver que el ID sea menor a 25 y agregarlo a tabla simbolos
-                // System.out.println(this.getClass());
-                AL.setTipoToken("id");
-                if (last != '\n' && last != ' ' && last != '\t') {
-                    AL.setRollback(last);
-                }
-            }
-        }
-
     }
+
 }

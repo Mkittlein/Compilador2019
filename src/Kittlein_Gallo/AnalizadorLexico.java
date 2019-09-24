@@ -50,16 +50,7 @@ public class AnalizadorLexico {
       //TO DO Cambiar AS
 
 /*
-        AccionSemantica.AccionConcatenar ASC= AS.new AccionConcatenar(this,p);
-        AccionSemantica.AccionPalabraReservada ASPR= AS.new AccionPalabraReservada(this,p);
-        AccionSemantica.AccionConcatenarGuion ASCG= AS.new AccionConcatenarGuion(this,p);
-        AccionSemantica.AccionNumero ASN= AS.new AccionNumero(this,p);
-        AccionSemantica.AccionConcatenar ASFTS= AS.new AccionConcatenar(this,p);
-        AccionSemantica.AccionNumeroUnsigned ASNU= AS.new AccionNumeroUnsigned(this,p);
-        AccionSemantica.AccionNumeroDouble ASND= AS.new AccionNumeroDouble(this,p);
-        AccionSemantica.AccionConsumeChar ASCC= AS.new AccionConsumeChar(this,p);
-        AccionSemantica.AccionConsumeChar ERR= AS.new AccionConsumeChar(this,p);
-        AccionSemantica.AccionString ASFS= AS.new AccionString(this,p);
+
 
         MASemanticas= new AccionSemantica[][]{
                 {ASCC, ASCC,  ERR,  ASC,  ASC,  ASC, ASCC,  ASC,  ASC, ASCC,  ERR,  ASC,  ASC,  ASC,  ASC,  ASC},
@@ -117,30 +108,12 @@ public class AnalizadorLexico {
 
     public int getCodToken(String t){
         switch (t){
-            case "begin" : return 257;
-            case "end" : return 258;
-            case "foreach" : return 259;
-            case "in" : return 276;
-           //case "constanteDouble" : return 264;
-           // case "constanteUsinteger" : return 265;
-            case "id" : return 260;
-            case "int" : return 261;
-           // case "usinteger" : return 262;
-            case "float" : return 263;
-           // case "string":return  266;
-            case "if" : return 267;
-            case "else" : return 268;
-            case "end_if" : return 269;
-            case "print" : return 271;
-           // case "for" : return 270;
+            //TODO
             case "!" : return (int) '!';
-            case "!=" : return 272;
             case "," : return (int) ',';
             case ">" : return (int) '>';
-            case ">=" : return 273;
             case "<" : return (int) '<';
             case ":" : return (int) ':';
-            case "<=" : return 274;
             case ";" : return (int) ';';
             case "=" : return (int) '=';
             case "+" : return (int) '+';
@@ -153,7 +126,7 @@ public class AnalizadorLexico {
             case "]" : return (int) ']';
             case "{" : return (int) '{';
             case "}" : return (int) '}';
-            case ":=":return 275;
+
         }
         if (t.length()==1){
             return (int) t.charAt(0);
@@ -234,32 +207,12 @@ public class AnalizadorLexico {
         rollchar=c;
     }
 
-    public Integer getPosPolaca(){return (Integer) polaca.size();}
-
-    public void addPolaca(Integer pos, String s){
-        System.out.println("Agrego a la polaca de tamaño "+getPosPolaca()+" el string "+s+"en el lugar "+pos);
-        polaca.set(pos,s);
-    }
-
-    public  List<String> getPolaca(){
-        return polaca;}
-
-    public String getPolacaToString(){
-        StringBuilder out= new StringBuilder();
-        out.append("Polaca Inversa: \n\n");
-        for (int i =0;i<polaca.size();i++){
-            out.append(i+":\t"+polaca.get(i)+"\n");
-        }
-
-        return out.toString();
-    }
-
     public Token getToken()throws FileNotFoundException, IOException {
         Token out;
         StringBuilder parcial= new StringBuilder();
         char aux;
         estadoactual=0;
-        while (estadoactual!=17 && estadoactual!=-1){
+        while (estadoactual!=13 && estadoactual!=-1){
             if (fis.available()<=2){
                 fis.close();
                 return null;}
@@ -288,3 +241,24 @@ public class AnalizadorLexico {
         return out;
     }
 }
+ /*
+    public Integer getPosPolaca(){return (Integer) polaca.size();}
+
+    public void addPolaca(Integer pos, String s){
+        System.out.println("Agrego a la polaca de tamaño "+getPosPolaca()+" el string "+s+"en el lugar "+pos);
+        polaca.set(pos,s);
+    }
+
+    public  List<String> getPolaca(){
+        return polaca;}
+
+    public String getPolacaToString(){
+        StringBuilder out= new StringBuilder();
+        out.append("Polaca Inversa: \n\n");
+        for (int i =0;i<polaca.size();i++){
+            out.append(i+":\t"+polaca.get(i)+"\n");
+        }
+
+        return out.toString();
+    }
+*/
