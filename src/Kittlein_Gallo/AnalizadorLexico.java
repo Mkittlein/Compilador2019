@@ -24,8 +24,8 @@ public class AnalizadorLexico {
     private int cantidadTokens;
     private String tipoToken;
     private List<String> polaca;
-    int [][] MTEstados;
-    AccionSemantica [][] MASemanticas;
+    private int [][] MTEstados;
+    private AccionSemantica [][] MASemanticas;
 
     private void cargarMatrices(){
         // TO DO Cambiar estados
@@ -49,8 +49,13 @@ public class AnalizadorLexico {
         AccionSemantica AS = new AccionSemantica(this,p);
       //TO DO Cambiar AS
 
-/*
-
+        AccionSemantica.AccionConsumeChar ASCC =  AS.new AccionConsumeChar(this,p);
+        AccionSemantica.AccionConcatenar ASC = AS.new AccionConcatenar(this,p);
+        AccionSemantica.AccionFloat ASF = AS.new AccionFloat(this,p);
+        AccionSemantica.AccionID ASID = AS.new AccionID(this,p);
+        AccionSemantica.AccionInt ASI = AS.new AccionInt(this,p);
+        AccionSemantica.AccionString ASS = AS.new AccionString(this,p);
+        AccionSemantica.AccionConsumeChar ERR= AS.new AccionConsumeChar(this,p);
 
         MASemanticas= new AccionSemantica[][]{
                 {ASCC, ASCC,  ERR,  ASC,  ASC,  ASC, ASCC,  ASC,  ASC, ASCC,  ERR,  ASC,  ASC,  ASC,  ASC,  ASC},
@@ -67,7 +72,7 @@ public class AnalizadorLexico {
                 { ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR},
                 {ASCC, ASCC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR}
         };
-        */
+
 
     }
 
@@ -218,7 +223,7 @@ public class AnalizadorLexico {
                 return null;}
             if (!rollback){
                 aux= (char) fis.read();
-                //System.out.println("CARACTER LEIDO: "+aux);
+                System.out.println("CARACTER LEIDO: "+aux);
                 pos++;
                 if (aux == '\n'){linea++;}
             }else {
@@ -226,8 +231,8 @@ public class AnalizadorLexico {
                 rollback=false;}
             estadofuturo=MTEstados[estadoactual][getCodChar(aux)];
             MASemanticas[estadoactual][getCodChar(aux)].run(parcial,aux);
-            //System.out.println("Estado actual: "+estadoactual+", Caracter Leido: "+aux+"("+getCodChar(aux)+")"+"proximo estado: "+MTEstados[estadoactual][getCodChar(aux)]);
-            //System.out.println("Char "+aux+" Estado "+estadoactual +" Posicion :"+pos);
+            System.out.println("Estado actual: "+estadoactual+", Caracter Leido: "+aux+"("+getCodChar(aux)+")"+"proximo estado: "+MTEstados[estadoactual][getCodChar(aux)]);
+            System.out.println("Char "+aux+" Estado "+estadoactual +" Posicion :"+pos);
             estadoactual= estadofuturo;
         }
         if (estadoactual==-1){

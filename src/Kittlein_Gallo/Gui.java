@@ -7,14 +7,16 @@ import java.io.*;
 import java.nio.file.Files;
 
 public class Gui extends JFrame implements ActionListener {
-    JTextArea textTokens, textCode, textPolaca;
+    private JTextArea textTokens, textCode, textPolaca;
     boolean error;
-    //TablaSimbolos TS;
-    JButton botonGet, botonSave, botonGetAll, botonTS;
-    File f;
+    TablaSimbolos TS;
+    private JButton botonGet;
+    private JButton botonSave;
+    private JButton botonTS;
+    private File f;
     JScrollPane scrollTokens, scrollCode, scrollPolaca;
-    //AnalizadorLexico AL;
-    //Parser parser;
+    AnalizadorLexico AL;
+    Parser parser;
     StringBuilder tokens;
     //GeneradorCodigo generadorCodigo;
 
@@ -26,11 +28,14 @@ public class Gui extends JFrame implements ActionListener {
 
 
     Gui(File Cod) throws IOException {
-
+        TS=new TablaSimbolos();
         error=false;
+        //generadorCodigo=new GeneradorCodigo();
         f = Cod;
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());
+        AL= new AnalizadorLexico(Cod,this,TS);
+        parser = AL.getParser();
         byte[] encoded = Files.readAllBytes(f.toPath());
         String Codigo = new String(encoded);
         tokens = new StringBuilder("Tokens: ");
@@ -45,7 +50,7 @@ public class Gui extends JFrame implements ActionListener {
         textTokens.setEditable(false);
         scrollTokens.setAutoscrolls(true);
         botonGet = new JButton("Get Token");
-        botonGetAll = new JButton("COMPILAR");
+        JButton botonGetAll = new JButton("COMPILAR");
         botonTS = new JButton("Mostrar Tabla de Simbolos");
         botonSave = new JButton("Save");
         JPanel botones = new JPanel(new GridLayout(1, 2));
@@ -78,7 +83,7 @@ public class Gui extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("Get Token")) {
             try {
-                //Token t = AL.getToken();
+                Token t = AL.getToken();
             } catch (Exception ex) {
                 System.out.println(ex);
             }
@@ -111,7 +116,7 @@ public class Gui extends JFrame implements ActionListener {
         }
         if (e.getActionCommand().equals("Mostrar Tabla de Simbolos")) {
             botonTS.setText("Ver Tokens");
-            //textTokens.setText(TS.toString());
+            textTokens.setText(TS.toString());
         }
         if (e.getActionCommand().equals("Ver Tokens")) {
             botonTS.setText("Mostrar Tabla de Simbolos");
