@@ -3,8 +3,7 @@ package Kittlein_Gallo;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TablaSimbolos {
-    /*private Map<String, Simbolo> TS;
+public class TablaSimbolos {private Map<String, Simbolo> TS;
 
 
     public TablaSimbolos() {
@@ -19,16 +18,15 @@ public class TablaSimbolos {
         return TS;}
 
     public void add(String key, Simbolo value){
-        //TS.put(key,value);
+        TS.put(key,value);
     }
     public boolean contains(String S){
-        //return TS.containsKey(S);
+        return TS.containsKey(S);
     }
 
     public String toString() {
         StringBuilder aux = new StringBuilder("Tabla de Simbolos: \n");
         aux.append(TS.toString());
         return aux.toString();
-    }*/
-  public boolean contains(String a){return  true;}
+    }
 }
