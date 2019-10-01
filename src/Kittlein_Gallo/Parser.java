@@ -387,21 +387,17 @@ final static String yyrule[] = {
 };
 
 //#line 102 "Gramatica2019.y"
-private Stack<Integer> pila;
-private List<String> ids;
-AnalizadorLexico al;
-private Map<String,Simbolo> TS;
-
+AnalizadorLexico Al;
+TablaSimbolos Ts;
 
 public void addTS(String key, Simbolo value){
-TS.put(key,value);}
+				TS.put(key,value);
+}
 
 
 public Parser(AnalizadorLexico AL){
-                al=AL;
-                TS = new HashMap<>();
-                ids = new ArrayList<>();
-                pila  = new Stack<Integer>();
+                this.Al= AL;
+                Ts = this.Al.getTablaDeSimbolos();
 }
 
 
@@ -410,13 +406,6 @@ public String imprimirTablaSimbolos(){
     aux.append(TS.toString());
     return aux.toString();
 }
-
-
-
-
-public Map<String,Simbolo> getTablaDeSimbolos(){
-return TS;}
-
 
 public int yylex(){
   Token aux=null;
@@ -438,7 +427,7 @@ public int yylex(){
 private void yyerror(String syntax_error) {
     System.out.println(syntax_error);
 }
-//#line 370 "Parser.java"
+//#line 359 "Parser.java"
 //###############################################################
 // method: yylexdebug : check lexer state
 //###############################################################
