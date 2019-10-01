@@ -218,11 +218,13 @@ public class AnalizadorLexico {
         char aux;
         estadoactual=0;
         while (estadoactual!=13 && estadoactual!=-1){
-            if (fis.available()<=2){
+            if (fis.available()<=0){
                 fis.close();
                 return null;}
             if (!rollback){
-                aux= (char) fis.read();
+                if (fis.available()==0){aux = '\n';}
+                else{
+                aux= (char) fis.read();}
                 System.out.println("CARACTER LEIDO: "+aux);
                 pos++;
                 if (aux == '\n'){linea++;}
