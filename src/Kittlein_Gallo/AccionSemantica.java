@@ -114,7 +114,6 @@ public class AccionSemantica {
 
     public class AccionFloat extends AccionSemantica {
 
-        // TO DO: transformar en float - Cambiar d por e y los rangos
 
         BigDecimal maxMant;
         BigDecimal maxExp;
@@ -148,7 +147,7 @@ public class AccionSemantica {
                 }
                 String[] output = parcial.toString().split(delimitador);
 
-                Float mantiza = Math.abs(Float.valueOf(output[0]));//Hacer los calculos de Mantisa
+                Float mantiza = Float.valueOf(output[0]);//Hacer los calculos de Mantisa
                 Long exponente = Long.valueOf(output[1]);//Hacer los calculos del Exponente
 
                 BigDecimal bigmantiza = new BigDecimal(mantiza);

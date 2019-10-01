@@ -1,0 +1,221 @@
+Codigo Cargado:
+C:\Users\manuel\IdeaProjects\Compilador2019\Casos de Prueba\Constantes float fuera de rango.txt
+inicio compilación
+CARACTER LEIDO: 1
+Estado actual: 0, Caracter Leido: 1(5)proximo estado: 3
+Char 1 Estado 0 Posicion :1
+CARACTER LEIDO: .
+Estado actual: 3, Caracter Leido: .(7)proximo estado: 5
+Char . Estado 3 Posicion :2
+CARACTER LEIDO: 1
+Estado actual: 5, Caracter Leido: 1(5)proximo estado: 5
+Char 1 Estado 5 Posicion :3
+CARACTER LEIDO: 7
+Estado actual: 5, Caracter Leido: 7(5)proximo estado: 5
+Char 7 Estado 5 Posicion :4
+CARACTER LEIDO: 5
+Estado actual: 5, Caracter Leido: 5(5)proximo estado: 5
+Char 5 Estado 5 Posicion :5
+CARACTER LEIDO: 4
+Estado actual: 5, Caracter Leido: 4(5)proximo estado: 5
+Char 4 Estado 5 Posicion :6
+CARACTER LEIDO: 9
+Estado actual: 5, Caracter Leido: 9(5)proximo estado: 5
+Char 9 Estado 5 Posicion :7
+CARACTER LEIDO: 4
+Estado actual: 5, Caracter Leido: 4(5)proximo estado: 5
+Char 4 Estado 5 Posicion :8
+CARACTER LEIDO: 3
+Estado actual: 5, Caracter Leido: 3(5)proximo estado: 5
+Char 3 Estado 5 Posicion :9
+CARACTER LEIDO: 6
+Estado actual: 5, Caracter Leido: 6(5)proximo estado: 5
+Char 6 Estado 5 Posicion :10
+CARACTER LEIDO: E
+Estado actual: 5, Caracter Leido: E(4)proximo estado: 6
+Char E Estado 5 Posicion :11
+CARACTER LEIDO: -
+Estado actual: 6, Caracter Leido: -(15)proximo estado: 7
+Char - Estado 6 Posicion :12
+CARACTER LEIDO: 3
+Estado actual: 7, Caracter Leido: 3(5)proximo estado: 7
+Char 3 Estado 7 Posicion :13
+CARACTER LEIDO: 8
+Estado actual: 7, Caracter Leido: 8(5)proximo estado: 7
+Char 8 Estado 7 Posicion :14
+CARACTER LEIDO: 
+Estado actual: 7, Caracter Leido: (0)proximo estado: 13
+Char  Estado 7 Posicion :15
+TOKEN CARGADO: 1.17549435E-38 TIPO: float
+Estado actual: 0, Caracter Leido: (0)proximo estado: 0
+Char  Estado 0 Posicion :15
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :16
+CARACTER LEIDO: 3
+Estado actual: 0, Caracter Leido: 3(5)proximo estado: 3
+Char 3 Estado 0 Posicion :17
+CARACTER LEIDO: .
+Estado actual: 3, Caracter Leido: .(7)proximo estado: 5
+Char . Estado 3 Posicion :18
+CARACTER LEIDO: 4
+Estado actual: 5, Caracter Leido: 4(5)proximo estado: 5
+Char 4 Estado 5 Posicion :19
+CARACTER LEIDO: 0
+Estado actual: 5, Caracter Leido: 0(5)proximo estado: 5
+Char 0 Estado 5 Posicion :20
+CARACTER LEIDO: 2
+Estado actual: 5, Caracter Leido: 2(5)proximo estado: 5
+Char 2 Estado 5 Posicion :21
+CARACTER LEIDO: 8
+Estado actual: 5, Caracter Leido: 8(5)proximo estado: 5
+Char 8 Estado 5 Posicion :22
+CARACTER LEIDO: 2
+Estado actual: 5, Caracter Leido: 2(5)proximo estado: 5
+Char 2 Estado 5 Posicion :23
+CARACTER LEIDO: 3
+Estado actual: 5, Caracter Leido: 3(5)proximo estado: 5
+Char 3 Estado 5 Posicion :24
+CARACTER LEIDO: 4
+Estado actual: 5, Caracter Leido: 4(5)proximo estado: 5
+Char 4 Estado 5 Posicion :25
+CARACTER LEIDO: 8
+Estado actual: 5, Caracter Leido: 8(5)proximo estado: 5
+Char 8 Estado 5 Posicion :26
+CARACTER LEIDO: E
+Estado actual: 5, Caracter Leido: E(4)proximo estado: 6
+Char E Estado 5 Posicion :27
+CARACTER LEIDO: 3
+Estado actual: 6, Caracter Leido: 3(5)proximo estado: 7
+Char 3 Estado 6 Posicion :28
+CARACTER LEIDO: 8
+Estado actual: 7, Caracter Leido: 8(5)proximo estado: 7
+Char 8 Estado 7 Posicion :29
+CARACTER LEIDO: 
+Estado actual: 7, Caracter Leido: (0)proximo estado: 13
+Char  Estado 7 Posicion :30
+TOKEN CARGADO: 3.4028235E38 TIPO: float
+Estado actual: 0, Caracter Leido: (0)proximo estado: 0
+Char  Estado 0 Posicion :30
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :31
+CARACTER LEIDO: -
+Estado actual: 0, Caracter Leido: -(15)proximo estado: 13
+Char - Estado 0 Posicion :32
+TOKEN CARGADO: - TIPO: -
+CARACTER LEIDO: 3
+Estado actual: 0, Caracter Leido: 3(5)proximo estado: 3
+Char 3 Estado 0 Posicion :33
+CARACTER LEIDO: .
+Estado actual: 3, Caracter Leido: .(7)proximo estado: 5
+Char . Estado 3 Posicion :34
+CARACTER LEIDO: 4
+Estado actual: 5, Caracter Leido: 4(5)proximo estado: 5
+Char 4 Estado 5 Posicion :35
+CARACTER LEIDO: 0
+Estado actual: 5, Caracter Leido: 0(5)proximo estado: 5
+Char 0 Estado 5 Posicion :36
+CARACTER LEIDO: 2
+Estado actual: 5, Caracter Leido: 2(5)proximo estado: 5
+Char 2 Estado 5 Posicion :37
+CARACTER LEIDO: 8
+Estado actual: 5, Caracter Leido: 8(5)proximo estado: 5
+Char 8 Estado 5 Posicion :38
+CARACTER LEIDO: 2
+Estado actual: 5, Caracter Leido: 2(5)proximo estado: 5
+Char 2 Estado 5 Posicion :39
+CARACTER LEIDO: 3
+Estado actual: 5, Caracter Leido: 3(5)proximo estado: 5
+Char 3 Estado 5 Posicion :40
+CARACTER LEIDO: 4
+Estado actual: 5, Caracter Leido: 4(5)proximo estado: 5
+Char 4 Estado 5 Posicion :41
+CARACTER LEIDO: 8
+Estado actual: 5, Caracter Leido: 8(5)proximo estado: 5
+Char 8 Estado 5 Posicion :42
+CARACTER LEIDO: E
+Estado actual: 5, Caracter Leido: E(4)proximo estado: 6
+Char E Estado 5 Posicion :43
+CARACTER LEIDO: 3
+Estado actual: 6, Caracter Leido: 3(5)proximo estado: 7
+Char 3 Estado 6 Posicion :44
+CARACTER LEIDO: 8
+Estado actual: 7, Caracter Leido: 8(5)proximo estado: 7
+Char 8 Estado 7 Posicion :45
+CARACTER LEIDO: 
+Estado actual: 7, Caracter Leido: (0)proximo estado: 13
+Char  Estado 7 Posicion :46
+TOKEN CARGADO: 3.4028235E38 TIPO: float
+Estado actual: 0, Caracter Leido: (0)proximo estado: 0
+Char  Estado 0 Posicion :46
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :47
+CARACTER LEIDO: -
+Estado actual: 0, Caracter Leido: -(15)proximo estado: 13
+Char - Estado 0 Posicion :48
+TOKEN CARGADO: - TIPO: -
+CARACTER LEIDO: 1
+Estado actual: 0, Caracter Leido: 1(5)proximo estado: 3
+Char 1 Estado 0 Posicion :49
+CARACTER LEIDO: .
+Estado actual: 3, Caracter Leido: .(7)proximo estado: 5
+Char . Estado 3 Posicion :50
+CARACTER LEIDO: 1
+Estado actual: 5, Caracter Leido: 1(5)proximo estado: 5
+Char 1 Estado 5 Posicion :51
+CARACTER LEIDO: 7
+Estado actual: 5, Caracter Leido: 7(5)proximo estado: 5
+Char 7 Estado 5 Posicion :52
+CARACTER LEIDO: 5
+Estado actual: 5, Caracter Leido: 5(5)proximo estado: 5
+Char 5 Estado 5 Posicion :53
+CARACTER LEIDO: 4
+Estado actual: 5, Caracter Leido: 4(5)proximo estado: 5
+Char 4 Estado 5 Posicion :54
+CARACTER LEIDO: 9
+Estado actual: 5, Caracter Leido: 9(5)proximo estado: 5
+Char 9 Estado 5 Posicion :55
+CARACTER LEIDO: 4
+Estado actual: 5, Caracter Leido: 4(5)proximo estado: 5
+Char 4 Estado 5 Posicion :56
+CARACTER LEIDO: 3
+Estado actual: 5, Caracter Leido: 3(5)proximo estado: 5
+Char 3 Estado 5 Posicion :57
+CARACTER LEIDO: 6
+Estado actual: 5, Caracter Leido: 6(5)proximo estado: 5
+Char 6 Estado 5 Posicion :58
+CARACTER LEIDO: E
+Estado actual: 5, Caracter Leido: E(4)proximo estado: 6
+Char E Estado 5 Posicion :59
+CARACTER LEIDO: -
+Estado actual: 6, Caracter Leido: -(15)proximo estado: 7
+Char - Estado 6 Posicion :60
+CARACTER LEIDO: 3
+Estado actual: 7, Caracter Leido: 3(5)proximo estado: 7
+Char 3 Estado 7 Posicion :61
+CARACTER LEIDO: 8
+Estado actual: 7, Caracter Leido: 8(5)proximo estado: 7
+Char 8 Estado 7 Posicion :62
+CARACTER LEIDO: 
+Estado actual: 7, Caracter Leido: (0)proximo estado: 13
+Char  Estado 7 Posicion :63
+TOKEN CARGADO: 1.17549435E-38 TIPO: float
+Estado actual: 0, Caracter Leido: (0)proximo estado: 0
+Char  Estado 0 Posicion :63
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :64

@@ -1,3 +1,0 @@
-__Este comentario esta bien definido
-
-_Se espera que el compilador ignore el comentario

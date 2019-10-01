@@ -1,2 +1,0 @@
-__Pasara como palabra reservada, pero no sera identificado como tal
-IDENTIFICADOR

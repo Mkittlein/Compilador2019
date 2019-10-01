@@ -113,7 +113,24 @@ public class AnalizadorLexico {
 
     public int getCodToken(String t){
         switch (t){
-            //TODO
+            case "begin" : return 257;
+            case "end" : return 258;
+            case "id" : return 259;
+            case "int" : return 260;
+            case "float" : return 261;
+            case "Print" : return 262;
+            case "String" : return 263;
+            case ":=" : return 264;
+            case "FOREACH" : return 265;
+            case "in" : return 266;
+            case "if" : return 267;
+            case "end_if" : return 268;
+            case "else" : return 269;
+            case ">=" : return 270;
+            case "<=" : return 271;
+            case "==" : return 272;
+            case "CTE_INT" : return 273;
+            case "CTE_FLOAT" : return 274;
             case "!" : return (int) '!';
             case "," : return (int) ',';
             case ">" : return (int) '>';
