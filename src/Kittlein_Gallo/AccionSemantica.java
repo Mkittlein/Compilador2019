@@ -55,9 +55,16 @@ public class AccionSemantica {
             AL.setTipoToken(parcial.toString());
             if (!esPalabra) {
                 AL.setTipoToken("id");
+                if (parcial.length() > 24){
+                    parcial.delete(25,parcial.length());
+                    AL.warning("Id con mas de 25 caracteres recortado");
+                }
+                TablaSimbolos Ts = AL.getTablaDeSimbolos();
+                //Cambiar tipo var cuando tengamos valores
+                Simbolo S = new Simbolo(0,parcial);
+                Ts.add(parcial.toString(),S);
             }
         }
-
     }
 
     public class AccionConcatenar extends AccionSemantica {
@@ -89,12 +96,18 @@ public class AccionSemantica {
             if (valor.compareTo(BigInteger.valueOf(32768)) == 1) {
 
                 //TO DO: si se va de rango pasa a ser float
+                AL.warning("Integer mayor al rango convertido a float");
                 Float valorF = Float.valueOf(parcial.toString());
                 parcial.setLength(0);
                 parcial.append(valorF.toString());
             }else{
             parcial.setLength(0);
             parcial.append(valor.toString());}
+
+            TablaSimbolos Ts = AL.getTablaDeSimbolos();
+            //Cambiar tipo var cuando tengamos valores
+            Simbolo S = new Simbolo(0,parcial);
+            Ts.add(parcial.toString(),S);
         }
     }
 
@@ -157,9 +170,10 @@ public class AccionSemantica {
                 parcial.setLength(0);
                 parcial.append(valor.toString());
             }
-           /* if (!AL.getTablaDeSimbolos().contains(parcial.toString()+"_D")){
-                AL.getTablaDeSimbolos().add(parcial.toString()+"_D",new Simbolo(263,parcial));
-            }*/
+            TablaSimbolos Ts = AL.getTablaDeSimbolos();
+            //Cambiar tipo var cuando tengamos valores
+            Simbolo S = new Simbolo(0,parcial);
+            Ts.add(parcial.toString(),S);
 
         }
     }
@@ -184,10 +198,10 @@ public class AccionSemantica {
         public void run(StringBuilder parcial, char last) {
             //  System.out.println(this.getClass());
             AL.setTipoToken("string");
-         /*   if (!AL.getTablaDeSimbolos().contains("STR_"+parcial.toString().replace(" ","_"))){
-                AL.getTablaDeSimbolos().add("STR_"+parcial.toString().replace(" ","_"),new Simbolo(264,parcial.toString()));}
-            }*/
+            TablaSimbolos Ts = AL.getTablaDeSimbolos();
+            //Cambiar tipo var cuando tengamos valores
+            Simbolo S = new Simbolo(0,parcial);
+            Ts.add(parcial.toString(),S);
+            }
         }
     }
-
-}

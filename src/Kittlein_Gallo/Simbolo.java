@@ -2,18 +2,11 @@ package Kittlein_Gallo;
 
 public class Simbolo {
     private int tipoVariable;
-    private int uso;
     private Object o;
 
     public Simbolo( int tipoVariable, Object o) {
         this.o=o;
         this.tipoVariable = tipoVariable;
-        this.uso=0;
-    }
-
-    public Simbolo( int tipoVariable, int uso) {
-        this.tipoVariable = tipoVariable;
-        this.uso=uso;
     }
 
     public String toString(){
