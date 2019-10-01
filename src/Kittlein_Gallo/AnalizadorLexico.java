@@ -239,7 +239,7 @@ public class AnalizadorLexico {
             JOptionPane.showMessageDialog(null, "ERROR: Linea "+this.getLinea()+" on token \""+parcial+"\" ");
             return null;
         }else {
-            out=new Token(parcial.toString(),(tipoToken));
+            out=new Token(parcial.toString(),getCodToken(tipoToken));
         }
         System.out.println("TOKEN CARGADO: "+parcial+" TIPO: "+tipoToken);
         gui.addMensaje(out.toString());
