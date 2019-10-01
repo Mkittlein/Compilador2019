@@ -391,7 +391,7 @@ AnalizadorLexico Al;
 TablaSimbolos Ts;
 
 public void addTS(String key, Simbolo value){
-				TS.put(key,value);
+				Ts.add(key,value);
 }
 
 
@@ -403,14 +403,14 @@ public Parser(AnalizadorLexico AL){
 
 public String imprimirTablaSimbolos(){
     StringBuilder aux= new StringBuilder("Tabla de Simbolos: \n");
-    aux.append(TS.toString());
+    aux.append(Ts.toString());
     return aux.toString();
 }
 
 public int yylex(){
   Token aux=null;
   try {
-    aux=al.getToken();
+    aux=Al.getToken();
   } catch (IOException e) {
     e.printStackTrace();
   }
