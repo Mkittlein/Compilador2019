@@ -81,7 +81,7 @@ public class AccionSemantica {
 
         public void run(StringBuilder parcial, char last) {
             // System.out.println(this.getClass());
-            AL.setTipoToken("constante");
+            AL.setTipoToken("integer");
             if (last != '\n' && last != ' ' && last != '\t') {
                 AL.setRollback(last);
             }

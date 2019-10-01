@@ -4,7 +4,7 @@ public class Token {
     private String T;
     private int cod;
 
-    public Token(String t, int cod) {
+    public Token(String t, String cod) {
         T = t;
         this.cod = cod;
 

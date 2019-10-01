@@ -96,7 +96,7 @@ public class AnalizadorLexico {
     public AnalizadorLexico(File code, Gui gui, TablaSimbolos TS) throws IOException{
         this.TS=TS;
         fis = new FileInputStream(code);
-        this.p=new Parser(this,TS);
+        this.p=new Parser();//this,TS);
         this.gui=gui;
         cargarMatrices();
         this.pos=0;
@@ -239,10 +239,11 @@ public class AnalizadorLexico {
             JOptionPane.showMessageDialog(null, "ERROR: Linea "+this.getLinea()+" on token \""+parcial+"\" ");
             return null;
         }else {
-            out=new Token(parcial.toString(),getCodToken(tipoToken));
+            out=new Token(parcial.toString(),(tipoToken));
         }
         System.out.println("TOKEN CARGADO: "+parcial+" TIPO: "+tipoToken);
         gui.addMensaje(out.toString());
+
         return out;
     }
 }
