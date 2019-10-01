@@ -1,0 +1,7 @@
+{ cadenavlida1 }
+{cadenavlida2
+  mismacadena2}
+{ cadenavlida3
+  mismacadena3
+  mismacadena32
+}

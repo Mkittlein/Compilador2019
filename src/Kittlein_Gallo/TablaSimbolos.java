@@ -20,6 +20,7 @@ public class TablaSimbolos {private Map<String, Simbolo> TS;
     public void add(String key, Simbolo value){
         TS.put(key,value);
     }
+
     public boolean contains(String S){
         return TS.containsKey(S);
     }
