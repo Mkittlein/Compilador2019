@@ -220,7 +220,7 @@ public class AnalizadorLexico {
         while (estadoactual!=13 && estadoactual!=-1){
             if (fis.available()<=0){
                 fis.close();
-                return null;}
+                return new Token(parcial.toString(),-1);}
             if (!rollback){
                 if (fis.available()==0){aux = '\n';}
                 else{
@@ -239,7 +239,7 @@ public class AnalizadorLexico {
         }
         if (estadoactual==-1){
             JOptionPane.showMessageDialog(null, "ERROR: Linea "+this.getLinea()+" on token \""+parcial+"\" ");
-            return null;
+            return new Token(parcial.toString(),-1);
         }else {
             out=new Token(parcial.toString(),getCodToken(tipoToken));
         }
