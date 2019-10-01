@@ -2,7 +2,7 @@
 /workspace.xml
 # Default ignored files
 /workspace.xml
-/OLD
-/out
+/OLD/*
+/out/*
 
-*.txt
+/*.txt
