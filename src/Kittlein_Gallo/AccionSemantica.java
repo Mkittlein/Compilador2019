@@ -61,7 +61,7 @@ public class AccionSemantica {
                 }
                 TablaSimbolos Ts = AL.getTablaDeSimbolos();
                 //Cambiar tipo var cuando tengamos valores
-                Simbolo S = new Simbolo(0,parcial);
+                Simbolo S = new Simbolo(0);
                 Ts.add(parcial.toString(),S);
             }
         }
@@ -106,11 +106,15 @@ public class AccionSemantica {
 
             TablaSimbolos Ts = AL.getTablaDeSimbolos();
             //Cambiar tipo var cuando tengamos valores
-            Simbolo S = new Simbolo(0,parcial);
+            Simbolo S = new Simbolo(0);
             Ts.add(parcial.toString(),S);
         }
     }
 
+
+    /* TO-DO:
+    * Implementar helper para distinguir floats declarados como tales de ints fuera de rango
+    * Comparar rango con if sobre mantisa y exponente O arreglar los problemas con BigDecimal (Leer bien la documentación) */
 
     public class AccionFloat extends AccionSemantica {
 
@@ -171,7 +175,7 @@ public class AccionSemantica {
             }
             TablaSimbolos Ts = AL.getTablaDeSimbolos();
             //Cambiar tipo var cuando tengamos valores
-            Simbolo S = new Simbolo(0,parcial);
+            Simbolo S = new Simbolo(0);
             Ts.add(parcial.toString(),S);
 
         }
@@ -199,7 +203,7 @@ public class AccionSemantica {
             AL.setTipoToken("string");
             TablaSimbolos Ts = AL.getTablaDeSimbolos();
             //Cambiar tipo var cuando tengamos valores
-            Simbolo S = new Simbolo(0,parcial);
+            Simbolo S = new Simbolo(0);
             Ts.add(parcial.toString(),S);
             }
         }

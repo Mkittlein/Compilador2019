@@ -131,23 +131,6 @@ public class AnalizadorLexico {
             case "==" : return 272;
             case "CTE_INT" : return 273;
             case "CTE_FLOAT" : return 274;
-            case "!" : return (int) '!';
-            case "," : return (int) ',';
-            case ">" : return (int) '>';
-            case "<" : return (int) '<';
-            case ":" : return (int) ':';
-            case ";" : return (int) ';';
-            case "=" : return (int) '=';
-            case "+" : return (int) '+';
-            case "-" : return (int) '-';
-            case "/" : return (int) '/';
-            case "*" : return (int) '*';
-            case "(" : return (int) '(';
-            case ")" : return (int) ')';
-            case "[" : return (int) '[';
-            case "]" : return (int) ']';
-            case "{" : return (int) '{';
-            case "}" : return (int) '}';
 
         }
         if (t.length()==1){
