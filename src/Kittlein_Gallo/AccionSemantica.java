@@ -61,7 +61,7 @@ public class AccionSemantica {
                 }
                 TablaSimbolos Ts = AL.getTablaDeSimbolos();
                 //Cambiar tipo var cuando tengamos valores
-                Simbolo S = new Simbolo(0,parcial);
+                Simbolo S = new Simbolo(0);
                 Ts.add(parcial.toString(),S);
             }
         }
@@ -106,15 +106,18 @@ public class AccionSemantica {
 
             TablaSimbolos Ts = AL.getTablaDeSimbolos();
             //Cambiar tipo var cuando tengamos valores
-            Simbolo S = new Simbolo(0,parcial);
+            Simbolo S = new Simbolo(0);
             Ts.add(parcial.toString(),S);
         }
     }
 
 
+    /* TO-DO:
+    * Implementar helper para distinguir floats declarados como tales de ints fuera de rango
+    * Comparar rango con if sobre mantisa y exponente O arreglar los problemas con BigDecimal (Leer bien la documentación) */
+
     public class AccionFloat extends AccionSemantica {
 
-        // TO DO: transformar en float - Cambiar d por e y los rangos
 
         BigDecimal maxMant;
         BigDecimal maxExp;
@@ -148,7 +151,7 @@ public class AccionSemantica {
                 }
                 String[] output = parcial.toString().split(delimitador);
 
-                Float mantiza = Math.abs(Float.valueOf(output[0]));//Hacer los calculos de Mantisa
+                Float mantiza = Float.valueOf(output[0]);//Hacer los calculos de Mantisa
                 Long exponente = Long.valueOf(output[1]);//Hacer los calculos del Exponente
 
                 BigDecimal bigmantiza = new BigDecimal(mantiza);
@@ -172,7 +175,7 @@ public class AccionSemantica {
             }
             TablaSimbolos Ts = AL.getTablaDeSimbolos();
             //Cambiar tipo var cuando tengamos valores
-            Simbolo S = new Simbolo(0,parcial);
+            Simbolo S = new Simbolo(0);
             Ts.add(parcial.toString(),S);
 
         }
@@ -200,7 +203,7 @@ public class AccionSemantica {
             AL.setTipoToken("string");
             TablaSimbolos Ts = AL.getTablaDeSimbolos();
             //Cambiar tipo var cuando tengamos valores
-            Simbolo S = new Simbolo(0,parcial);
+            Simbolo S = new Simbolo(0);
             Ts.add(parcial.toString(),S);
             }
         }

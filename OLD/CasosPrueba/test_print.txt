@@ -1,8 +1,0 @@
-print (_v),
-
-print ( 'Pan-
-Carne-
-salchica-
-lechu-
-ga-
-pan' ) ,
