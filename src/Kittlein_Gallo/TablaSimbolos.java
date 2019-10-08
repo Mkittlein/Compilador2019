@@ -3,7 +3,8 @@ package Kittlein_Gallo;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TablaSimbolos {private Map<String, Simbolo> TS;
+public class TablaSimbolos {
+    Map<String, Simbolo> TS;
 
 
     public TablaSimbolos() {

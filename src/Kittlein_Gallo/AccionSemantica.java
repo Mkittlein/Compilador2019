@@ -102,7 +102,7 @@ public class AccionSemantica {
                 parcial.append(valorF.toString());
                 TablaSimbolos Ts = AL.getTablaDeSimbolos();
                 //Cambiar tipo var cuando tengamos valores
-                Simbolo S = new Simbolo('i');
+                Simbolo S = new Simbolo('f');
                 Ts.add(parcial.toString(),S);
             }else{
             parcial.setLength(0);

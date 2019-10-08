@@ -6,8 +6,10 @@
 2.5E1
 15.
 0.
-#Estos se van de rango y no deberian, redondeo de floats?
-1.17549435E-38
+;
+
+#Estos se van de rango y no deberian, redondeo de floats;
+1.17549435E-38;
 3.40282347E38
 -3.40282347E38
 -1.17549435E-38

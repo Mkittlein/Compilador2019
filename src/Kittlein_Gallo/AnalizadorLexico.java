@@ -31,19 +31,19 @@ public class AnalizadorLexico {
         // TO DO Cambiar estados
 
         MTEstados=new int[][]{
-                { 0,  0, -1,  1,  1,  3,  2,  4,  8,  9, -1, 10, 12, 11, 13, 13},
-                {13, 13,  1,  1,  1,  1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
-                { 0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2},
-                {13, 13, -1, -1, -1,  3, -1,  5, -1, -1, -1, -1, -1, -1, -1, -1},
-                {-1, -1, -1, -1, -1,  5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
-                {13, 13, -1, -1,  6,  5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
-                {-1, -1, -1, -1, -1,  7, -1, -1, -1, -1, -1, -1, -1, -1, -1,  7},
-                {13, 13, -1, -1, -1,  7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
-                {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, -1},
-                { 9,  9,  9,  9,  9,  9,  9,  9,  9,  9, 13,  9,  9,  9,  9,  9},
-                {13, 13, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13, 13, -1, -1},
-                {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, -1},
-                {13, 13, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, -1}
+                { 0,  0, -1,  1,  1,  3,  2,  4,  8,  9, -1, 10, 12, 11, 13, 13, 13},
+                {13, 13,  1,  1,  1,  1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13},
+                { 0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2},
+                {13, 13, -1, -1, -1,  3, -1,  5, -1, -1, -1, -1, -1, -1, -1, -1, 13},
+                {-1, -1, -1, -1, -1,  5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+                {13, 13, -1, -1,  6,  5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13},
+                {-1, -1, -1, -1, -1,  7, -1, -1, -1, -1, -1, -1, -1, -1, -1,  7, -1},
+                {13, 13, -1, -1, -1,  7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13},
+                {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, -1, -1},
+                { 9,  9,  9,  9,  9,  9,  9,  9,  9,  9, 13,  9,  9,  9,  9,  9,  9},
+                {13, 13, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13, 13, -1, -1, -1},
+                {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, -1, -1},
+                {13, 13, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, -1, -1}
         };
 
         AccionSemantica AS = new AccionSemantica(this,p);
@@ -58,19 +58,19 @@ public class AnalizadorLexico {
         AccionSemantica.AccionConsumeChar ERR= AS.new AccionConsumeChar(this,p);
 
         MASemanticas= new AccionSemantica[][]{
-                {ASCC, ASCC,  ERR,  ASC,  ASC,  ASC, ASCC,  ASC,  ASC, ASCC,  ERR,  ASC,  ASC,  ASC,  ASC,  ASC},
-                {ASID, ASID,  ASC,  ASC,  ASC,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR},
-                {ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC},
-                { ASI,  ASI,  ERR,  ERR,  ERR,  ASC,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR},
-                { ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR},
-                { ASF,  ASF,  ERR,  ERR,  ASC,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR},
-                { ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC},
-                { ASF,  ASF,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR},
-                { ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR},
-                {ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC, ASCC,  ASC,  ASC,  ASC,  ASC,  ASC},
-                {ASCC, ASCC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ASC,  ERR,  ERR},
-                { ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR},
-                {ASCC, ASCC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR}
+                {ASCC, ASCC,  ERR,  ASC,  ASC,  ASC, ASCC,  ASC,  ASC, ASCC,  ERR,  ASC,  ASC,  ASC,  ASC,  ASC, ASC},
+                {ASID, ASID,  ASC,  ASC,  ASC,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR, ASID},
+                {ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC},
+                { ASI,  ASI,  ERR,  ERR,  ERR,  ASC,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASI},
+                { ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR},
+                { ASF,  ASF,  ERR,  ERR,  ASC,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASF},
+                { ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR},
+                { ASF,  ASF,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASF},
+                { ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR},
+                {ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC, ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC},
+                {ASCC, ASCC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ASC,  ERR,  ERR, ERR},
+                { ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR, ERR},
+                {ASCC, ASCC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR, ERR}
         };
 
 
@@ -173,7 +173,7 @@ public class AnalizadorLexico {
         if(c==61)//=
             return 13;
         if (c==59)//;
-            return 14;
+            return 16;
         if (c==44)//,
             return 14;
         if(c==47)///
