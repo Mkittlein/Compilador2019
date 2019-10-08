@@ -1,25 +1,32 @@
 package Kittlein_Gallo;
 
 public class Simbolo {
-    private int tipoVariable;
+    private char Tipo;
+    private Object Valor;
 
-    public Simbolo( int tipoVariable) {
-        this.tipoVariable = tipoVariable; //El tipo variable distingue entre IDs y constantes, ints, floats y strings siumltaneamente. Es decir que tendríamos 5 tipos
-        //ID_INT, ID_FLOAT, CTE_INT, CTE_FLOAT y CTE_STRING
+    Simbolo(char tipo) {
+        this.Tipo = tipo; //El tipo variable distingue entre IDs y constantes, ints, floats y strings siumltaneamente. Es decir que tendríamos 5 tipos
+                                          //ID_INT= I, ID_FLOAT = F, CTE_INT = i, CTE_FLOAT = f, CTE_STRING = s y D para IDs no determinadas.
 
     }
 
     public String toString(){
-        String aux=(" Tipo: \""+tipoVariable+"\n");
-        return aux;
+        return (" Tipo: \""+Tipo+"\n");
     }
 
-    public void setTipoVariable(int tipoVariable) {
-        this.tipoVariable = tipoVariable;
+    public void setTipoVariable(char tipoVariable) {
+        this.Tipo = tipoVariable;
     }
 
     public int getTipoVariable() {
-        return tipoVariable;
+        return Tipo;
     }
 
+    public Object getValor() {
+        return Valor;
+    }
+
+    void setValor(Object valor) {
+        Valor = valor;
+    }
 }

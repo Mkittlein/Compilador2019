@@ -7,9 +7,9 @@ import java.util.List;
 
 public class AccionSemantica {
     AnalizadorLexico AL;
-    Parser p;
+    private Parser p;
 
-    public AccionSemantica(AnalizadorLexico AL, Parser p) {
+    AccionSemantica(AnalizadorLexico AL, Parser p) {
         this.AL = AL;
         this.p = p;
     }
@@ -21,7 +21,7 @@ public class AccionSemantica {
 
     public class AccionID extends AccionSemantica {
 
-        public AccionID(AnalizadorLexico al, Parser p) {
+        AccionID(AnalizadorLexico al, Parser p) {
             super(al, p);
         }
 
@@ -61,7 +61,7 @@ public class AccionSemantica {
                 }
                 TablaSimbolos Ts = AL.getTablaDeSimbolos();
                 //Cambiar tipo var cuando tengamos valores
-                Simbolo S = new Simbolo(0);
+                Simbolo S = new Simbolo('D');
                 Ts.add(parcial.toString(),S);
             }
         }
@@ -69,7 +69,7 @@ public class AccionSemantica {
 
     public class AccionConcatenar extends AccionSemantica {
 
-        public AccionConcatenar(AnalizadorLexico AL, Parser p) {
+        AccionConcatenar(AnalizadorLexico AL, Parser p) {
             super(AL, p);
         }
 
@@ -82,7 +82,7 @@ public class AccionSemantica {
 
     public class AccionInt extends AccionSemantica {
 
-        public AccionInt(AnalizadorLexico AL, Parser p) {
+        AccionInt(AnalizadorLexico AL, Parser p) {
             super(AL, p);
         }
 
@@ -100,13 +100,17 @@ public class AccionSemantica {
                 Float valorF = Float.valueOf(parcial.toString());
                 parcial.setLength(0);
                 parcial.append(valorF.toString());
+                TablaSimbolos Ts = AL.getTablaDeSimbolos();
+                //Cambiar tipo var cuando tengamos valores
+                Simbolo S = new Simbolo('i');
+                Ts.add(parcial.toString(),S);
             }else{
             parcial.setLength(0);
             parcial.append(valor.toString());}
 
             TablaSimbolos Ts = AL.getTablaDeSimbolos();
             //Cambiar tipo var cuando tengamos valores
-            Simbolo S = new Simbolo(0);
+            Simbolo S = new Simbolo('i');
             Ts.add(parcial.toString(),S);
         }
     }
@@ -118,7 +122,7 @@ public class AccionSemantica {
 
     public class AccionFloat extends AccionSemantica {
 
-
+        Float valor;
         BigDecimal maxMant;
         BigDecimal maxExp;
         BigDecimal maxVal;
@@ -126,7 +130,7 @@ public class AccionSemantica {
         BigDecimal minExp;
         BigDecimal minVal;
 
-        public AccionFloat(AnalizadorLexico AL, Parser p) {
+        AccionFloat(AnalizadorLexico AL, Parser p) {
             super(AL, p);
             // System.out.println(this.getClass());
             maxMant = new BigDecimal("3.40282347");
@@ -166,16 +170,17 @@ public class AccionSemantica {
                     AL.warning("Valor de float fuera de rango");
                 }
                 parcial.setLength(0);
-                float auxF = Float.valueOf(bigvalor.toString());
+                float auxF = Float.parseFloat(bigvalor.toString());
                 parcial.append(auxF);
             } else {
-                Float valor = Float.valueOf(parcial.toString());
+                valor = Float.valueOf(parcial.toString());
                 parcial.setLength(0);
                 parcial.append(valor.toString());
             }
             TablaSimbolos Ts = AL.getTablaDeSimbolos();
             //Cambiar tipo var cuando tengamos valores
-            Simbolo S = new Simbolo(0);
+            Simbolo S = new Simbolo('f');
+            S.setValor(valor);
             Ts.add(parcial.toString(),S);
 
         }
@@ -183,7 +188,7 @@ public class AccionSemantica {
 
     public class AccionConsumeChar extends AccionSemantica {
 
-        public AccionConsumeChar(AnalizadorLexico AL, Parser p) {
+        AccionConsumeChar(AnalizadorLexico AL, Parser p) {
             super(AL, p);
         }
 
@@ -194,17 +199,18 @@ public class AccionSemantica {
     }
 
     public class AccionString extends AccionSemantica {
-        public AccionString(AnalizadorLexico AL, Parser p) {
+        AccionString(AnalizadorLexico AL, Parser p) {
             super(AL, p);
         }
 
         public void run(StringBuilder parcial, char last) {
-            //  System.out.println(this.getClass());
-            AL.setTipoToken("string");
+            String valor;
+            AL.setTipoToken("String");
             TablaSimbolos Ts = AL.getTablaDeSimbolos();
             //Cambiar tipo var cuando tengamos valores
-            Simbolo S = new Simbolo(0);
-            Ts.add(parcial.toString(),S);
+            Simbolo S = new Simbolo('s');
+            S.setValor(parcial);
+            Ts.add("STR_"+parcial.toString(),S);
             }
         }
     }
