@@ -32,7 +32,7 @@ public class AnalizadorLexico {
 
         MTEstados=new int[][]{
                 { 0,  0, -1,  1,  1,  3,  2,  4,  8,  9, -1, 10, 12, 11, 13, 13, 13},
-                {13, 13,  1,  1,  1,  1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, 13},
+                {13, 13,  1,  1,  1,  1, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, 13},
                 { 0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2},
                 {13, 13, -1, -1, -1,  3, -1,  5, -1, -1, -1, -1, -1, -1, -1, -1, 13},
                 {-1, -1, -1, -1, -1,  5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
@@ -59,7 +59,7 @@ public class AnalizadorLexico {
 
         MASemanticas= new AccionSemantica[][]{
                 {ASCC, ASCC,  ERR,  ASC,  ASC,  ASC, ASCC,  ASC,  ASC, ASCC,  ERR,  ASC,  ASC,  ASC,  ASC,  ASC, ASC},
-                {ASID, ASID,  ASC,  ASC,  ASC,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ASC, ASID},
+                {ASID, ASID,  ASC,  ASC,  ASC,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASID,  ASID, ASID},
                 {ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC},
                 { ASI,  ASI,  ERR,  ERR,  ERR,  ASC,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASI},
                 { ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR},
