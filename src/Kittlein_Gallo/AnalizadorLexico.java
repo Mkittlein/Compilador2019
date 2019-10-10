@@ -116,7 +116,7 @@ public class AnalizadorLexico {
             case "begin" : return 257;
             case "end" : return 258;
             case "id" : return 259;
-            case "integer" : return 260;
+            case "int" : return 260;
             case "float" : return 261;
             case "print" : return 262;
             case "string" : return 263;

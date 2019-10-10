@@ -17,8 +17,6 @@ public class AccionSemantica {
     public void run(StringBuilder S, char c) {
     }
 
-
-
     public class AccionID extends AccionSemantica {
 
         AccionID(AnalizadorLexico al, Parser p) {
@@ -115,7 +113,6 @@ public class AccionSemantica {
             Ts.add(parcial.toString(),S);
         }
     }
-
 
     /* TO-DO:
     * Implementar helper para distinguir floats declarados como tales de ints fuera de rango

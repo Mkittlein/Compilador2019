@@ -35,7 +35,9 @@ public class Gui extends JFrame implements ActionListener {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());
         AL= new AnalizadorLexico(Cod,this,TS);
-        parser = AL.getParser();
+
+        parser = new Parser(AL);
+
         byte[] encoded = Files.readAllBytes(f.toPath());
         String Codigo = new String(encoded);
         tokens = new StringBuilder("Tokens: ");
@@ -89,7 +91,7 @@ public class Gui extends JFrame implements ActionListener {
             }
         }
         if(e.getActionCommand().equals("COMPILAR")) {
-           // parser.run();
+            parser.run();
             int aux=0;
             System.out.println("inicio compilación");
             while (!error){

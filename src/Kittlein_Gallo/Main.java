@@ -15,7 +15,6 @@ public class Main {
         }
     }
 
-
     private static void setOut() throws FileNotFoundException {
         // Creating a File object that represents the disk file.
         PrintStream o = new PrintStream(new File("./LOG.txt"));
