@@ -88,7 +88,7 @@ public class AccionSemantica {
 
         public void run(StringBuilder parcial, char last) {
             // System.out.println(this.getClass());
-            AL.setTipoToken("integer");
+            AL.setTipoToken("cte_integer");
             if (last != '\n' && last != ' ' && last != '\t') {
                 AL.setRollback(last);
             }
@@ -103,6 +103,7 @@ public class AccionSemantica {
                 TablaSimbolos Ts = AL.getTablaDeSimbolos();
                 //Cambiar tipo var cuando tengamos valores
                 Simbolo S = new Simbolo('f');
+                AL.setTipoToken("cte_float");
                 Ts.add(parcial.toString(),S);
             }else{
             parcial.setLength(0);
@@ -142,7 +143,7 @@ public class AccionSemantica {
         }
 
         public void run(StringBuilder parcial, char last) {
-            AL.setTipoToken("float");
+            AL.setTipoToken("cte_float");
             if (last != '\n' && last != ' ' && last != '\t') {
                 AL.setRollback(last);
             }
@@ -205,7 +206,7 @@ public class AccionSemantica {
 
         public void run(StringBuilder parcial, char last) {
             String valor;
-            AL.setTipoToken("String");
+            AL.setTipoToken("string");
             TablaSimbolos Ts = AL.getTablaDeSimbolos();
             //Cambiar tipo var cuando tengamos valores
             Simbolo S = new Simbolo('s');

@@ -116,12 +116,12 @@ public class AnalizadorLexico {
             case "begin" : return 257;
             case "end" : return 258;
             case "id" : return 259;
-            case "int" : return 260;
+            case "integer" : return 260;
             case "float" : return 261;
-            case "Print" : return 262;
-            case "String" : return 263;
+            case "print" : return 262;
+            case "string" : return 263;
             case ":=" : return 264;
-            case "FOREACH" : return 265;
+            case "foreach" : return 265;
             case "in" : return 266;
             case "if" : return 267;
             case "end_if" : return 268;
@@ -129,8 +129,8 @@ public class AnalizadorLexico {
             case ">=" : return 270;
             case "<=" : return 271;
             case "==" : return 272;
-            case "CTE_INT" : return 273;
-            case "CTE_FLOAT" : return 274;
+            case "cte_integer" : return 273;
+            case "cte_float" : return 274;
 
         }
         if (t.length()==1){
@@ -220,7 +220,7 @@ public class AnalizadorLexico {
         while (estadoactual!=13 && estadoactual!=-1){
             if (fis.available()<=0){
                 fis.close();
-                return new Token(parcial.toString(),-1);}
+                return new Token(parcial.toString(),getCodToken(tipoToken));}
             if (!rollback){
                 if (fis.available()==0){aux = '\n';}
                 else{
@@ -239,6 +239,7 @@ public class AnalizadorLexico {
         }
         if (estadoactual==-1){
             JOptionPane.showMessageDialog(null, "ERROR: Linea "+this.getLinea()+" on token \""+parcial+"\" ");
+
             return new Token(parcial.toString(),-1);
         }else {
             out=new Token(parcial.toString(),getCodToken(tipoToken));
