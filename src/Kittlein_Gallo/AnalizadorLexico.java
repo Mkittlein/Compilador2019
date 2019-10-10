@@ -215,11 +215,12 @@ public class AnalizadorLexico {
     public Token getToken()throws FileNotFoundException, IOException {
         Token out;
         StringBuilder parcial= new StringBuilder();
-        char aux;
+        char aux =0;
         estadoactual=0;
         while (estadoactual!=13 && estadoactual!=-1){
             if (fis.available()<=0){
                 fis.close();
+                gui.error=true;
                 return new Token(parcial.toString(),getCodToken(tipoToken));}
             if (!rollback){
                 if (fis.available()==0){aux = '\n';}
@@ -239,8 +240,10 @@ public class AnalizadorLexico {
         }
         if (estadoactual==-1){
             JOptionPane.showMessageDialog(null, "ERROR: Linea "+this.getLinea()+" on token \""+parcial+"\" ");
-
-            return new Token(parcial.toString(),-1);
+           return new Token(parcial.toString(),-1);
+           /* while (fis.available()!=0 && aux!=';' ){
+                aux= (char) fis.read();
+            }*/
         }else {
             out=new Token(parcial.toString(),getCodToken(tipoToken));
         }

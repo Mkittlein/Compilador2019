@@ -92,7 +92,7 @@ public class Gui extends JFrame implements ActionListener {
            // parser.run();
             int aux=0;
             System.out.println("inicio compilación");
-            while (aux != -1){
+            while (!error){
                 try {
                     aux = AL.getToken().getCod();
                 } catch (IOException ex) {
