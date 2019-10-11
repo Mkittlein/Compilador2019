@@ -221,7 +221,7 @@ public class AnalizadorLexico {
             if (fis.available()<=0){
                 fis.close();
                 gui.error=true;
-                return null;//new Token(parcial.toString(),getCodToken(tipoToken));}
+                return null;}//new Token(parcial.toString(),getCodToken(tipoToken));}
             if (!rollback){
                 if (fis.available()==0){aux = '\n';}
                 else{
