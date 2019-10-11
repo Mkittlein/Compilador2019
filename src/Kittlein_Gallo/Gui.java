@@ -57,12 +57,10 @@ public class Gui extends JFrame implements ActionListener {
         JPanel botones = new JPanel(new GridLayout(1, 2));
         JPanel texto = new JPanel(new GridLayout(1, 2));
         botones.setSize(new Dimension(-1, 30));
-        //botonGet.addActionListener(this);
         botonSave.addActionListener(this);
         botonGetAll.addActionListener(this);
         botonTS.addActionListener(this);
         textTokens.setText(tokens.toString());
-        //botones.add(botonGet, BorderLayout.WEST);
         botones.add(botonTS, BorderLayout.CENTER);
         botones.add(botonGetAll, BorderLayout.CENTER);
         botones.add(botonSave, BorderLayout.EAST);
@@ -82,13 +80,6 @@ public class Gui extends JFrame implements ActionListener {
 
 
     public void actionPerformed(ActionEvent e) {
-        if(e.getActionCommand().equals("Get Token")) {
-            try {
-                Token t = AL.getToken();
-            } catch (Exception ex) {
-                System.out.println(ex);
-            }
-        }
         if(e.getActionCommand().equals("COMPILAR")) {
             System.out.println("inicio compilación");
             parser.run();

@@ -25,7 +25,8 @@ public class TablaSimbolos {
         return TS;}
 
     public void add(String key, Simbolo value){
-        TS.put(key,value);
+        if (!TS.containsKey(key)){
+        TS.put(key,value);}
     }
 
     public boolean contains(String S){
