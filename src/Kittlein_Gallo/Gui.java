@@ -7,18 +7,17 @@ import java.io.*;
 import java.nio.file.Files;
 
 public class Gui extends JFrame implements ActionListener {
-    private JTextArea textTokens, textCode, textPolaca;
+    private JTextArea textTokens, textCode, textRepIntermedia;
     boolean error;
     TablaSimbolos TS;
     private JButton botonGet;
     private JButton botonSave;
     private JButton botonTS;
     private File f;
-    JScrollPane scrollTokens, scrollCode, scrollPolaca;
+    JScrollPane scrollTokens, scrollCode, scrollRepIntermedia;
     AnalizadorLexico AL;
     Parser parser;
     StringBuilder tokens;
-    //GeneradorCodigo generadorCodigo;
 
     public void addMensaje(String M) {
         tokens.append("\n" + M);
@@ -30,28 +29,24 @@ public class Gui extends JFrame implements ActionListener {
     Gui(File Cod) throws IOException {
         TS=new TablaSimbolos();
         error=false;
-        //generadorCodigo=new GeneradorCodigo();
         f = Cod;
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());
         AL= new AnalizadorLexico(Cod,this,TS);
-
         parser = new Parser(AL);
-
         byte[] encoded = Files.readAllBytes(f.toPath());
         String Codigo = new String(encoded);
         tokens = new StringBuilder("Tokens: ");
-        textPolaca = new JTextArea();
+        textRepIntermedia = new JTextArea();
         textTokens = new JTextArea();
-        scrollPolaca = new JScrollPane(textPolaca);
+        scrollRepIntermedia = new JScrollPane(textRepIntermedia);
         scrollTokens = new JScrollPane(textTokens);
         textCode = new JTextArea();
         scrollCode = new JScrollPane(textCode);
         TextLineNumber tln = new TextLineNumber(textCode);
         tln.setBorderGap(0);
         scrollCode.setRowHeaderView(tln);
-
-        textPolaca.setText("Polaca Inversa:");
+        textRepIntermedia.setText("Representación intermedia:");
         textCode.setText(Codigo);
         textTokens.setEditable(false);
         scrollTokens.setAutoscrolls(true);
@@ -74,7 +69,7 @@ public class Gui extends JFrame implements ActionListener {
         add(texto, BorderLayout.CENTER);
         texto.add(scrollTokens);
         texto.add(scrollCode);
-        texto.add(scrollPolaca);
+        texto.add(scrollRepIntermedia);
         add(botones, BorderLayout.SOUTH);
         this.setMinimumSize(new Dimension(800, 600));
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -106,7 +101,7 @@ public class Gui extends JFrame implements ActionListener {
                 }
             }
             if (!error) {
-                //generadorCodigo.generarCodigo(AL.getPolaca(), f.getName(),TS.getTablaDeSimbolos());
+                //generarCodigo
             }
         }
         if(e.getActionCommand().equals("Save")) {
