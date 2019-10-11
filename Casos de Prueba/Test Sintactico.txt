@@ -1,9 +1,9 @@
-float idTest2, IdTest3 ;
-int IdTest1 ,IdTest2 ;
+float IdTest1, IdTest3 , IdTest5 ;
+int IdTest2 ,IdTest4;
 begin
-IdTest1 := 2.0 ;
 IdTest2 := 2 ;
 IdTest3 := 7 ;
 IdTest4 := -1 ;
 IdTest5 := 5 ;
+IdTest1 := 2.0 ;
 end

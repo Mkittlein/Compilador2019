@@ -2,6 +2,7 @@ package Kittlein_Gallo;
 
 import javax.swing.*;
 import java.io.*;
+import java.util.ArrayList;
 
 
 public class Main {
@@ -31,6 +32,8 @@ public class Main {
         file.setDialogTitle("Elegir Codigo a cargar");
         int r = file.showOpenDialog(null);
         File f = file.getSelectedFile();
+
+
         if (f!=null){
             Gui gui= new Gui(f);
             gui.setTitle("Trabajo Compiladores Kittlein-Gallo");

@@ -14,11 +14,11 @@ public class Simbolo {
         return (" Tipo: \""+Tipo+"\n");
     }
 
-    public void setTipoVariable(char tipoVariable) {
+    public void setTipo(char tipoVariable) {
         this.Tipo = tipoVariable;
     }
 
-    public int getTipoVariable() {
+    public int getTipo() {
         return Tipo;
     }
 

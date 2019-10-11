@@ -32,6 +32,10 @@ public class TablaSimbolos {
         return TS.containsKey(S);
     }
 
+    public Simbolo getSimbolo(String k){
+        return TS.get(k);
+    }
+
     public String toString() {
         StringBuilder aux = new StringBuilder("Tabla de Simbolos: \n");
         aux.append(TS.toString());

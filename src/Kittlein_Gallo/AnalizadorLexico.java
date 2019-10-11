@@ -142,6 +142,8 @@ public class AnalizadorLexico {
     public int getCodChar(char ch) {
         int c=ch;
 
+
+
         if (c==13) //[CR]
             return 0;
         if(c==10)//[LN]
