@@ -90,16 +90,9 @@ public class Gui extends JFrame implements ActionListener {
             }
         }
         if(e.getActionCommand().equals("COMPILAR")) {
+            System.out.println("inicio compilación");
             parser.run();
             int aux=0;
-            System.out.println("inicio compilación");
-            while (!error){
-                try {
-                    aux = AL.getToken().getCod();
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            }
             if (!error) {
                 //generarCodigo
             }

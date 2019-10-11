@@ -215,7 +215,7 @@ public class AnalizadorLexico {
     }
 
     public Token getToken()throws FileNotFoundException, IOException {
-        Token out;
+        Token out=null;
         StringBuilder parcial= new StringBuilder();
         char aux =0;
         estadoactual=0;
@@ -238,18 +238,20 @@ public class AnalizadorLexico {
             MASemanticas[estadoactual][getCodChar(aux)].run(parcial,aux);
             System.out.println("Estado actual: "+estadoactual+", Caracter Leido: "+aux+"("+getCodChar(aux)+")"+"proximo estado: "+MTEstados[estadoactual][getCodChar(aux)]);
             System.out.println("Char "+aux+" Estado "+estadoactual +" Posicion :"+pos);
+
+            if (estadoactual==-1){
+                JOptionPane.showMessageDialog(null, "ERROR: Linea "+this.getLinea()+" on token \""+parcial+"\" ");
+                while (fis.available()!=0 && aux!=';' ){
+                    aux= (char) fis.read();
+                    if (aux == '\n'){linea++;}
+                }
+                out=null;
+            }else {
+                out=new Token(parcial.toString(),getCodToken(tipoToken));
+            }
             estadoactual= estadofuturo;
         }
-        if (estadoactual==-1){
-            JOptionPane.showMessageDialog(null, "ERROR: Linea "+this.getLinea()+" on token \""+parcial+"\" ");
-           return new Token(parcial.toString(),-1);
-           /* while (fis.available()!=0 && aux!=';' ){
-                aux= (char) fis.read();
-                if (aux == '\n'){linea++;}
-            }*/
-        }else {
-            out=new Token(parcial.toString(),getCodToken(tipoToken));
-        }
+
         System.out.println("TOKEN CARGADO: "+parcial+" TIPO: "+tipoToken);
         gui.addMensaje(out.toString());
 
