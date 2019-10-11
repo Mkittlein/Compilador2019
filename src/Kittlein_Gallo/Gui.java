@@ -47,6 +47,10 @@ public class Gui extends JFrame implements ActionListener {
         scrollTokens = new JScrollPane(textTokens);
         textCode = new JTextArea();
         scrollCode = new JScrollPane(textCode);
+        TextLineNumber tln = new TextLineNumber(textCode);
+        tln.setBorderGap(0);
+        scrollCode.setRowHeaderView(tln);
+
         textPolaca.setText("Polaca Inversa:");
         textCode.setText(Codigo);
         textTokens.setEditable(false);

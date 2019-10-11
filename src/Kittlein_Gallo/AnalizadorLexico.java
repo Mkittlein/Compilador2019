@@ -99,7 +99,7 @@ public class AnalizadorLexico {
         this.p=new Parser();//this,TS);
         this.gui=gui;
         cargarMatrices();
-        this.pos=0;
+        this.pos=1;
         this.polaca = new ArrayList<String>();
         this.cantidadTokens=0;
         this.code=code;
@@ -243,6 +243,7 @@ public class AnalizadorLexico {
            return new Token(parcial.toString(),-1);
            /* while (fis.available()!=0 && aux!=';' ){
                 aux= (char) fis.read();
+                if (aux == '\n'){linea++;}
             }*/
         }else {
             out=new Token(parcial.toString(),getCodToken(tipoToken));
