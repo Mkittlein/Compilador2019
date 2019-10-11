@@ -15,6 +15,12 @@ public class TablaSimbolos {
         TS.put(key, value);
     }
 
+    public void setNeg(String s){
+        if (TS.containsKey(s)){
+            TS.put("-"+s,TS.get(s));
+        }
+    }
+
     public Map<String,Simbolo> getTablaDeSimbolos(){
         return TS;}
 
