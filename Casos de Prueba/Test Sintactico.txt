@@ -1,8 +1,7 @@
-float idTest2, IdTest3 ;
+float IdTest5, IdTest3 , IdTest4;
 int IdTest1 ,IdTest2 ;
 begin
-
-IdTest1 := 2.0 ^ ;
+IdTest1 := 2.0 ;
 IdTest2 := 2 ;
 IdTest3 := 7 ;
 IdTest4 := -1 ;
