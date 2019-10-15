@@ -27,6 +27,7 @@ public class Gui extends JFrame implements ActionListener {
 
 
     Gui(File Cod) throws IOException {
+       this.setIconImage(new ImageIcon("./icon.png").getImage());
         TS=new TablaSimbolos();
         error=false;
         f = Cod;
@@ -75,7 +76,6 @@ public class Gui extends JFrame implements ActionListener {
         setVisible(true);
 
     }
-
 
 
 
