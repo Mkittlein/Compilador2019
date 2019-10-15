@@ -1,10 +1,10 @@
-int id3 ;  #Declaracion simple
-int Jose[ 2 , 3 , 5 ] ;  #Coleccion de lista - Es necesario un espacio separando componentes
-float Carlos[ 4 ] ;	 #Coleccion por cte - Es necesario un espacio separando componentes
-float id1 , id2 , id7 , id8 ; #Declaracion multiple
-int id9 , id10 ; #Declaracion multiple
+int id3;  #Declaracion simple
+int Jose[2,3,5];  #Coleccion de lista
+float Carlos[4];	 #Coleccion por cte
+float id1,id2,id7,id8; #Declaracion multiple
+int id9,id1; #Declaracion multiple
 begin
-if ( id1 > 25 ) 	#If - comparacion - Es necesario un espacio separando componentes
+if (id1 > 25) 	#If - comparacion
 	id2 := 2.2;	#Asignacion simple
 else			#Else del if
 	id2 := 2.7;	#Asignacion simple
@@ -13,9 +13,9 @@ foreach id3 in id4	#Foreach
 	id2 := 2.7;
 print( {TestMult	#Print Multilinea
 ilinea} );
-print( {TestLinea} );	#Print linea simple
+print({TestLinea});	#Print linea simple
 Jose[1] := 2;		#Asignacion a coleccion
-id14 := Jose [ 1 ] * Carlos [ 4 ]	#Coleccion usada como operando
+id14 := Jose [1] * Carlos [ 4 ]	#Coleccion usada como operando
 end
 
 

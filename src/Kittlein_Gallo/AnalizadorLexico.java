@@ -28,13 +28,11 @@ public class AnalizadorLexico {
     private AccionSemantica [][] MASemanticas;
 
     private void cargarMatrices(){
-        // TO DO Cambiar estados
-
         MTEstados=new int[][]{
                 { 0,  0, -1,  1,  1,  3,  2,  4,  8,  9, -1, 10, 12, 11, 13, 13, 13},
                 {13, 13,  1,  1,  1,  1, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, 13},
                 { 0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2},
-                {13, 13, -1, -1, -1,  3, -1,  5, -1, -1, -1, -1, -1, -1, -1, -1, 13},
+                {13, 13, -1, -1, -1,  3, -1,  5, -1, -1, -1, -1, -1, -1, 13, -1, 13},
                 {-1, -1, -1, -1, -1,  5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
                 {13, 13, -1, -1,  6,  5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13},
                 {-1, -1, -1, -1, -1,  7, -1, -1, -1, -1, -1, -1, -1, -1, -1,  7, -1},
@@ -47,8 +45,6 @@ public class AnalizadorLexico {
         };
 
         AccionSemantica AS = new AccionSemantica(this,p);
-      //TO DO Cambiar AS
-
         AccionSemantica.AccionConsumeChar ASCC =  AS.new AccionConsumeChar(this,p);
         AccionSemantica.AccionConcatenar ASC = AS.new AccionConcatenar(this,p);
         AccionSemantica.AccionFloat ASF = AS.new AccionFloat(this,p);
@@ -72,8 +68,6 @@ public class AnalizadorLexico {
                 { ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR, ERR},
                 {ASCC, ASCC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR, ERR}
         };
-
-
     }
 
     public int getLinea(){
