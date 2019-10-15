@@ -3,10 +3,11 @@ package Kittlein_Gallo;
 public class Simbolo {
     private char Tipo;
     private Object Valor;
+    private int size;
 
     Simbolo(char tipo) {
-        this.Tipo = tipo; //El tipo variable distingue entre IDs y constantes, ints, floats y strings siumltaneamente. Es decir que tendríamos 5 tipos
-                                          //ID_INT= I, ID_FLOAT = F, CTE_INT = i, CTE_FLOAT = f, CTE_STRING = s y D para IDs no determinadas.
+        this.Tipo = tipo; //El tipo variable distingue entre IDs y constantes, ints, floats y strings siumltaneamente. Es decir que tendríamos 5 tipo
+        this.size=1;// ID_INT= I, ID_FLOAT = F, CTE_INT = i, CTE_FLOAT = f, CTE_STRING = s y D para IDs no determinadas.
 
     }
 
@@ -28,5 +29,13 @@ public class Simbolo {
 
     void setValor(Object valor) {
         Valor = valor;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
     }
 }
