@@ -61,13 +61,13 @@ public class AnalizadorLexico {
                 {ASCC, ASCC,  ERR,  ASC,  ASC,  ASC, ASCC,  ASC,  ASC, ASCC,  ERR,  ASC,  ASC,  ASC,  ASC,  ASC, ASC},
                 {ASID, ASID,  ASC,  ASC,  ASC,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASID,  ASID, ASID},
                 {ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC},
-                { ASI,  ASI,  ERR,  ERR,  ERR,  ASC,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASI},
+                { ASI,  ASI,  ERR,  ERR,  ERR,  ASC,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASI,  ERR,  ASI},
                 { ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR},
                 { ASF,  ASF,  ERR,  ERR,  ASC,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASF},
                 { ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR},
                 { ASF,  ASF,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASF},
                 { ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR},
-                {ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC, ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC},
+                {ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC, ASS,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC},
                 {ASCC, ASCC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ASC,  ERR,  ERR, ERR},
                 { ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR, ERR},
                 {ASCC, ASCC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR, ERR}
@@ -141,8 +141,6 @@ public class AnalizadorLexico {
 
     public int getCodChar(char ch) {
         int c=ch;
-
-
 
         if (c==13) //[CR]
             return 0;

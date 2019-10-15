@@ -12,6 +12,9 @@ public class Simbolo {
     }
 
     public String toString(){
+        if (size > 1){
+            return (" Tipo: \""+Tipo+   "\" Tamaño: " + size + "\n");
+        }
         return (" Tipo: \""+Tipo+"\"\n");
     }
 

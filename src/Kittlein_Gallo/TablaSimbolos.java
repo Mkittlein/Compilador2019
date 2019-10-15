@@ -37,6 +37,10 @@ public class TablaSimbolos {
         return TS.get(k);
     }
 
+    public void setSize(String Key, int newsize){
+        TS.get(Key).setSize(newsize);
+    }
+
     public String toString() {
         StringBuilder aux = new StringBuilder("Tabla de Simbolos: \n");
         aux.append(TS.toString());
