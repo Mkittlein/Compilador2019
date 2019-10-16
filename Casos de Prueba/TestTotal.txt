@@ -16,8 +16,4 @@ ilinea} );
 print({TestLinea});	#Print linea simple
 Jose[1] := 2;		#Asignacion a coleccion
 id14 := Jose [1] * Carlos [ 4 ]	#Coleccion usada como operando
-end
-
-
-
-
+end
