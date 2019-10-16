@@ -1,0 +1,2122 @@
+Codigo Cargado:
+C:\Users\Matias\Compilador2019\Casos de Prueba\TestTotal.txt
+inicio compilación
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :2
+CARACTER LEIDO: n
+Estado actual: 1, Caracter Leido: n(3)proximo estado: 1
+Char n Estado 1 Posicion :3
+CARACTER LEIDO: t
+Estado actual: 1, Caracter Leido: t(3)proximo estado: 1
+Char t Estado 1 Posicion :4
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :5
+TOKEN CARGADO: int TIPO: int
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :5
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :6
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :7
+CARACTER LEIDO: 3
+Estado actual: 1, Caracter Leido: 3(5)proximo estado: 1
+Char 3 Estado 1 Posicion :8
+CARACTER LEIDO: ;
+Estado actual: 1, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 1 Posicion :9
+TOKEN CARGADO: id3 TIPO: id
+Estado actual: 0, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 0 Posicion :9
+TOKEN CARGADO: ; TIPO: ;
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :10
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :11
+CARACTER LEIDO: #
+Estado actual: 0, Caracter Leido: #(6)proximo estado: 2
+Char # Estado 0 Posicion :12
+CARACTER LEIDO: D
+Estado actual: 2, Caracter Leido: D(3)proximo estado: 2
+Char D Estado 2 Posicion :13
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :14
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :15
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :16
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :17
+CARACTER LEIDO: r
+Estado actual: 2, Caracter Leido: r(3)proximo estado: 2
+Char r Estado 2 Posicion :18
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :19
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :20
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :21
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :22
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :23
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :24
+CARACTER LEIDO: s
+Estado actual: 2, Caracter Leido: s(3)proximo estado: 2
+Char s Estado 2 Posicion :25
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :26
+CARACTER LEIDO: m
+Estado actual: 2, Caracter Leido: m(3)proximo estado: 2
+Char m Estado 2 Posicion :27
+CARACTER LEIDO: p
+Estado actual: 2, Caracter Leido: p(3)proximo estado: 2
+Char p Estado 2 Posicion :28
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :29
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :30
+CARACTER LEIDO: 
+Estado actual: 2, Caracter Leido: (0)proximo estado: 0
+Char  Estado 2 Posicion :31
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :32
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :33
+CARACTER LEIDO: n
+Estado actual: 1, Caracter Leido: n(3)proximo estado: 1
+Char n Estado 1 Posicion :34
+CARACTER LEIDO: t
+Estado actual: 1, Caracter Leido: t(3)proximo estado: 1
+Char t Estado 1 Posicion :35
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :36
+TOKEN CARGADO: int TIPO: int
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :36
+CARACTER LEIDO: J
+Estado actual: 0, Caracter Leido: J(3)proximo estado: 1
+Char J Estado 0 Posicion :37
+CARACTER LEIDO: o
+Estado actual: 1, Caracter Leido: o(3)proximo estado: 1
+Char o Estado 1 Posicion :38
+CARACTER LEIDO: s
+Estado actual: 1, Caracter Leido: s(3)proximo estado: 1
+Char s Estado 1 Posicion :39
+CARACTER LEIDO: e
+Estado actual: 1, Caracter Leido: e(4)proximo estado: 1
+Char e Estado 1 Posicion :40
+CARACTER LEIDO: [
+Estado actual: 1, Caracter Leido: [(14)proximo estado: 13
+Char [ Estado 1 Posicion :41
+TOKEN CARGADO: Jose TIPO: id
+Estado actual: 0, Caracter Leido: [(14)proximo estado: 13
+Char [ Estado 0 Posicion :41
+TOKEN CARGADO: [ TIPO: [
+CARACTER LEIDO: 2
+Estado actual: 0, Caracter Leido: 2(5)proximo estado: 3
+Char 2 Estado 0 Posicion :42
+CARACTER LEIDO: ,
+Estado actual: 3, Caracter Leido: ,(14)proximo estado: 13
+Char , Estado 3 Posicion :43
+TOKEN CARGADO: 2 TIPO: cte_integer
+Estado actual: 0, Caracter Leido: ,(14)proximo estado: 13
+Char , Estado 0 Posicion :43
+TOKEN CARGADO: , TIPO: ,
+CARACTER LEIDO: 3
+Estado actual: 0, Caracter Leido: 3(5)proximo estado: 3
+Char 3 Estado 0 Posicion :44
+CARACTER LEIDO: ,
+Estado actual: 3, Caracter Leido: ,(14)proximo estado: 13
+Char , Estado 3 Posicion :45
+TOKEN CARGADO: 3 TIPO: cte_integer
+Estado actual: 0, Caracter Leido: ,(14)proximo estado: 13
+Char , Estado 0 Posicion :45
+TOKEN CARGADO: , TIPO: ,
+CARACTER LEIDO: 5
+Estado actual: 0, Caracter Leido: 5(5)proximo estado: 3
+Char 5 Estado 0 Posicion :46
+CARACTER LEIDO: ]
+Estado actual: 3, Caracter Leido: ](14)proximo estado: 13
+Char ] Estado 3 Posicion :47
+TOKEN CARGADO: 5 TIPO: cte_integer
+Estado actual: 0, Caracter Leido: ](14)proximo estado: 13
+Char ] Estado 0 Posicion :47
+TOKEN CARGADO: ] TIPO: ]
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :48
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :49
+CARACTER LEIDO: #
+Estado actual: 0, Caracter Leido: #(6)proximo estado: 2
+Char # Estado 0 Posicion :50
+CARACTER LEIDO: C
+Estado actual: 2, Caracter Leido: C(3)proximo estado: 2
+Char C Estado 2 Posicion :51
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :52
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :53
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :54
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :55
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :56
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :57
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :58
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :59
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :60
+CARACTER LEIDO: d
+Estado actual: 2, Caracter Leido: d(3)proximo estado: 2
+Char d Estado 2 Posicion :61
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :62
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :63
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :64
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :65
+CARACTER LEIDO: s
+Estado actual: 2, Caracter Leido: s(3)proximo estado: 2
+Char s Estado 2 Posicion :66
+CARACTER LEIDO: t
+Estado actual: 2, Caracter Leido: t(3)proximo estado: 2
+Char t Estado 2 Posicion :67
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :68
+CARACTER LEIDO: 
+Estado actual: 2, Caracter Leido: (0)proximo estado: 0
+Char  Estado 2 Posicion :69
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :70
+CARACTER LEIDO: f
+Estado actual: 0, Caracter Leido: f(3)proximo estado: 1
+Char f Estado 0 Posicion :71
+CARACTER LEIDO: l
+Estado actual: 1, Caracter Leido: l(3)proximo estado: 1
+Char l Estado 1 Posicion :72
+CARACTER LEIDO: o
+Estado actual: 1, Caracter Leido: o(3)proximo estado: 1
+Char o Estado 1 Posicion :73
+CARACTER LEIDO: a
+Estado actual: 1, Caracter Leido: a(3)proximo estado: 1
+Char a Estado 1 Posicion :74
+CARACTER LEIDO: t
+Estado actual: 1, Caracter Leido: t(3)proximo estado: 1
+Char t Estado 1 Posicion :75
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :76
+TOKEN CARGADO: float TIPO: float
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :76
+CARACTER LEIDO: C
+Estado actual: 0, Caracter Leido: C(3)proximo estado: 1
+Char C Estado 0 Posicion :77
+CARACTER LEIDO: a
+Estado actual: 1, Caracter Leido: a(3)proximo estado: 1
+Char a Estado 1 Posicion :78
+CARACTER LEIDO: r
+Estado actual: 1, Caracter Leido: r(3)proximo estado: 1
+Char r Estado 1 Posicion :79
+CARACTER LEIDO: l
+Estado actual: 1, Caracter Leido: l(3)proximo estado: 1
+Char l Estado 1 Posicion :80
+CARACTER LEIDO: o
+Estado actual: 1, Caracter Leido: o(3)proximo estado: 1
+Char o Estado 1 Posicion :81
+CARACTER LEIDO: s
+Estado actual: 1, Caracter Leido: s(3)proximo estado: 1
+Char s Estado 1 Posicion :82
+CARACTER LEIDO: [
+Estado actual: 1, Caracter Leido: [(14)proximo estado: 13
+Char [ Estado 1 Posicion :83
+TOKEN CARGADO: Carlos TIPO: id
+Estado actual: 0, Caracter Leido: [(14)proximo estado: 13
+Char [ Estado 0 Posicion :83
+TOKEN CARGADO: [ TIPO: [
+CARACTER LEIDO: 4
+Estado actual: 0, Caracter Leido: 4(5)proximo estado: 3
+Char 4 Estado 0 Posicion :84
+CARACTER LEIDO: ]
+Estado actual: 3, Caracter Leido: ](14)proximo estado: 13
+Char ] Estado 3 Posicion :85
+TOKEN CARGADO: 4 TIPO: cte_integer
+Estado actual: 0, Caracter Leido: ](14)proximo estado: 13
+Char ] Estado 0 Posicion :85
+TOKEN CARGADO: ] TIPO: ]
+CARACTER LEIDO: ;
+Estado actual: 0, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 0 Posicion :86
+TOKEN CARGADO: ; TIPO: ;
+CARACTER LEIDO: 	
+Estado actual: 0, Caracter Leido: 	(1)proximo estado: 0
+Char 	 Estado 0 Posicion :87
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :88
+CARACTER LEIDO: #
+Estado actual: 0, Caracter Leido: #(6)proximo estado: 2
+Char # Estado 0 Posicion :89
+CARACTER LEIDO: C
+Estado actual: 2, Caracter Leido: C(3)proximo estado: 2
+Char C Estado 2 Posicion :90
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :91
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :92
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :93
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :94
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :95
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :96
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :97
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :98
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :99
+CARACTER LEIDO: p
+Estado actual: 2, Caracter Leido: p(3)proximo estado: 2
+Char p Estado 2 Posicion :100
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :101
+CARACTER LEIDO: r
+Estado actual: 2, Caracter Leido: r(3)proximo estado: 2
+Char r Estado 2 Posicion :102
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :103
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :104
+CARACTER LEIDO: t
+Estado actual: 2, Caracter Leido: t(3)proximo estado: 2
+Char t Estado 2 Posicion :105
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :106
+CARACTER LEIDO: 
+Estado actual: 2, Caracter Leido: (0)proximo estado: 0
+Char  Estado 2 Posicion :107
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :108
+CARACTER LEIDO: f
+Estado actual: 0, Caracter Leido: f(3)proximo estado: 1
+Char f Estado 0 Posicion :109
+CARACTER LEIDO: l
+Estado actual: 1, Caracter Leido: l(3)proximo estado: 1
+Char l Estado 1 Posicion :110
+CARACTER LEIDO: o
+Estado actual: 1, Caracter Leido: o(3)proximo estado: 1
+Char o Estado 1 Posicion :111
+CARACTER LEIDO: a
+Estado actual: 1, Caracter Leido: a(3)proximo estado: 1
+Char a Estado 1 Posicion :112
+CARACTER LEIDO: t
+Estado actual: 1, Caracter Leido: t(3)proximo estado: 1
+Char t Estado 1 Posicion :113
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :114
+TOKEN CARGADO: float TIPO: float
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :114
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :115
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :116
+CARACTER LEIDO: 1
+Estado actual: 1, Caracter Leido: 1(5)proximo estado: 1
+Char 1 Estado 1 Posicion :117
+CARACTER LEIDO: ,
+Estado actual: 1, Caracter Leido: ,(14)proximo estado: 13
+Char , Estado 1 Posicion :118
+TOKEN CARGADO: id1 TIPO: id
+Estado actual: 0, Caracter Leido: ,(14)proximo estado: 13
+Char , Estado 0 Posicion :118
+TOKEN CARGADO: , TIPO: ,
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :119
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :120
+CARACTER LEIDO: 2
+Estado actual: 1, Caracter Leido: 2(5)proximo estado: 1
+Char 2 Estado 1 Posicion :121
+CARACTER LEIDO: ,
+Estado actual: 1, Caracter Leido: ,(14)proximo estado: 13
+Char , Estado 1 Posicion :122
+TOKEN CARGADO: id2 TIPO: id
+Estado actual: 0, Caracter Leido: ,(14)proximo estado: 13
+Char , Estado 0 Posicion :122
+TOKEN CARGADO: , TIPO: ,
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :123
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :124
+CARACTER LEIDO: 7
+Estado actual: 1, Caracter Leido: 7(5)proximo estado: 1
+Char 7 Estado 1 Posicion :125
+CARACTER LEIDO: ,
+Estado actual: 1, Caracter Leido: ,(14)proximo estado: 13
+Char , Estado 1 Posicion :126
+TOKEN CARGADO: id7 TIPO: id
+Estado actual: 0, Caracter Leido: ,(14)proximo estado: 13
+Char , Estado 0 Posicion :126
+TOKEN CARGADO: , TIPO: ,
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :127
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :128
+CARACTER LEIDO: 8
+Estado actual: 1, Caracter Leido: 8(5)proximo estado: 1
+Char 8 Estado 1 Posicion :129
+CARACTER LEIDO: ;
+Estado actual: 1, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 1 Posicion :130
+TOKEN CARGADO: id8 TIPO: id
+Estado actual: 0, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 0 Posicion :130
+TOKEN CARGADO: ; TIPO: ;
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :131
+CARACTER LEIDO: #
+Estado actual: 0, Caracter Leido: #(6)proximo estado: 2
+Char # Estado 0 Posicion :132
+CARACTER LEIDO: D
+Estado actual: 2, Caracter Leido: D(3)proximo estado: 2
+Char D Estado 2 Posicion :133
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :134
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :135
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :136
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :137
+CARACTER LEIDO: r
+Estado actual: 2, Caracter Leido: r(3)proximo estado: 2
+Char r Estado 2 Posicion :138
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :139
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :140
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :141
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :142
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :143
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :144
+CARACTER LEIDO: m
+Estado actual: 2, Caracter Leido: m(3)proximo estado: 2
+Char m Estado 2 Posicion :145
+CARACTER LEIDO: u
+Estado actual: 2, Caracter Leido: u(3)proximo estado: 2
+Char u Estado 2 Posicion :146
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :147
+CARACTER LEIDO: t
+Estado actual: 2, Caracter Leido: t(3)proximo estado: 2
+Char t Estado 2 Posicion :148
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :149
+CARACTER LEIDO: p
+Estado actual: 2, Caracter Leido: p(3)proximo estado: 2
+Char p Estado 2 Posicion :150
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :151
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :152
+CARACTER LEIDO: 
+Estado actual: 2, Caracter Leido: (0)proximo estado: 0
+Char  Estado 2 Posicion :153
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :154
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :155
+CARACTER LEIDO: n
+Estado actual: 1, Caracter Leido: n(3)proximo estado: 1
+Char n Estado 1 Posicion :156
+CARACTER LEIDO: t
+Estado actual: 1, Caracter Leido: t(3)proximo estado: 1
+Char t Estado 1 Posicion :157
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :158
+TOKEN CARGADO: int TIPO: int
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :158
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :159
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :160
+CARACTER LEIDO: 9
+Estado actual: 1, Caracter Leido: 9(5)proximo estado: 1
+Char 9 Estado 1 Posicion :161
+CARACTER LEIDO: ,
+Estado actual: 1, Caracter Leido: ,(14)proximo estado: 13
+Char , Estado 1 Posicion :162
+TOKEN CARGADO: id9 TIPO: id
+Estado actual: 0, Caracter Leido: ,(14)proximo estado: 13
+Char , Estado 0 Posicion :162
+TOKEN CARGADO: , TIPO: ,
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :163
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :164
+CARACTER LEIDO: 1
+Estado actual: 1, Caracter Leido: 1(5)proximo estado: 1
+Char 1 Estado 1 Posicion :165
+CARACTER LEIDO: ;
+Estado actual: 1, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 1 Posicion :166
+TOKEN CARGADO: id1 TIPO: id
+Estado actual: 0, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 0 Posicion :166
+TOKEN CARGADO: ; TIPO: ;
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :167
+CARACTER LEIDO: #
+Estado actual: 0, Caracter Leido: #(6)proximo estado: 2
+Char # Estado 0 Posicion :168
+CARACTER LEIDO: D
+Estado actual: 2, Caracter Leido: D(3)proximo estado: 2
+Char D Estado 2 Posicion :169
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :170
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :171
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :172
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :173
+CARACTER LEIDO: r
+Estado actual: 2, Caracter Leido: r(3)proximo estado: 2
+Char r Estado 2 Posicion :174
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :175
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :176
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :177
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :178
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :179
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :180
+CARACTER LEIDO: m
+Estado actual: 2, Caracter Leido: m(3)proximo estado: 2
+Char m Estado 2 Posicion :181
+CARACTER LEIDO: u
+Estado actual: 2, Caracter Leido: u(3)proximo estado: 2
+Char u Estado 2 Posicion :182
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :183
+CARACTER LEIDO: t
+Estado actual: 2, Caracter Leido: t(3)proximo estado: 2
+Char t Estado 2 Posicion :184
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :185
+CARACTER LEIDO: p
+Estado actual: 2, Caracter Leido: p(3)proximo estado: 2
+Char p Estado 2 Posicion :186
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :187
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :188
+CARACTER LEIDO: 
+Estado actual: 2, Caracter Leido: (0)proximo estado: 0
+Char  Estado 2 Posicion :189
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :190
+CARACTER LEIDO: b
+Estado actual: 0, Caracter Leido: b(3)proximo estado: 1
+Char b Estado 0 Posicion :191
+CARACTER LEIDO: e
+Estado actual: 1, Caracter Leido: e(4)proximo estado: 1
+Char e Estado 1 Posicion :192
+CARACTER LEIDO: g
+Estado actual: 1, Caracter Leido: g(3)proximo estado: 1
+Char g Estado 1 Posicion :193
+CARACTER LEIDO: i
+Estado actual: 1, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 1 Posicion :194
+CARACTER LEIDO: n
+Estado actual: 1, Caracter Leido: n(3)proximo estado: 1
+Char n Estado 1 Posicion :195
+CARACTER LEIDO: 
+Estado actual: 1, Caracter Leido: (0)proximo estado: 13
+Char  Estado 1 Posicion :196
+TOKEN CARGADO: begin TIPO: begin
+Estado actual: 0, Caracter Leido: (0)proximo estado: 0
+Char  Estado 0 Posicion :196
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :197
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :198
+CARACTER LEIDO: f
+Estado actual: 1, Caracter Leido: f(3)proximo estado: 1
+Char f Estado 1 Posicion :199
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :200
+TOKEN CARGADO: if TIPO: if
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :200
+CARACTER LEIDO: (
+Estado actual: 0, Caracter Leido: ((14)proximo estado: 13
+Char ( Estado 0 Posicion :201
+TOKEN CARGADO: ( TIPO: (
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :202
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :203
+CARACTER LEIDO: 1
+Estado actual: 1, Caracter Leido: 1(5)proximo estado: 1
+Char 1 Estado 1 Posicion :204
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :205
+TOKEN CARGADO: id1 TIPO: id
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :205
+CARACTER LEIDO: >
+Estado actual: 0, Caracter Leido: >(12)proximo estado: 12
+Char > Estado 0 Posicion :206
+CARACTER LEIDO:  
+Estado actual: 12, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 12 Posicion :207
+TOKEN CARGADO: > TIPO: >
+CARACTER LEIDO: 2
+Estado actual: 0, Caracter Leido: 2(5)proximo estado: 3
+Char 2 Estado 0 Posicion :208
+CARACTER LEIDO: 5
+Estado actual: 3, Caracter Leido: 5(5)proximo estado: 3
+Char 5 Estado 3 Posicion :209
+CARACTER LEIDO: )
+Estado actual: 3, Caracter Leido: )(14)proximo estado: 13
+Char ) Estado 3 Posicion :210
+TOKEN CARGADO: 25 TIPO: cte_integer
+Estado actual: 0, Caracter Leido: )(14)proximo estado: 13
+Char ) Estado 0 Posicion :210
+TOKEN CARGADO: ) TIPO: )
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :211
+CARACTER LEIDO: 	
+Estado actual: 0, Caracter Leido: 	(1)proximo estado: 0
+Char 	 Estado 0 Posicion :212
+CARACTER LEIDO: #
+Estado actual: 0, Caracter Leido: #(6)proximo estado: 2
+Char # Estado 0 Posicion :213
+CARACTER LEIDO: I
+Estado actual: 2, Caracter Leido: I(3)proximo estado: 2
+Char I Estado 2 Posicion :214
+CARACTER LEIDO: f
+Estado actual: 2, Caracter Leido: f(3)proximo estado: 2
+Char f Estado 2 Posicion :215
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :216
+CARACTER LEIDO: -
+Estado actual: 2, Caracter Leido: -(15)proximo estado: 2
+Char - Estado 2 Posicion :217
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :218
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :219
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :220
+CARACTER LEIDO: m
+Estado actual: 2, Caracter Leido: m(3)proximo estado: 2
+Char m Estado 2 Posicion :221
+CARACTER LEIDO: p
+Estado actual: 2, Caracter Leido: p(3)proximo estado: 2
+Char p Estado 2 Posicion :222
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :223
+CARACTER LEIDO: r
+Estado actual: 2, Caracter Leido: r(3)proximo estado: 2
+Char r Estado 2 Posicion :224
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :225
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :226
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :227
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :228
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :229
+CARACTER LEIDO: 
+Estado actual: 2, Caracter Leido: (0)proximo estado: 0
+Char  Estado 2 Posicion :230
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :231
+CARACTER LEIDO: 	
+Estado actual: 0, Caracter Leido: 	(1)proximo estado: 0
+Char 	 Estado 0 Posicion :232
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :233
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :234
+CARACTER LEIDO: 2
+Estado actual: 1, Caracter Leido: 2(5)proximo estado: 1
+Char 2 Estado 1 Posicion :235
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :236
+TOKEN CARGADO: id2 TIPO: id
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :236
+CARACTER LEIDO: :
+Estado actual: 0, Caracter Leido: :(8)proximo estado: 8
+Char : Estado 0 Posicion :237
+CARACTER LEIDO: =
+Estado actual: 8, Caracter Leido: =(13)proximo estado: 13
+Char = Estado 8 Posicion :238
+TOKEN CARGADO: := TIPO: :=
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :239
+CARACTER LEIDO: 2
+Estado actual: 0, Caracter Leido: 2(5)proximo estado: 3
+Char 2 Estado 0 Posicion :240
+CARACTER LEIDO: .
+Estado actual: 3, Caracter Leido: .(7)proximo estado: 5
+Char . Estado 3 Posicion :241
+CARACTER LEIDO: 2
+Estado actual: 5, Caracter Leido: 2(5)proximo estado: 5
+Char 2 Estado 5 Posicion :242
+CARACTER LEIDO: ;
+Estado actual: 5, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 5 Posicion :243
+TOKEN CARGADO: 2.2 TIPO: cte_float
+Estado actual: 0, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 0 Posicion :243
+TOKEN CARGADO: ; TIPO: ;
+CARACTER LEIDO: 	
+Estado actual: 0, Caracter Leido: 	(1)proximo estado: 0
+Char 	 Estado 0 Posicion :244
+CARACTER LEIDO: #
+Estado actual: 0, Caracter Leido: #(6)proximo estado: 2
+Char # Estado 0 Posicion :245
+CARACTER LEIDO: A
+Estado actual: 2, Caracter Leido: A(3)proximo estado: 2
+Char A Estado 2 Posicion :246
+CARACTER LEIDO: s
+Estado actual: 2, Caracter Leido: s(3)proximo estado: 2
+Char s Estado 2 Posicion :247
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :248
+CARACTER LEIDO: g
+Estado actual: 2, Caracter Leido: g(3)proximo estado: 2
+Char g Estado 2 Posicion :249
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :250
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :251
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :252
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :253
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :254
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :255
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :256
+CARACTER LEIDO: s
+Estado actual: 2, Caracter Leido: s(3)proximo estado: 2
+Char s Estado 2 Posicion :257
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :258
+CARACTER LEIDO: m
+Estado actual: 2, Caracter Leido: m(3)proximo estado: 2
+Char m Estado 2 Posicion :259
+CARACTER LEIDO: p
+Estado actual: 2, Caracter Leido: p(3)proximo estado: 2
+Char p Estado 2 Posicion :260
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :261
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :262
+CARACTER LEIDO: 
+Estado actual: 2, Caracter Leido: (0)proximo estado: 0
+Char  Estado 2 Posicion :263
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :264
+CARACTER LEIDO: e
+Estado actual: 0, Caracter Leido: e(4)proximo estado: 1
+Char e Estado 0 Posicion :265
+CARACTER LEIDO: l
+Estado actual: 1, Caracter Leido: l(3)proximo estado: 1
+Char l Estado 1 Posicion :266
+CARACTER LEIDO: s
+Estado actual: 1, Caracter Leido: s(3)proximo estado: 1
+Char s Estado 1 Posicion :267
+CARACTER LEIDO: e
+Estado actual: 1, Caracter Leido: e(4)proximo estado: 1
+Char e Estado 1 Posicion :268
+CARACTER LEIDO: 	
+Estado actual: 1, Caracter Leido: 	(1)proximo estado: 13
+Char 	 Estado 1 Posicion :269
+TOKEN CARGADO: else TIPO: else
+Estado actual: 0, Caracter Leido: 	(1)proximo estado: 0
+Char 	 Estado 0 Posicion :269
+CARACTER LEIDO: 	
+Estado actual: 0, Caracter Leido: 	(1)proximo estado: 0
+Char 	 Estado 0 Posicion :270
+CARACTER LEIDO: 	
+Estado actual: 0, Caracter Leido: 	(1)proximo estado: 0
+Char 	 Estado 0 Posicion :271
+CARACTER LEIDO: #
+Estado actual: 0, Caracter Leido: #(6)proximo estado: 2
+Char # Estado 0 Posicion :272
+CARACTER LEIDO: E
+Estado actual: 2, Caracter Leido: E(4)proximo estado: 2
+Char E Estado 2 Posicion :273
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :274
+CARACTER LEIDO: s
+Estado actual: 2, Caracter Leido: s(3)proximo estado: 2
+Char s Estado 2 Posicion :275
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :276
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :277
+CARACTER LEIDO: d
+Estado actual: 2, Caracter Leido: d(3)proximo estado: 2
+Char d Estado 2 Posicion :278
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :279
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :280
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :281
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :282
+CARACTER LEIDO: f
+Estado actual: 2, Caracter Leido: f(3)proximo estado: 2
+Char f Estado 2 Posicion :283
+CARACTER LEIDO: 
+Estado actual: 2, Caracter Leido: (0)proximo estado: 0
+Char  Estado 2 Posicion :284
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :285
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :286
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :287
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :288
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :289
+CARACTER LEIDO: b
+Estado actual: 0, Caracter Leido: b(3)proximo estado: 1
+Char b Estado 0 Posicion :290
+CARACTER LEIDO: e
+Estado actual: 1, Caracter Leido: e(4)proximo estado: 1
+Char e Estado 1 Posicion :291
+CARACTER LEIDO: g
+Estado actual: 1, Caracter Leido: g(3)proximo estado: 1
+Char g Estado 1 Posicion :292
+CARACTER LEIDO: i
+Estado actual: 1, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 1 Posicion :293
+CARACTER LEIDO: n
+Estado actual: 1, Caracter Leido: n(3)proximo estado: 1
+Char n Estado 1 Posicion :294
+CARACTER LEIDO: 
+Estado actual: 1, Caracter Leido: (0)proximo estado: 13
+Char  Estado 1 Posicion :295
+TOKEN CARGADO: begin TIPO: begin
+Estado actual: 0, Caracter Leido: (0)proximo estado: 0
+Char  Estado 0 Posicion :295
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :296
+CARACTER LEIDO: 	
+Estado actual: 0, Caracter Leido: 	(1)proximo estado: 0
+Char 	 Estado 0 Posicion :297
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :298
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :299
+CARACTER LEIDO: 2
+Estado actual: 1, Caracter Leido: 2(5)proximo estado: 1
+Char 2 Estado 1 Posicion :300
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :301
+TOKEN CARGADO: id2 TIPO: id
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :301
+CARACTER LEIDO: :
+Estado actual: 0, Caracter Leido: :(8)proximo estado: 8
+Char : Estado 0 Posicion :302
+CARACTER LEIDO: =
+Estado actual: 8, Caracter Leido: =(13)proximo estado: 13
+Char = Estado 8 Posicion :303
+TOKEN CARGADO: := TIPO: :=
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :304
+CARACTER LEIDO: 2
+Estado actual: 0, Caracter Leido: 2(5)proximo estado: 3
+Char 2 Estado 0 Posicion :305
+CARACTER LEIDO: .
+Estado actual: 3, Caracter Leido: .(7)proximo estado: 5
+Char . Estado 3 Posicion :306
+CARACTER LEIDO: 7
+Estado actual: 5, Caracter Leido: 7(5)proximo estado: 5
+Char 7 Estado 5 Posicion :307
+CARACTER LEIDO: ;
+Estado actual: 5, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 5 Posicion :308
+TOKEN CARGADO: 2.7 TIPO: cte_float
+Estado actual: 0, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 0 Posicion :308
+TOKEN CARGADO: ; TIPO: ;
+CARACTER LEIDO: 	
+Estado actual: 0, Caracter Leido: 	(1)proximo estado: 0
+Char 	 Estado 0 Posicion :309
+CARACTER LEIDO: #
+Estado actual: 0, Caracter Leido: #(6)proximo estado: 2
+Char # Estado 0 Posicion :310
+CARACTER LEIDO: A
+Estado actual: 2, Caracter Leido: A(3)proximo estado: 2
+Char A Estado 2 Posicion :311
+CARACTER LEIDO: s
+Estado actual: 2, Caracter Leido: s(3)proximo estado: 2
+Char s Estado 2 Posicion :312
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :313
+CARACTER LEIDO: g
+Estado actual: 2, Caracter Leido: g(3)proximo estado: 2
+Char g Estado 2 Posicion :314
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :315
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :316
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :317
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :318
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :319
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :320
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :321
+CARACTER LEIDO: s
+Estado actual: 2, Caracter Leido: s(3)proximo estado: 2
+Char s Estado 2 Posicion :322
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :323
+CARACTER LEIDO: m
+Estado actual: 2, Caracter Leido: m(3)proximo estado: 2
+Char m Estado 2 Posicion :324
+CARACTER LEIDO: p
+Estado actual: 2, Caracter Leido: p(3)proximo estado: 2
+Char p Estado 2 Posicion :325
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :326
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :327
+CARACTER LEIDO: 
+Estado actual: 2, Caracter Leido: (0)proximo estado: 0
+Char  Estado 2 Posicion :328
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :329
+CARACTER LEIDO: 	
+Estado actual: 0, Caracter Leido: 	(1)proximo estado: 0
+Char 	 Estado 0 Posicion :330
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :331
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :332
+CARACTER LEIDO: 2
+Estado actual: 1, Caracter Leido: 2(5)proximo estado: 1
+Char 2 Estado 1 Posicion :333
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :334
+TOKEN CARGADO: id2 TIPO: id
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :334
+CARACTER LEIDO: :
+Estado actual: 0, Caracter Leido: :(8)proximo estado: 8
+Char : Estado 0 Posicion :335
+CARACTER LEIDO: =
+Estado actual: 8, Caracter Leido: =(13)proximo estado: 13
+Char = Estado 8 Posicion :336
+TOKEN CARGADO: := TIPO: :=
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :337
+CARACTER LEIDO: 2
+Estado actual: 0, Caracter Leido: 2(5)proximo estado: 3
+Char 2 Estado 0 Posicion :338
+CARACTER LEIDO: .
+Estado actual: 3, Caracter Leido: .(7)proximo estado: 5
+Char . Estado 3 Posicion :339
+CARACTER LEIDO: 8
+Estado actual: 5, Caracter Leido: 8(5)proximo estado: 5
+Char 8 Estado 5 Posicion :340
+CARACTER LEIDO: ;
+Estado actual: 5, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 5 Posicion :341
+TOKEN CARGADO: 2.8 TIPO: cte_float
+Estado actual: 0, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 0 Posicion :341
+TOKEN CARGADO: ; TIPO: ;
+CARACTER LEIDO: 
+Estado actual: 0, Caracter Leido: (0)proximo estado: 0
+Char  Estado 0 Posicion :342
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :343
+CARACTER LEIDO: 	
+Estado actual: 0, Caracter Leido: 	(1)proximo estado: 0
+Char 	 Estado 0 Posicion :344
+CARACTER LEIDO: e
+Estado actual: 0, Caracter Leido: e(4)proximo estado: 1
+Char e Estado 0 Posicion :345
+CARACTER LEIDO: n
+Estado actual: 1, Caracter Leido: n(3)proximo estado: 1
+Char n Estado 1 Posicion :346
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :347
+CARACTER LEIDO: 
+Estado actual: 1, Caracter Leido: (0)proximo estado: 13
+Char  Estado 1 Posicion :348
+TOKEN CARGADO: end TIPO: end
+Estado actual: 0, Caracter Leido: (0)proximo estado: 0
+Char  Estado 0 Posicion :348
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :349
+CARACTER LEIDO: e
+Estado actual: 0, Caracter Leido: e(4)proximo estado: 1
+Char e Estado 0 Posicion :350
+CARACTER LEIDO: n
+Estado actual: 1, Caracter Leido: n(3)proximo estado: 1
+Char n Estado 1 Posicion :351
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :352
+CARACTER LEIDO: _
+Estado actual: 1, Caracter Leido: _(2)proximo estado: 1
+Char _ Estado 1 Posicion :353
+CARACTER LEIDO: i
+Estado actual: 1, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 1 Posicion :354
+CARACTER LEIDO: f
+Estado actual: 1, Caracter Leido: f(3)proximo estado: 1
+Char f Estado 1 Posicion :355
+CARACTER LEIDO: ;
+Estado actual: 1, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 1 Posicion :356
+TOKEN CARGADO: end_if TIPO: end_if
+Estado actual: 0, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 0 Posicion :356
+TOKEN CARGADO: ; TIPO: ;
+CARACTER LEIDO: 
+Estado actual: 0, Caracter Leido: (0)proximo estado: 0
+Char  Estado 0 Posicion :357
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :358
+CARACTER LEIDO: f
+Estado actual: 0, Caracter Leido: f(3)proximo estado: 1
+Char f Estado 0 Posicion :359
+CARACTER LEIDO: o
+Estado actual: 1, Caracter Leido: o(3)proximo estado: 1
+Char o Estado 1 Posicion :360
+CARACTER LEIDO: r
+Estado actual: 1, Caracter Leido: r(3)proximo estado: 1
+Char r Estado 1 Posicion :361
+CARACTER LEIDO: e
+Estado actual: 1, Caracter Leido: e(4)proximo estado: 1
+Char e Estado 1 Posicion :362
+CARACTER LEIDO: a
+Estado actual: 1, Caracter Leido: a(3)proximo estado: 1
+Char a Estado 1 Posicion :363
+CARACTER LEIDO: c
+Estado actual: 1, Caracter Leido: c(3)proximo estado: 1
+Char c Estado 1 Posicion :364
+CARACTER LEIDO: h
+Estado actual: 1, Caracter Leido: h(3)proximo estado: 1
+Char h Estado 1 Posicion :365
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :366
+TOKEN CARGADO: foreach TIPO: foreach
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :366
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :367
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :368
+CARACTER LEIDO: 3
+Estado actual: 1, Caracter Leido: 3(5)proximo estado: 1
+Char 3 Estado 1 Posicion :369
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :370
+TOKEN CARGADO: id3 TIPO: id
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :370
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :371
+CARACTER LEIDO: n
+Estado actual: 1, Caracter Leido: n(3)proximo estado: 1
+Char n Estado 1 Posicion :372
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :373
+TOKEN CARGADO: in TIPO: in
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :373
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :374
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :375
+CARACTER LEIDO: 4
+Estado actual: 1, Caracter Leido: 4(5)proximo estado: 1
+Char 4 Estado 1 Posicion :376
+CARACTER LEIDO: 	
+Estado actual: 1, Caracter Leido: 	(1)proximo estado: 13
+Char 	 Estado 1 Posicion :377
+TOKEN CARGADO: id4 TIPO: id
+Estado actual: 0, Caracter Leido: 	(1)proximo estado: 0
+Char 	 Estado 0 Posicion :377
+CARACTER LEIDO: #
+Estado actual: 0, Caracter Leido: #(6)proximo estado: 2
+Char # Estado 0 Posicion :378
+CARACTER LEIDO: F
+Estado actual: 2, Caracter Leido: F(3)proximo estado: 2
+Char F Estado 2 Posicion :379
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :380
+CARACTER LEIDO: r
+Estado actual: 2, Caracter Leido: r(3)proximo estado: 2
+Char r Estado 2 Posicion :381
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :382
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :383
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :384
+CARACTER LEIDO: h
+Estado actual: 2, Caracter Leido: h(3)proximo estado: 2
+Char h Estado 2 Posicion :385
+CARACTER LEIDO: 
+Estado actual: 2, Caracter Leido: (0)proximo estado: 0
+Char  Estado 2 Posicion :386
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :387
+CARACTER LEIDO: 	
+Estado actual: 0, Caracter Leido: 	(1)proximo estado: 0
+Char 	 Estado 0 Posicion :388
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :389
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :390
+CARACTER LEIDO: 2
+Estado actual: 1, Caracter Leido: 2(5)proximo estado: 1
+Char 2 Estado 1 Posicion :391
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :392
+TOKEN CARGADO: id2 TIPO: id
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :392
+CARACTER LEIDO: :
+Estado actual: 0, Caracter Leido: :(8)proximo estado: 8
+Char : Estado 0 Posicion :393
+CARACTER LEIDO: =
+Estado actual: 8, Caracter Leido: =(13)proximo estado: 13
+Char = Estado 8 Posicion :394
+TOKEN CARGADO: := TIPO: :=
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :395
+CARACTER LEIDO: 2
+Estado actual: 0, Caracter Leido: 2(5)proximo estado: 3
+Char 2 Estado 0 Posicion :396
+CARACTER LEIDO: .
+Estado actual: 3, Caracter Leido: .(7)proximo estado: 5
+Char . Estado 3 Posicion :397
+CARACTER LEIDO: 7
+Estado actual: 5, Caracter Leido: 7(5)proximo estado: 5
+Char 7 Estado 5 Posicion :398
+CARACTER LEIDO: ;
+Estado actual: 5, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 5 Posicion :399
+TOKEN CARGADO: 2.7 TIPO: cte_float
+Estado actual: 0, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 0 Posicion :399
+TOKEN CARGADO: ; TIPO: ;
+CARACTER LEIDO: 
+Estado actual: 0, Caracter Leido: (0)proximo estado: 0
+Char  Estado 0 Posicion :400
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :401
+CARACTER LEIDO: p
+Estado actual: 0, Caracter Leido: p(3)proximo estado: 1
+Char p Estado 0 Posicion :402
+CARACTER LEIDO: r
+Estado actual: 1, Caracter Leido: r(3)proximo estado: 1
+Char r Estado 1 Posicion :403
+CARACTER LEIDO: i
+Estado actual: 1, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 1 Posicion :404
+CARACTER LEIDO: n
+Estado actual: 1, Caracter Leido: n(3)proximo estado: 1
+Char n Estado 1 Posicion :405
+CARACTER LEIDO: t
+Estado actual: 1, Caracter Leido: t(3)proximo estado: 1
+Char t Estado 1 Posicion :406
+CARACTER LEIDO: (
+Estado actual: 1, Caracter Leido: ((14)proximo estado: 13
+Char ( Estado 1 Posicion :407
+TOKEN CARGADO: print TIPO: print
+Estado actual: 0, Caracter Leido: ((14)proximo estado: 13
+Char ( Estado 0 Posicion :407
+TOKEN CARGADO: ( TIPO: (
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :408
+CARACTER LEIDO: {
+Estado actual: 0, Caracter Leido: {(9)proximo estado: 9
+Char { Estado 0 Posicion :409
+CARACTER LEIDO: T
+Estado actual: 9, Caracter Leido: T(3)proximo estado: 9
+Char T Estado 9 Posicion :410
+CARACTER LEIDO: e
+Estado actual: 9, Caracter Leido: e(4)proximo estado: 9
+Char e Estado 9 Posicion :411
+CARACTER LEIDO: s
+Estado actual: 9, Caracter Leido: s(3)proximo estado: 9
+Char s Estado 9 Posicion :412
+CARACTER LEIDO: t
+Estado actual: 9, Caracter Leido: t(3)proximo estado: 9
+Char t Estado 9 Posicion :413
+CARACTER LEIDO: M
+Estado actual: 9, Caracter Leido: M(3)proximo estado: 9
+Char M Estado 9 Posicion :414
+CARACTER LEIDO: u
+Estado actual: 9, Caracter Leido: u(3)proximo estado: 9
+Char u Estado 9 Posicion :415
+CARACTER LEIDO: l
+Estado actual: 9, Caracter Leido: l(3)proximo estado: 9
+Char l Estado 9 Posicion :416
+CARACTER LEIDO: t
+Estado actual: 9, Caracter Leido: t(3)proximo estado: 9
+Char t Estado 9 Posicion :417
+CARACTER LEIDO: 	
+Estado actual: 9, Caracter Leido: 	(1)proximo estado: 9
+Char 	 Estado 9 Posicion :418
+CARACTER LEIDO: #
+Estado actual: 9, Caracter Leido: #(6)proximo estado: 9
+Char # Estado 9 Posicion :419
+CARACTER LEIDO: P
+Estado actual: 9, Caracter Leido: P(3)proximo estado: 9
+Char P Estado 9 Posicion :420
+CARACTER LEIDO: r
+Estado actual: 9, Caracter Leido: r(3)proximo estado: 9
+Char r Estado 9 Posicion :421
+CARACTER LEIDO: i
+Estado actual: 9, Caracter Leido: i(3)proximo estado: 9
+Char i Estado 9 Posicion :422
+CARACTER LEIDO: n
+Estado actual: 9, Caracter Leido: n(3)proximo estado: 9
+Char n Estado 9 Posicion :423
+CARACTER LEIDO: t
+Estado actual: 9, Caracter Leido: t(3)proximo estado: 9
+Char t Estado 9 Posicion :424
+CARACTER LEIDO:  
+Estado actual: 9, Caracter Leido:  (1)proximo estado: 9
+Char   Estado 9 Posicion :425
+CARACTER LEIDO: M
+Estado actual: 9, Caracter Leido: M(3)proximo estado: 9
+Char M Estado 9 Posicion :426
+CARACTER LEIDO: u
+Estado actual: 9, Caracter Leido: u(3)proximo estado: 9
+Char u Estado 9 Posicion :427
+CARACTER LEIDO: l
+Estado actual: 9, Caracter Leido: l(3)proximo estado: 9
+Char l Estado 9 Posicion :428
+CARACTER LEIDO: t
+Estado actual: 9, Caracter Leido: t(3)proximo estado: 9
+Char t Estado 9 Posicion :429
+CARACTER LEIDO: i
+Estado actual: 9, Caracter Leido: i(3)proximo estado: 9
+Char i Estado 9 Posicion :430
+CARACTER LEIDO: l
+Estado actual: 9, Caracter Leido: l(3)proximo estado: 9
+Char l Estado 9 Posicion :431
+CARACTER LEIDO: i
+Estado actual: 9, Caracter Leido: i(3)proximo estado: 9
+Char i Estado 9 Posicion :432
+CARACTER LEIDO: n
+Estado actual: 9, Caracter Leido: n(3)proximo estado: 9
+Char n Estado 9 Posicion :433
+CARACTER LEIDO: e
+Estado actual: 9, Caracter Leido: e(4)proximo estado: 9
+Char e Estado 9 Posicion :434
+CARACTER LEIDO: a
+Estado actual: 9, Caracter Leido: a(3)proximo estado: 9
+Char a Estado 9 Posicion :435
+CARACTER LEIDO: 
+Estado actual: 9, Caracter Leido: (0)proximo estado: 9
+Char  Estado 9 Posicion :436
+CARACTER LEIDO: 
+
+Estado actual: 9, Caracter Leido: 
+(0)proximo estado: 9
+Char 
+ Estado 9 Posicion :437
+CARACTER LEIDO: i
+Estado actual: 9, Caracter Leido: i(3)proximo estado: 9
+Char i Estado 9 Posicion :438
+CARACTER LEIDO: l
+Estado actual: 9, Caracter Leido: l(3)proximo estado: 9
+Char l Estado 9 Posicion :439
+CARACTER LEIDO: i
+Estado actual: 9, Caracter Leido: i(3)proximo estado: 9
+Char i Estado 9 Posicion :440
+CARACTER LEIDO: n
+Estado actual: 9, Caracter Leido: n(3)proximo estado: 9
+Char n Estado 9 Posicion :441
+CARACTER LEIDO: e
+Estado actual: 9, Caracter Leido: e(4)proximo estado: 9
+Char e Estado 9 Posicion :442
+CARACTER LEIDO: a
+Estado actual: 9, Caracter Leido: a(3)proximo estado: 9
+Char a Estado 9 Posicion :443
+CARACTER LEIDO: }
+Estado actual: 9, Caracter Leido: }(10)proximo estado: 13
+Char } Estado 9 Posicion :444
+TOKEN CARGADO: TestMult	#Print Multilineailinea TIPO: string
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :445
+CARACTER LEIDO: )
+Estado actual: 0, Caracter Leido: )(14)proximo estado: 13
+Char ) Estado 0 Posicion :446
+TOKEN CARGADO: ) TIPO: )
+CARACTER LEIDO: ;
+Estado actual: 0, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 0 Posicion :447
+TOKEN CARGADO: ; TIPO: ;
+CARACTER LEIDO: 
+Estado actual: 0, Caracter Leido: (0)proximo estado: 0
+Char  Estado 0 Posicion :448
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :449
+CARACTER LEIDO: p
+Estado actual: 0, Caracter Leido: p(3)proximo estado: 1
+Char p Estado 0 Posicion :450
+CARACTER LEIDO: r
+Estado actual: 1, Caracter Leido: r(3)proximo estado: 1
+Char r Estado 1 Posicion :451
+CARACTER LEIDO: i
+Estado actual: 1, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 1 Posicion :452
+CARACTER LEIDO: n
+Estado actual: 1, Caracter Leido: n(3)proximo estado: 1
+Char n Estado 1 Posicion :453
+CARACTER LEIDO: t
+Estado actual: 1, Caracter Leido: t(3)proximo estado: 1
+Char t Estado 1 Posicion :454
+CARACTER LEIDO: (
+Estado actual: 1, Caracter Leido: ((14)proximo estado: 13
+Char ( Estado 1 Posicion :455
+TOKEN CARGADO: print TIPO: print
+Estado actual: 0, Caracter Leido: ((14)proximo estado: 13
+Char ( Estado 0 Posicion :455
+TOKEN CARGADO: ( TIPO: (
+CARACTER LEIDO: {
+Estado actual: 0, Caracter Leido: {(9)proximo estado: 9
+Char { Estado 0 Posicion :456
+CARACTER LEIDO: T
+Estado actual: 9, Caracter Leido: T(3)proximo estado: 9
+Char T Estado 9 Posicion :457
+CARACTER LEIDO: e
+Estado actual: 9, Caracter Leido: e(4)proximo estado: 9
+Char e Estado 9 Posicion :458
+CARACTER LEIDO: s
+Estado actual: 9, Caracter Leido: s(3)proximo estado: 9
+Char s Estado 9 Posicion :459
+CARACTER LEIDO: t
+Estado actual: 9, Caracter Leido: t(3)proximo estado: 9
+Char t Estado 9 Posicion :460
+CARACTER LEIDO: L
+Estado actual: 9, Caracter Leido: L(3)proximo estado: 9
+Char L Estado 9 Posicion :461
+CARACTER LEIDO: i
+Estado actual: 9, Caracter Leido: i(3)proximo estado: 9
+Char i Estado 9 Posicion :462
+CARACTER LEIDO: n
+Estado actual: 9, Caracter Leido: n(3)proximo estado: 9
+Char n Estado 9 Posicion :463
+CARACTER LEIDO: e
+Estado actual: 9, Caracter Leido: e(4)proximo estado: 9
+Char e Estado 9 Posicion :464
+CARACTER LEIDO: a
+Estado actual: 9, Caracter Leido: a(3)proximo estado: 9
+Char a Estado 9 Posicion :465
+CARACTER LEIDO: }
+Estado actual: 9, Caracter Leido: }(10)proximo estado: 13
+Char } Estado 9 Posicion :466
+TOKEN CARGADO: TestLinea TIPO: string
+CARACTER LEIDO: )
+Estado actual: 0, Caracter Leido: )(14)proximo estado: 13
+Char ) Estado 0 Posicion :467
+TOKEN CARGADO: ) TIPO: )
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :468
+CARACTER LEIDO: ;
+Estado actual: 0, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 0 Posicion :469
+TOKEN CARGADO: ; TIPO: ;
+CARACTER LEIDO: 	
+Estado actual: 0, Caracter Leido: 	(1)proximo estado: 0
+Char 	 Estado 0 Posicion :470
+CARACTER LEIDO: #
+Estado actual: 0, Caracter Leido: #(6)proximo estado: 2
+Char # Estado 0 Posicion :471
+CARACTER LEIDO: P
+Estado actual: 2, Caracter Leido: P(3)proximo estado: 2
+Char P Estado 2 Posicion :472
+CARACTER LEIDO: r
+Estado actual: 2, Caracter Leido: r(3)proximo estado: 2
+Char r Estado 2 Posicion :473
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :474
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :475
+CARACTER LEIDO: t
+Estado actual: 2, Caracter Leido: t(3)proximo estado: 2
+Char t Estado 2 Posicion :476
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :477
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :478
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :479
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :480
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :481
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :482
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :483
+CARACTER LEIDO: s
+Estado actual: 2, Caracter Leido: s(3)proximo estado: 2
+Char s Estado 2 Posicion :484
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :485
+CARACTER LEIDO: m
+Estado actual: 2, Caracter Leido: m(3)proximo estado: 2
+Char m Estado 2 Posicion :486
+CARACTER LEIDO: p
+Estado actual: 2, Caracter Leido: p(3)proximo estado: 2
+Char p Estado 2 Posicion :487
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :488
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :489
+CARACTER LEIDO: 
+Estado actual: 2, Caracter Leido: (0)proximo estado: 0
+Char  Estado 2 Posicion :490
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :491
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :492
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :493
+CARACTER LEIDO: 1
+Estado actual: 1, Caracter Leido: 1(5)proximo estado: 1
+Char 1 Estado 1 Posicion :494
+CARACTER LEIDO: 4
+Estado actual: 1, Caracter Leido: 4(5)proximo estado: 1
+Char 4 Estado 1 Posicion :495
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :496
+TOKEN CARGADO: id14 TIPO: id
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :496
+CARACTER LEIDO: :
+Estado actual: 0, Caracter Leido: :(8)proximo estado: 8
+Char : Estado 0 Posicion :497
+CARACTER LEIDO: =
+Estado actual: 8, Caracter Leido: =(13)proximo estado: 13
+Char = Estado 8 Posicion :498
+TOKEN CARGADO: := TIPO: :=
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :499
+CARACTER LEIDO: J
+Estado actual: 0, Caracter Leido: J(3)proximo estado: 1
+Char J Estado 0 Posicion :500
+CARACTER LEIDO: o
+Estado actual: 1, Caracter Leido: o(3)proximo estado: 1
+Char o Estado 1 Posicion :501
+CARACTER LEIDO: s
+Estado actual: 1, Caracter Leido: s(3)proximo estado: 1
+Char s Estado 1 Posicion :502
+CARACTER LEIDO: e
+Estado actual: 1, Caracter Leido: e(4)proximo estado: 1
+Char e Estado 1 Posicion :503
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :504
+TOKEN CARGADO: Jose TIPO: id
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :504
+CARACTER LEIDO: [
+Estado actual: 0, Caracter Leido: [(14)proximo estado: 13
+Char [ Estado 0 Posicion :505
+TOKEN CARGADO: [ TIPO: [
+CARACTER LEIDO: 1
+Estado actual: 0, Caracter Leido: 1(5)proximo estado: 3
+Char 1 Estado 0 Posicion :506
+CARACTER LEIDO: ]
+Estado actual: 3, Caracter Leido: ](14)proximo estado: 13
+Char ] Estado 3 Posicion :507
+TOKEN CARGADO: 1 TIPO: cte_integer
+Estado actual: 0, Caracter Leido: ](14)proximo estado: 13
+Char ] Estado 0 Posicion :507
+TOKEN CARGADO: ] TIPO: ]
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :508
+CARACTER LEIDO: *
+Estado actual: 0, Caracter Leido: *(14)proximo estado: 13
+Char * Estado 0 Posicion :509
+TOKEN CARGADO: * TIPO: *
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :510
+CARACTER LEIDO: C
+Estado actual: 0, Caracter Leido: C(3)proximo estado: 1
+Char C Estado 0 Posicion :511
+CARACTER LEIDO: a
+Estado actual: 1, Caracter Leido: a(3)proximo estado: 1
+Char a Estado 1 Posicion :512
+CARACTER LEIDO: r
+Estado actual: 1, Caracter Leido: r(3)proximo estado: 1
+Char r Estado 1 Posicion :513
+CARACTER LEIDO: l
+Estado actual: 1, Caracter Leido: l(3)proximo estado: 1
+Char l Estado 1 Posicion :514
+CARACTER LEIDO: o
+Estado actual: 1, Caracter Leido: o(3)proximo estado: 1
+Char o Estado 1 Posicion :515
+CARACTER LEIDO: s
+Estado actual: 1, Caracter Leido: s(3)proximo estado: 1
+Char s Estado 1 Posicion :516
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :517
+TOKEN CARGADO: Carlos TIPO: id
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :517
+CARACTER LEIDO: [
+Estado actual: 0, Caracter Leido: [(14)proximo estado: 13
+Char [ Estado 0 Posicion :518
+TOKEN CARGADO: [ TIPO: [
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :519
+CARACTER LEIDO: 4
+Estado actual: 0, Caracter Leido: 4(5)proximo estado: 3
+Char 4 Estado 0 Posicion :520
+CARACTER LEIDO:  
+Estado actual: 3, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 3 Posicion :521
+TOKEN CARGADO: 4 TIPO: cte_integer
+CARACTER LEIDO: ]
+Estado actual: 0, Caracter Leido: ](14)proximo estado: 13
+Char ] Estado 0 Posicion :522
+TOKEN CARGADO: ] TIPO: ]
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :523
+CARACTER LEIDO: ;
+Estado actual: 0, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 0 Posicion :524
+TOKEN CARGADO: ; TIPO: ;
+CARACTER LEIDO: 	
+Estado actual: 0, Caracter Leido: 	(1)proximo estado: 0
+Char 	 Estado 0 Posicion :525
+CARACTER LEIDO: #
+Estado actual: 0, Caracter Leido: #(6)proximo estado: 2
+Char # Estado 0 Posicion :526
+CARACTER LEIDO: C
+Estado actual: 2, Caracter Leido: C(3)proximo estado: 2
+Char C Estado 2 Posicion :527
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :528
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :529
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :530
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :531
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :532
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :533
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :534
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :535
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :536
+CARACTER LEIDO: u
+Estado actual: 2, Caracter Leido: u(3)proximo estado: 2
+Char u Estado 2 Posicion :537
+CARACTER LEIDO: s
+Estado actual: 2, Caracter Leido: s(3)proximo estado: 2
+Char s Estado 2 Posicion :538
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :539
+CARACTER LEIDO: d
+Estado actual: 2, Caracter Leido: d(3)proximo estado: 2
+Char d Estado 2 Posicion :540
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :541
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :542
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :543
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :544
+CARACTER LEIDO: m
+Estado actual: 2, Caracter Leido: m(3)proximo estado: 2
+Char m Estado 2 Posicion :545
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :546
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :547
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :548
+CARACTER LEIDO: p
+Estado actual: 2, Caracter Leido: p(3)proximo estado: 2
+Char p Estado 2 Posicion :549
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :550
+CARACTER LEIDO: r
+Estado actual: 2, Caracter Leido: r(3)proximo estado: 2
+Char r Estado 2 Posicion :551
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :552
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :553
+CARACTER LEIDO: d
+Estado actual: 2, Caracter Leido: d(3)proximo estado: 2
+Char d Estado 2 Posicion :554
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :555
+CARACTER LEIDO: 
+Estado actual: 2, Caracter Leido: (0)proximo estado: 0
+Char  Estado 2 Posicion :556
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :557
+CARACTER LEIDO: J
+Estado actual: 0, Caracter Leido: J(3)proximo estado: 1
+Char J Estado 0 Posicion :558
+CARACTER LEIDO: o
+Estado actual: 1, Caracter Leido: o(3)proximo estado: 1
+Char o Estado 1 Posicion :559
+CARACTER LEIDO: s
+Estado actual: 1, Caracter Leido: s(3)proximo estado: 1
+Char s Estado 1 Posicion :560
+CARACTER LEIDO: e
+Estado actual: 1, Caracter Leido: e(4)proximo estado: 1
+Char e Estado 1 Posicion :561
+CARACTER LEIDO: [
+Estado actual: 1, Caracter Leido: [(14)proximo estado: 13
+Char [ Estado 1 Posicion :562
+TOKEN CARGADO: Jose TIPO: id
+Estado actual: 0, Caracter Leido: [(14)proximo estado: 13
+Char [ Estado 0 Posicion :562
+TOKEN CARGADO: [ TIPO: [
+CARACTER LEIDO: 1
+Estado actual: 0, Caracter Leido: 1(5)proximo estado: 3
+Char 1 Estado 0 Posicion :563
+CARACTER LEIDO: ]
+Estado actual: 3, Caracter Leido: ](14)proximo estado: 13
+Char ] Estado 3 Posicion :564
+TOKEN CARGADO: 1 TIPO: cte_integer
+Estado actual: 0, Caracter Leido: ](14)proximo estado: 13
+Char ] Estado 0 Posicion :564
+TOKEN CARGADO: ] TIPO: ]
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :565
+CARACTER LEIDO: :
+Estado actual: 0, Caracter Leido: :(8)proximo estado: 8
+Char : Estado 0 Posicion :566
+CARACTER LEIDO: =
+Estado actual: 8, Caracter Leido: =(13)proximo estado: 13
+Char = Estado 8 Posicion :567
+TOKEN CARGADO: := TIPO: :=
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :568
+CARACTER LEIDO: 2
+Estado actual: 0, Caracter Leido: 2(5)proximo estado: 3
+Char 2 Estado 0 Posicion :569
+CARACTER LEIDO:  
+Estado actual: 3, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 3 Posicion :570
+TOKEN CARGADO: 2 TIPO: cte_integer
+CARACTER LEIDO: +
+Estado actual: 0, Caracter Leido: +(15)proximo estado: 13
+Char + Estado 0 Posicion :571
+TOKEN CARGADO: + TIPO: +
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :572
+CARACTER LEIDO: 3
+Estado actual: 0, Caracter Leido: 3(5)proximo estado: 3
+Char 3 Estado 0 Posicion :573
+CARACTER LEIDO:  
+Estado actual: 3, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 3 Posicion :574
+TOKEN CARGADO: 3 TIPO: cte_integer
+CARACTER LEIDO: ;
+Estado actual: 0, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 0 Posicion :575
+TOKEN CARGADO: ; TIPO: ;
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :576
+CARACTER LEIDO: #
+Estado actual: 0, Caracter Leido: #(6)proximo estado: 2
+Char # Estado 0 Posicion :577
+CARACTER LEIDO: A
+Estado actual: 2, Caracter Leido: A(3)proximo estado: 2
+Char A Estado 2 Posicion :578
+CARACTER LEIDO: s
+Estado actual: 2, Caracter Leido: s(3)proximo estado: 2
+Char s Estado 2 Posicion :579
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :580
+CARACTER LEIDO: g
+Estado actual: 2, Caracter Leido: g(3)proximo estado: 2
+Char g Estado 2 Posicion :581
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :582
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :583
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :584
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :585
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :586
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :587
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :588
+CARACTER LEIDO: a
+Estado actual: 2, Caracter Leido: a(3)proximo estado: 2
+Char a Estado 2 Posicion :589
+CARACTER LEIDO:  
+Estado actual: 2, Caracter Leido:  (1)proximo estado: 2
+Char   Estado 2 Posicion :590
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :591
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :592
+CARACTER LEIDO: l
+Estado actual: 2, Caracter Leido: l(3)proximo estado: 2
+Char l Estado 2 Posicion :593
+CARACTER LEIDO: e
+Estado actual: 2, Caracter Leido: e(4)proximo estado: 2
+Char e Estado 2 Posicion :594
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :595
+CARACTER LEIDO: c
+Estado actual: 2, Caracter Leido: c(3)proximo estado: 2
+Char c Estado 2 Posicion :596
+CARACTER LEIDO: i
+Estado actual: 2, Caracter Leido: i(3)proximo estado: 2
+Char i Estado 2 Posicion :597
+CARACTER LEIDO: o
+Estado actual: 2, Caracter Leido: o(3)proximo estado: 2
+Char o Estado 2 Posicion :598
+CARACTER LEIDO: n
+Estado actual: 2, Caracter Leido: n(3)proximo estado: 2
+Char n Estado 2 Posicion :599
+CARACTER LEIDO: 
+Estado actual: 2, Caracter Leido: (0)proximo estado: 0
+Char  Estado 2 Posicion :600
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :601
+CARACTER LEIDO: i
+Estado actual: 0, Caracter Leido: i(3)proximo estado: 1
+Char i Estado 0 Posicion :602
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :603
+CARACTER LEIDO: 1
+Estado actual: 1, Caracter Leido: 1(5)proximo estado: 1
+Char 1 Estado 1 Posicion :604
+CARACTER LEIDO: 5
+Estado actual: 1, Caracter Leido: 5(5)proximo estado: 1
+Char 5 Estado 1 Posicion :605
+CARACTER LEIDO:  
+Estado actual: 1, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 1 Posicion :606
+TOKEN CARGADO: id15 TIPO: id
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :606
+CARACTER LEIDO: :
+Estado actual: 0, Caracter Leido: :(8)proximo estado: 8
+Char : Estado 0 Posicion :607
+CARACTER LEIDO: =
+Estado actual: 8, Caracter Leido: =(13)proximo estado: 13
+Char = Estado 8 Posicion :608
+TOKEN CARGADO: := TIPO: :=
+CARACTER LEIDO:  
+Estado actual: 0, Caracter Leido:  (1)proximo estado: 0
+Char   Estado 0 Posicion :609
+CARACTER LEIDO: 3
+Estado actual: 0, Caracter Leido: 3(5)proximo estado: 3
+Char 3 Estado 0 Posicion :610
+CARACTER LEIDO:  
+Estado actual: 3, Caracter Leido:  (1)proximo estado: 13
+Char   Estado 3 Posicion :611
+TOKEN CARGADO: 3 TIPO: cte_integer
+CARACTER LEIDO: ;
+Estado actual: 0, Caracter Leido: ;(16)proximo estado: 13
+Char ; Estado 0 Posicion :612
+TOKEN CARGADO: ; TIPO: ;
+CARACTER LEIDO: 
+Estado actual: 0, Caracter Leido: (0)proximo estado: 0
+Char  Estado 0 Posicion :613
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :614
+CARACTER LEIDO: e
+Estado actual: 0, Caracter Leido: e(4)proximo estado: 1
+Char e Estado 0 Posicion :615
+CARACTER LEIDO: n
+Estado actual: 1, Caracter Leido: n(3)proximo estado: 1
+Char n Estado 1 Posicion :616
+CARACTER LEIDO: d
+Estado actual: 1, Caracter Leido: d(3)proximo estado: 1
+Char d Estado 1 Posicion :617
+CARACTER LEIDO: 
+Estado actual: 1, Caracter Leido: (0)proximo estado: 13
+Char  Estado 1 Posicion :618
+TOKEN CARGADO: end TIPO: end
+Estado actual: 0, Caracter Leido: (0)proximo estado: 0
+Char  Estado 0 Posicion :618
+CARACTER LEIDO: 
+
+Estado actual: 0, Caracter Leido: 
+(0)proximo estado: 0
+Char 
+ Estado 0 Posicion :619
