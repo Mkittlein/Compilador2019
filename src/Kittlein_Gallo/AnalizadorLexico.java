@@ -75,12 +75,9 @@ public class AnalizadorLexico {
     }
 
     public void warning(String m){
-        gui.addMensaje("WARNING: "+m);
+        gui.addMensajeWarning("WARNING: "+m);
     }
 
-    public void error(String m){
-        gui.addMensaje("ERROR: "+m);
-    }
 
     public  Parser getParser(){return p;}
 
@@ -192,7 +189,7 @@ public class AnalizadorLexico {
             return 3;
         if((c>=97)&&(c<=122))//letras
             return 3;
-        gui.addMensaje("CARACTER INVALIDO \""+ch+"\""+"Codigo: "+c);
+        gui.addMensajeWarning("CARACTER INVALIDO \""+ch+"\""+"Codigo: "+c);
        return 0;
     }
 
@@ -215,7 +212,7 @@ public class AnalizadorLexico {
             if (fis.available()<=0){
                 fis.close();
                 gui.error=true;
-                return null;}//new Token(parcial.toString(),getCodToken(tipoToken));}
+                return null;}
             if (!rollback){
                 if (fis.available()==0){aux = '\n';}
                 else{
@@ -245,29 +242,8 @@ public class AnalizadorLexico {
         }
 
         System.out.println("TOKEN CARGADO: "+parcial+" TIPO: "+tipoToken);
-        gui.addMensaje(out.toString());
+        gui.addToken(out.toString());
 
         return out;
     }
 }
- /*
-    public Integer getPosPolaca(){return (Integer) polaca.size();}
-
-    public void addPolaca(Integer pos, String s){
-        System.out.println("Agrego a la polaca de tamaño "+getPosPolaca()+" el string "+s+"en el lugar "+pos);
-        polaca.set(pos,s);
-    }
-
-    public  List<String> getPolaca(){
-        return polaca;}
-
-    public String getPolacaToString(){
-        StringBuilder out= new StringBuilder();
-        out.append("Polaca Inversa: \n\n");
-        for (int i =0;i<polaca.size();i++){
-            out.append(i+":\t"+polaca.get(i)+"\n");
-        }
-
-        return out.toString();
-    }
-*/

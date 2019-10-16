@@ -7,27 +7,31 @@ import java.io.*;
 import java.nio.file.Files;
 
 public class Gui extends JFrame implements ActionListener {
-    private JTextArea textTokens, textCode, textRepIntermedia;
+    private JTextArea textTokens, textCode, textRepIntermedia,textWarnings;
     boolean error;
     TablaSimbolos TS;
     private JButton botonGet;
     private JButton botonSave;
     private JButton botonTS;
     private File f;
-    JScrollPane scrollTokens, scrollCode, scrollRepIntermedia;
+    JScrollPane scrollTokens, scrollCode, scrollRepIntermedia, scrollWarnings;
     AnalizadorLexico AL;
     Parser parser;
-    StringBuilder tokens;
+    StringBuilder tokens, warnings;
 
-    public void addMensaje(String M) {
+
+    public void addMensajeWarning(String M) {
+        warnings.append("\n" + M);
+        textWarnings.setText(warnings.toString());
+    }
+
+    public void addToken(String M) {
         tokens.append("\n" + M);
         textTokens.setText(tokens.toString());
     }
 
 
-
     Gui(File Cod) throws IOException {
-       this.setIconImage(new ImageIcon("./icon.png").getImage());
         TS=new TablaSimbolos();
         error=false;
         f = Cod;
@@ -38,10 +42,13 @@ public class Gui extends JFrame implements ActionListener {
         byte[] encoded = Files.readAllBytes(f.toPath());
         String Codigo = new String(encoded);
         tokens = new StringBuilder("Tokens: ");
+        warnings = new StringBuilder("Warnings: ");
         textRepIntermedia = new JTextArea();
         textTokens = new JTextArea();
+        textWarnings = new JTextArea();
         scrollRepIntermedia = new JScrollPane(textRepIntermedia);
         scrollTokens = new JScrollPane(textTokens);
+        scrollWarnings= new JScrollPane(textWarnings);
         textCode = new JTextArea();
         scrollCode = new JScrollPane(textCode);
         TextLineNumber tln = new TextLineNumber(textCode);
@@ -51,22 +58,35 @@ public class Gui extends JFrame implements ActionListener {
         textCode.setText(Codigo);
         textTokens.setEditable(false);
         scrollTokens.setAutoscrolls(true);
-        //botonGet = new JButton("Get Token");
         JButton botonGetAll = new JButton("COMPILAR");
         botonTS = new JButton("Mostrar Tabla de Simbolos");
         botonSave = new JButton("Save");
+        JPanel outs = new JPanel(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+        c.weighty=0.75;
+        c.weightx=1;
+        c.fill=c.BOTH;
+        c.gridy=0;
+        c.gridx=0;
+        outs.add(scrollTokens,c);
+        c.weighty=0.25;
+        c.fill=c.BOTH;
+        c.gridy=1;
+        c.gridx=0;
+        outs.add(scrollWarnings,c);
         JPanel botones = new JPanel(new GridLayout(1, 2));
-        JPanel texto = new JPanel(new GridLayout(1, 2));
+        JPanel texto = new JPanel(new GridLayout(1, 3));
         botones.setSize(new Dimension(-1, 30));
         botonSave.addActionListener(this);
         botonGetAll.addActionListener(this);
         botonTS.addActionListener(this);
         textTokens.setText(tokens.toString());
-        botones.add(botonTS, BorderLayout.CENTER);
-        botones.add(botonGetAll, BorderLayout.CENTER);
-        botones.add(botonSave, BorderLayout.EAST);
+        textWarnings.setText(warnings.toString());
+        botones.add(botonTS, BorderLayout.WEST);
+        botones.add(botonSave, BorderLayout.CENTER);
+        botones.add(botonGetAll, BorderLayout.EAST);
         add(texto, BorderLayout.CENTER);
-        texto.add(scrollTokens);
+        texto.add(outs);
         texto.add(scrollCode);
         texto.add(scrollRepIntermedia);
         add(botones, BorderLayout.SOUTH);

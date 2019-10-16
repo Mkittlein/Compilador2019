@@ -42,8 +42,12 @@ public class TablaSimbolos {
     }
 
     public String toString() {
+        Simbolo s;
         StringBuilder aux = new StringBuilder("Tabla de Simbolos: \n");
-        aux.append(TS.toString());
+        for (String k:TS.keySet()) {
+        aux.append("["+k+" \t| "+TS.get(k).toString()+"]\n");
+        }
+
         return aux.toString();
     }
 }
