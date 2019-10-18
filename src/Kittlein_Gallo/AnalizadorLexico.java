@@ -74,8 +74,14 @@ public class AnalizadorLexico {
         return linea;
     }
 
+    public void eror(String m){
+        gui.addMensajeWarning("ERROR: "+m);
+        gui.setColorError(3);
+    }
+
     public void warning(String m){
         gui.addMensajeWarning("WARNING: "+m);
+        gui.setColorError(2);
     }
 
     public  Parser getParser(){return p;}
