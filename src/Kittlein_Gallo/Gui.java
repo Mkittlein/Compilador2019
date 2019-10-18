@@ -137,4 +137,8 @@ public class Gui extends JFrame implements ActionListener {
             textTokens.setText(tokens.toString());
         }
     }
+
+    public void updatePolaca() {
+        textRepIntermedia.setText(AL.getPolacaToString());
+    }
 }

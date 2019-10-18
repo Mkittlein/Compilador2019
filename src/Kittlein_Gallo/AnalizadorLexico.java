@@ -206,7 +206,7 @@ public class AnalizadorLexico {
 
     public void addPolaca(String s){
         polaca.add(s);
-        //this.gui.updatePolaca();
+        this.gui.updatePolaca();
     }
 
     public void addPolaca(Integer pos, String s){
