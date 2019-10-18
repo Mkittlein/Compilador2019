@@ -78,7 +78,6 @@ public class AnalizadorLexico {
         gui.addMensajeWarning("WARNING: "+m);
     }
 
-
     public  Parser getParser(){return p;}
 
     public TablaSimbolos getTablaDeSimbolos(){
@@ -201,6 +200,31 @@ public class AnalizadorLexico {
     public void setRollback(char c){
         rollback=true;
         rollchar=c;
+    }
+
+    public Integer getPosPolaca(){return (Integer) polaca.size();}
+
+    public void addPolaca(String s){
+        polaca.add(s);
+        //this.gui.updatePolaca();
+    }
+
+    public void addPolaca(Integer pos, String s){
+        System.out.println("Agrego a la polaca de tamaño "+getPosPolaca()+" el string "+s+"en el lugar "+pos);
+        polaca.set(pos,s);
+    }
+
+    public  List<String> getPolaca(){
+        return polaca;}
+
+    public String getPolacaToString(){
+        StringBuilder out= new StringBuilder();
+        out.append("Polaca Inversa: \n\n");
+        for (int i =0;i<polaca.size();i++){
+            out.append(i+":\t"+polaca.get(i)+"\n");
+        }
+
+        return out.toString();
     }
 
     public Token getToken()throws FileNotFoundException, IOException {
