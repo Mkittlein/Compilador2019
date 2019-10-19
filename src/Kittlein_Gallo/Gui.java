@@ -9,15 +9,16 @@ import java.nio.file.Files;
 public class Gui extends JFrame implements ActionListener {
     private JTextArea textTokens, textCode, textRepIntermedia,textWarnings;
     boolean error;
+    private int n=0;
     TablaSimbolos TS;
     private JButton botonGet;
     private JButton botonSave;
     private JButton botonTS;
     private File f;
-    JScrollPane scrollTokens, scrollCode, scrollRepIntermedia, scrollWarnings;
-    AnalizadorLexico AL;
-    Parser parser;
-    StringBuilder tokens, warnings;
+    private JScrollPane scrollTokens, scrollCode, scrollRepIntermedia, scrollWarnings;
+    private AnalizadorLexico AL;
+    private Parser parser;
+    private StringBuilder tokens, warnings;
 
 
     public void addMensajeWarning(String M) {
@@ -30,6 +31,17 @@ public class Gui extends JFrame implements ActionListener {
         textTokens.setText(tokens.toString());
     }
 
+    public void setColorError(int nivelError){
+
+       if (this.n<nivelError) {
+           if (n == 1)
+               textWarnings.setBackground(Color.GREEN);
+           if (n == 2)
+               textWarnings.setBackground(Color.yellow);
+           if (n == 3)
+               textWarnings.setBackground(Color.red);
+       }
+    }
 
     Gui(File Cod) throws IOException {
         TS=new TablaSimbolos();
@@ -104,6 +116,7 @@ public class Gui extends JFrame implements ActionListener {
             System.out.println("inicio compilación");
             parser.run();
             int aux=0;
+            this.setColorError(1);
             if (!error) {
                 //generarCodigo
             }
