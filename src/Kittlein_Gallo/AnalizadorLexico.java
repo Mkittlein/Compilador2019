@@ -210,8 +210,12 @@ public class AnalizadorLexico {
     }
 
     public void addPolaca(Integer pos, String s){
-        System.out.println("Agrego a la polaca de tamaño "+getPosPolaca()+" el string "+s+"en el lugar "+pos);
+        System.out.println("Agrego a la polaca de tamaño "+getPosPolaca()+" el string "+s+" en el lugar "+pos);
         polaca.set(pos,s);
+    }
+
+    public void clearPolaca(){
+        polaca.clear();
     }
 
     public  List<String> getPolaca(){

@@ -1,5 +1,5 @@
 int id3;  #Declaracion simple
-int Jose[2,3,5]  #Coleccion de lista
+int Jose[2,3,5];  #Coleccion de lista
 float Carlos[4];	 #Coleccion por cte
 float id1,id2,id7,id8; #Declaracion multiple
 int id9,id1; #Declaracion multiple
@@ -12,12 +12,10 @@ else			#Else del if
 	id2 := 2.8;
 	end
 end_if;
-foreach id3 in id4	#Foreach
-	id2 := 2.7;
-print( {TestMult	#Print Multilinea
-ilinea} );
+print( {TestMult
+ilinea} );          #Print Multilinea
 print({TestLinea}) ;	#Print linea simple
-id14 := Jose [1] * Carlos [ 4 ] ;	#Coleccion usada como operando
+id14 := Jose [1] * Carlos [ id3 ] ;	#Coleccion usada como operando
 Jose[1] := 2 + 3 ; #Asignacion a coleccion
 id15 := 3 ;
 end
