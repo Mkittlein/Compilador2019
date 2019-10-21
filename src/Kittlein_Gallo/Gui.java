@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 
 public class Gui extends JFrame implements ActionListener {
@@ -52,7 +53,7 @@ public class Gui extends JFrame implements ActionListener {
         AL= new AnalizadorLexico(Cod,this,TS);
         parser = new Parser(AL);
         byte[] encoded = Files.readAllBytes(f.toPath());
-        String Codigo = new String(encoded);
+        String Codigo = new String(encoded, StandardCharsets.UTF_8);
         tokens = new StringBuilder("Tokens: ");
         warnings = new StringBuilder("Warnings: ");
         textRepIntermedia = new JTextArea();
