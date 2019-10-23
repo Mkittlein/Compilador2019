@@ -75,13 +75,13 @@ public class AnalizadorLexico {
     }
 
     public void eror(String m){
-        gui.addMensajeWarning("ERROR: "+m);
         gui.setColorError(3);
+        gui.addMensaje("ERROR: "+m);
     }
 
     public void warning(String m){
-        gui.addMensajeWarning("WARNING: "+m);
         gui.setColorError(2);
+        gui.addMensaje("WARNING: "+m);
     }
 
     public  Parser getParser(){return p;}
@@ -194,7 +194,7 @@ public class AnalizadorLexico {
             return 3;
         if((c>=97)&&(c<=122))//letras
             return 3;
-        gui.addMensajeWarning("CARACTER INVALIDO \""+ch+"\""+"Codigo: "+c);
+        gui.addMensaje("CARACTER INVALIDO \""+ch+"\""+"Codigo: "+c);
        return 0;
     }
 

@@ -22,7 +22,7 @@ public class Gui extends JFrame implements ActionListener {
     private StringBuilder tokens, warnings;
 
 
-    public void addMensajeWarning(String M) {
+    public void addMensaje(String M) {
         warnings.append("\n" + M);
         textWarnings.setText(warnings.toString());
     }
@@ -33,14 +33,21 @@ public class Gui extends JFrame implements ActionListener {
     }
 
     public void setColorError(int nivelError){
-
+        textWarnings.setOpaque(true);
        if (this.n<nivelError) {
-           if (n == 1)
+           this.n=nivelError;
+           if (n == 1){
                textWarnings.setBackground(Color.GREEN);
-           if (n == 2)
-               textWarnings.setBackground(Color.yellow);
-           if (n == 3)
-               textWarnings.setBackground(Color.red);
+
+           }
+           if (n == 2){
+               textWarnings.setBackground(Color.YELLOW);
+
+           }
+           if (n == 3){
+               textWarnings.setBackground(Color.RED);
+
+           }
        }
     }
 
@@ -67,10 +74,11 @@ public class Gui extends JFrame implements ActionListener {
         TextLineNumber tln = new TextLineNumber(textCode);
         tln.setBorderGap(0);
         scrollCode.setRowHeaderView(tln);
-        textRepIntermedia.setText("Representación intermedia:");
+        textRepIntermedia.setText("Polaca Inversa:");
         textCode.setText(Codigo);
         textTokens.setEditable(false);
-        scrollTokens.setAutoscrolls(true);
+        scrollTokens.setAutoscrolls(false);
+        scrollWarnings.setAutoscrolls(false);
         JButton botonGetAll = new JButton("COMPILAR");
         botonTS = new JButton("Mostrar Tabla de Simbolos");
         botonSave = new JButton("Save");
@@ -118,9 +126,12 @@ public class Gui extends JFrame implements ActionListener {
             parser.run();
             int aux=0;
             this.setColorError(1);
-            if (!error) {
+            if (n!=3) {
+                if(n==1)
+                    textWarnings.setText("Codigo compilado sin warnings ni errores");
                 //generarCodigo
             }
+
         }
         if(e.getActionCommand().equals("Save")) {
             Writer writer = null;
