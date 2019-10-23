@@ -74,7 +74,7 @@ public class AnalizadorLexico {
         return linea;
     }
 
-    public void eror(String m){
+    public void error(String m){
         gui.setColorError(3);
         gui.addMensaje("ERROR: "+m);
     }

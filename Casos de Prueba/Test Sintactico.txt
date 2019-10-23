@@ -1,5 +1,7 @@
+int A[4];
 float IdTest5, IdTest3 , IdTest4;
-int IdTest1 ,IdTest2 ;
+int IdTest1 ,IdTest2 , IdTest5 ;
+float A[7];
 begin
 IdTest1 := 2.0 ;
 IdTest2 := 2 ;

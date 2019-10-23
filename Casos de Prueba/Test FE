@@ -1,0 +1,11 @@
+int id3;  #Declaracion simple
+int Jose[2,3,5]  #Coleccion de lista
+float Carlos[4];	 #Coleccion por cte
+float id1,id2,id7,id8; #Declaracion multiple
+int id9,id1; #Declaracion multiple
+begin
+id3 := 3 ;
+foreach id3 in id4	#Foreach
+	id2 := 2.7;
+id1 := 1.2;
+end
