@@ -59,7 +59,7 @@ public class AccionSemantica {
                 }
                 TablaSimbolos Ts = AL.getTablaDeSimbolos();
                 //Cambiar tipo var cuando tengamos valores
-                Simbolo S = new Simbolo('D');
+                Simbolo S = new Simbolo('D','V');
                 Ts.add(parcial.toString(),S);
             }
         }
@@ -100,7 +100,7 @@ public class AccionSemantica {
                 parcial.append(valorF.toString());
                 TablaSimbolos Ts = AL.getTablaDeSimbolos();
                 //Cambiar tipo var cuando tengamos valores
-                Simbolo S = new Simbolo('f');
+                Simbolo S = new Simbolo('F','C');
                 AL.setTipoToken("cte_float");
                 Ts.add(parcial.toString(),S);
             }else{
@@ -108,7 +108,7 @@ public class AccionSemantica {
             parcial.append(valor.toString());}
 
             TablaSimbolos Ts = AL.getTablaDeSimbolos();
-            Simbolo S = new Simbolo('i');
+            Simbolo S = new Simbolo('I','C');
             Ts.add(parcial.toString(),S);
         }
     }
@@ -175,7 +175,7 @@ public class AccionSemantica {
             }
             TablaSimbolos Ts = AL.getTablaDeSimbolos();
             //Cambiar tipo var cuando tengamos valores
-            Simbolo S = new Simbolo('f');
+            Simbolo S = new Simbolo('F','C');
             S.setValor(valor);
             Ts.add(parcial.toString(),S);
 
@@ -204,7 +204,7 @@ public class AccionSemantica {
             AL.setTipoToken("string");
             TablaSimbolos Ts = AL.getTablaDeSimbolos();
             //Cambiar tipo var cuando tengamos valores
-            Simbolo S = new Simbolo('s');
+            Simbolo S = new Simbolo('S','C');
             S.setValor(parcial);
             Ts.add("STR_"+parcial.toString(),S);
             }

@@ -4,18 +4,22 @@ public class Simbolo {
     private char Tipo;
     private Object Valor;
     private int size;
+    private char Uso;
 
-    Simbolo(char tipo) {
-        this.Tipo = tipo; //El tipo variable distingue entre IDs y constantes, ints, floats y strings siumltaneamente. Es decir que tendríamos 5 tipo
-        this.size=1;// ID_INT= I, ID_FLOAT = F, CTE_INT = i, CTE_FLOAT = f, CTE_STRING = s y D para IDs no determinadas.
-
+    Simbolo(char tipo, char uso) {
+        // Tipo es Float = F, Int = I , String = S, D para IDs no determinadas
+        // Uso es A para Arreglos/Colecciones, V para variable, C para constante
+        this.Tipo = tipo;
+        this.size=1;
+        this.Uso=uso;
+        // Hace falta uno mas para declaracion? Se puede gracia a la D
     }
 
     public String toString(){
         if (size > 1){
-            return (" Tipo: \""+Tipo+   "\" Tamaño: " + size );
+            return (" Tipo: \""+Tipo+ "\" Uso: " + Uso + "\" Tamaño: " + size );
         }
-        return (" Tipo: \""+Tipo+"\"");
+        return (" Tipo: \""+Tipo+ "\" Uso: " + Uso + "\"");
     }
 
     public void setTipo(char tipo) {
@@ -24,6 +28,14 @@ public class Simbolo {
 
     public int getTipo() {
         return Tipo;
+    }
+
+    public void setUso(char uso) {
+        this.Uso = uso;
+    }
+
+    public int getUso() {
+        return Uso;
     }
 
     public Object getValor() {
