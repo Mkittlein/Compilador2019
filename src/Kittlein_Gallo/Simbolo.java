@@ -7,12 +7,11 @@ public class Simbolo {
     private char Uso;
 
     Simbolo(char tipo, char uso) {
-        // Tipo es Float = F, Int = I , String = S, D para IDs no determinadas
+        // Tipo es Float = F, Int = I , String = S, D para IDs no determinadas. Usar D para definir si no es instanciada esta bien
         // Uso es A para Arreglos/Colecciones, V para variable, C para constante
         this.Tipo = tipo;
         this.size=1;
         this.Uso=uso;
-        // Hace falta uno mas para declaracion? Se puede gracia a la D
     }
 
     public String toString(){
