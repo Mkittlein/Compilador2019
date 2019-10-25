@@ -1,22 +1,25 @@
 package Kittlein_Gallo;
 
+import java.util.ArrayList;
+
 public class Simbolo {
     private char Tipo;
     private Object Valor;
-    private int size;
+    private int Size;
     private char Uso;
+    private ArrayList<Integer> Valores;
 
     Simbolo(char tipo, char uso) {
         // Tipo es Float = F, Int = I , String = S, D para IDs no determinadas. Usar D para definir si no es instanciada esta bien
         // Uso es A para Arreglos/Colecciones, V para variable, C para constante
         this.Tipo = tipo;
-        this.size=1;
+        this.Size=1;
         this.Uso=uso;
     }
 
     public String toString(){
-        if (size > 1){
-            return (" Tipo: \""+Tipo+ "\" Uso: " + Uso + "\" Tamaño: " + size );
+        if (Size > 1){
+            return (" Tipo: \""+Tipo+ "\" Uso: " + Uso + "\" Tamaño: " + Size);
         }
         return (" Tipo: \""+Tipo+ "\" Uso: " + Uso + "\"");
     }
@@ -46,10 +49,24 @@ public class Simbolo {
     }
 
     public int getSize() {
-        return size;
+        return Size;
     }
 
     public void setSize(int size) {
-        this.size = size;
+        this.Size = size;
+        Valores = new ArrayList<>(size);
+    }
+
+    public void asignarValor(ArrayList<String> entrada){
+        int i = 0;
+        for (String valor:entrada) {
+            if (valor.equals("_")){
+                Valores.add(i,0);
+                i++;
+            } else {
+                Valores.add(i,Integer.parseInt(valor));
+                i++;
+            }
+        }
     }
 }
