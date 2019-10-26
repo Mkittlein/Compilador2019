@@ -1,9 +1,12 @@
 float Carlos[4];	 #Coleccion por cte
 int id3;  #Declaracion simple
-int Jose[2,3,5];  #Coleccion de lista
+int Jose[2,3,5];  #Coleccion de lista SE ROMPE EL COMPILADOR SI TIENE UN NUMERO NEGATIVO COMO HACIA ANTES
 float id1,id2,id7,id8; #Declaracion multiple
 int id9; #Declaracion multiple
 begin
+Jose := 3; #DEBERIA SALTAR POR QUERER ASIGNAR A UNA COLECCION
+id2 := 2.0; 
+id3 := id2;#DEBERIA SALTAR ERROR DE ASIGNACION
 id20 := 1;
 id3 := 3 ;
 foreach id7 in Carlos	#Foreach
