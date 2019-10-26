@@ -60,7 +60,7 @@ public class Simbolo {
     public void asignarValor(ArrayList<String> entrada){
         int i = 0;
         for (String valor:entrada) {
-            if (valor.equals("_")){
+            if (valor.equals("-")){
                 Valores.add(i,0);
                 i++;
             } else {

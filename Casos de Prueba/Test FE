@@ -1,6 +1,6 @@
 float Carlos[4];	 #Coleccion por cte
 int id3;  #Declaracion simple
-int Jose[2,3,5];  #Coleccion de lista SE ROMPE EL COMPILADOR SI TIENE UN NUMERO NEGATIVO COMO HACIA ANTES
+int Jose[2,3,5];  #Coleccion de lista
 float id1,id2,id7,id8; #Declaracion multiple
 int id9; #Declaracion multiple
 begin
