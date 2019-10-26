@@ -536,9 +536,9 @@ final static String yyrule[] = {
 "CTE_POS : CTE_FLOAT",
 };
 
-//#line 387 "Gramatica2019.y"
+//#line 395 "Gramatica2019.y"
 Stack<Integer> pilaErrorPtoComa;
-private Stack<Integer> pilaPolacaHelper;
+Stack<Integer> pilaPolacaHelper;
 AnalizadorLexico Al;
 TablaSimbolos Ts;
 PrintStream GramLog;
@@ -1019,11 +1019,18 @@ case 43:
 {GramLog.println("Se encuentra ID ASIG Expresion reduzco a Asignacion");
 																if (Ts.getSimbolo(val_peek(2).sval).getTipo() == 'D')
 																	Al.error((Al.getLinea()+1) + " Variable no definida");
+																	else
+																	if (Ts.getSimbolo(val_peek(2).sval).getTipo() != Ts.getSimbolo(val_peek(0).sval).getTipo())
+																		Al.error((Al.getLinea()+1) + " Tipos incompatibles en la asignacion");
+																if (Ts.getSimbolo(val_peek(2).sval).getUso() == 'A')
+																	Al.error((Al.getLinea()+1) + " Necesario especificar posicion del arreglo");
+															
 																Al.addPolaca(val_peek(2).sval);
-                                                                Al.addPolaca(":=");}
+                                                                Al.addPolaca(":=");
+																}
 break;
 case 44:
-//#line 199 "Gramatica2019.y"
+//#line 207 "Gramatica2019.y"
 {GramLog.println("Se encuentra ID '[' CTE ']' ASIG Expresion reduzco a Asignacion");
 																if (Ts.getSimbolo(val_peek(5).sval).getTipo() == 'D')
 																	Al.error((Al.getLinea()+1) + " Variable no definida");
@@ -1031,17 +1038,17 @@ case 44:
                                                                 Al.addPolaca(":=");}
 break;
 case 45:
-//#line 205 "Gramatica2019.y"
+//#line 213 "Gramatica2019.y"
 {/*Error */
 																Al.warning("Linea: " + Al.getLinea() + " [ faltante en la asignacion de coleccion");}
 break;
 case 46:
-//#line 208 "Gramatica2019.y"
+//#line 216 "Gramatica2019.y"
 {/*Error */
 																Al.warning("Linea: " + Al.getLinea() + " ] faltante en la asignacion de coleccion");}
 break;
 case 47:
-//#line 211 "Gramatica2019.y"
+//#line 219 "Gramatica2019.y"
 {GramLog.println("Se encuentra ID '[' ID ']' ASIG Expresion reduzco a Asignacion");
 																if (Ts.getSimbolo(val_peek(5).sval).getTipo() == 'D')
 																	Al.error((Al.getLinea()+1) + " Variable no definida");
@@ -1051,17 +1058,17 @@ case 47:
                                                                 Al.addPolaca(":=");}
 break;
 case 48:
-//#line 219 "Gramatica2019.y"
+//#line 227 "Gramatica2019.y"
 {/*Error */
 																Al.warning("Linea: " + Al.getLinea() + " [ faltante en la asignacion de coleccion");}
 break;
 case 49:
-//#line 222 "Gramatica2019.y"
+//#line 230 "Gramatica2019.y"
 {/*Error */
 																Al.warning("Linea: " + Al.getLinea() + " ] faltante en la asignacion de coleccion");}
 break;
 case 50:
-//#line 225 "Gramatica2019.y"
+//#line 233 "Gramatica2019.y"
 {GramLog.println("Se encuentra FOREACH ID IN ID BEGIN ListaEjecutables END reduzco a BloqueForeach");
 																Al.addPolaca("");
 																Al.addPolaca("BI");
@@ -1070,7 +1077,7 @@ case 50:
                                                                 }
 break;
 case 51:
-//#line 232 "Gramatica2019.y"
+//#line 240 "Gramatica2019.y"
 {GramLog.println("Se encuentra FOREACH ID IN ID EjecutableSimple reduzco a BloqueForeach");
 																/*pilaErrorPtoComa.pop();*/
 																Al.addPolaca("");
@@ -1080,7 +1087,7 @@ case 51:
                                                                 }
 break;
 case 52:
-//#line 240 "Gramatica2019.y"
+//#line 248 "Gramatica2019.y"
 {GramLog.println("Se encuentra ID IN ID reduzco a CondColec");
 																if (Ts.getSimbolo(val_peek(2).sval).getTipo() == 'D')
 																	Al.error((Al.getLinea()+1) + " Variable no definida");
@@ -1104,15 +1111,15 @@ case 52:
 																}
 break;
 case 53:
-//#line 262 "Gramatica2019.y"
+//#line 270 "Gramatica2019.y"
 {GramLog.println("Se encuentra IfSinElse END_IF reduzco a BloqueIF");}
 break;
 case 54:
-//#line 264 "Gramatica2019.y"
+//#line 272 "Gramatica2019.y"
 {GramLog.println("Se encuentra IfConElse END_IF reduzco a BloqueIF");}
 break;
 case 55:
-//#line 266 "Gramatica2019.y"
+//#line 274 "Gramatica2019.y"
 {GramLog.println("Se encuentra IF '(' Comparacion ')' BEGIN ListaEjecutables END reduzco a IfSinElse");
 																Al.addPolaca("");
                                                                 Al.addPolaca(pilaPolacaHelper.pop(),Integer.valueOf(Al.getPosPolaca()+1).toString());
@@ -1120,27 +1127,27 @@ case 55:
                                                                 Al.addPolaca("BI");}
 break;
 case 56:
-//#line 272 "Gramatica2019.y"
+//#line 280 "Gramatica2019.y"
 {/*Error */
 																Al.warning("Linea: " + Al.getLinea() + " ( faltante en la comparacion");}
 break;
 case 57:
-//#line 275 "Gramatica2019.y"
+//#line 283 "Gramatica2019.y"
 {/*Error */
 																Al.warning("Linea: " + Al.getLinea() + " ) faltante en la comparacion");}
 break;
 case 58:
-//#line 278 "Gramatica2019.y"
+//#line 286 "Gramatica2019.y"
 {/*Error */
 																Al.warning("Linea: " + Al.getLinea() + " Begin faltante en la lista de sentencias");}
 break;
 case 59:
-//#line 281 "Gramatica2019.y"
+//#line 289 "Gramatica2019.y"
 {/*Error */
 																Al.warning("Linea: " + Al.getLinea() + " End faltante en la lista de sentencias");}
 break;
 case 60:
-//#line 284 "Gramatica2019.y"
+//#line 292 "Gramatica2019.y"
 {GramLog.println("Se encuentra IF '(' Comparacion ')' EjecutableSimple reduzco a IfSinElse");
 																pilaErrorPtoComa.pop();
 																Al.addPolaca("");
@@ -1149,38 +1156,38 @@ case 60:
                                                                 Al.addPolaca("BI");}
 break;
 case 61:
-//#line 291 "Gramatica2019.y"
+//#line 299 "Gramatica2019.y"
 {/*Error */
 																Al.warning("Linea: " + Al.getLinea() + " ( faltante en la lista de sentencias");
 																pilaErrorPtoComa.pop();}
 break;
 case 62:
-//#line 295 "Gramatica2019.y"
+//#line 303 "Gramatica2019.y"
 {/*Error */
 																Al.warning("Linea: " + Al.getLinea() + " ) faltante en la comparacion");
 																pilaErrorPtoComa.pop();}
 break;
 case 63:
-//#line 299 "Gramatica2019.y"
+//#line 307 "Gramatica2019.y"
 {GramLog.println("Se encuentra IfSinElse ELSE BEGIN ListaEjecutables END reduzco a IfConElse");}
 break;
 case 64:
-//#line 301 "Gramatica2019.y"
+//#line 309 "Gramatica2019.y"
 {/*Error */
 																Al.warning("Linea: " + Al.getLinea() + " Begin faltante en la lista de sentencias");}
 break;
 case 65:
-//#line 304 "Gramatica2019.y"
+//#line 312 "Gramatica2019.y"
 {/*Error*/
 																Al.warning("Linea: " + Al.getLinea() + " End faltante en la lista de sentencias");}
 break;
 case 66:
-//#line 307 "Gramatica2019.y"
+//#line 315 "Gramatica2019.y"
 {GramLog.println("Se encuentra IfSinElse ELSE EjecutableSimple reduzco a IfConElse");
 																pilaErrorPtoComa.pop();}
 break;
 case 67:
-//#line 310 "Gramatica2019.y"
+//#line 318 "Gramatica2019.y"
 {GramLog.println("Se encuentra Expresion Comparador Expresion reduzco a Comparacion");
 																if ((Ts.getSimbolo(val_peek(2).sval).getTipo()) == (Ts.getSimbolo(val_peek(0).sval).getTipo())){
 																	Al.addPolaca(val_peek(1).sval);
@@ -1193,83 +1200,83 @@ case 67:
 																}
 break;
 case 68:
-//#line 321 "Gramatica2019.y"
+//#line 329 "Gramatica2019.y"
 {GramLog.println("Se encuentra < reduzco a Comparador");}
 break;
 case 69:
-//#line 323 "Gramatica2019.y"
+//#line 331 "Gramatica2019.y"
 {GramLog.println("Se encuentra > reduzco a Comparador");}
 break;
 case 70:
-//#line 325 "Gramatica2019.y"
+//#line 333 "Gramatica2019.y"
 {GramLog.println("Se encuentra MenorIgual reduzco a Comparador");}
 break;
 case 71:
-//#line 327 "Gramatica2019.y"
+//#line 335 "Gramatica2019.y"
 {GramLog.println("Se encuentra MayorIgual reduzco a Comparador");}
 break;
 case 72:
-//#line 329 "Gramatica2019.y"
+//#line 337 "Gramatica2019.y"
 {GramLog.println("Se encuentra Igual reduzco a Comparador");}
 break;
 case 73:
-//#line 332 "Gramatica2019.y"
+//#line 340 "Gramatica2019.y"
 {GramLog.println("Se encuentra Expresion '+' Termino reduzco a Expresion");
 																Al.addPolaca("+");}
 break;
 case 74:
-//#line 335 "Gramatica2019.y"
+//#line 343 "Gramatica2019.y"
 {GramLog.println("Se encuentra Expresion '–' Termino reduzco a Expresion");
 																Al.addPolaca("-");}
 break;
 case 75:
-//#line 338 "Gramatica2019.y"
+//#line 346 "Gramatica2019.y"
 {GramLog.println("Se encuentra Termino reduzco a Expresion");}
 break;
 case 76:
-//#line 340 "Gramatica2019.y"
+//#line 348 "Gramatica2019.y"
 {GramLog.println("Se encuentra Termino '*' Factor reduzco a Termino");
 																Al.addPolaca("*");}
 break;
 case 77:
-//#line 343 "Gramatica2019.y"
+//#line 351 "Gramatica2019.y"
 {GramLog.println("Se encuentra Termino '/' Factor reduzco a Termino"); 
 																Al.addPolaca("/");}
 break;
 case 78:
-//#line 346 "Gramatica2019.y"
+//#line 354 "Gramatica2019.y"
 {GramLog.println("Se encuentra Factor reduzco a Termino");}
 break;
 case 79:
-//#line 348 "Gramatica2019.y"
+//#line 356 "Gramatica2019.y"
 {GramLog.println("Se encuentra ID reduzco a Factor");
 																Al.addPolaca(val_peek(0).sval);
 																if (Ts.getSimbolo(val_peek(0).sval).getTipo() == 'D')
 																	Al.error((Al.getLinea()+1) + " Variable no definida");}
 break;
 case 80:
-//#line 353 "Gramatica2019.y"
+//#line 361 "Gramatica2019.y"
 {GramLog.println("Se encuentra CTE reduzco a Factor");}
 break;
 case 81:
-//#line 355 "Gramatica2019.y"
+//#line 363 "Gramatica2019.y"
 {GramLog.println("Se encuentra ID'[' CTE ']' reduzco a Factor");
 																Al.addPolaca(Al.getPosPolaca()-1,val_peek(3).sval + "[" + val_peek(1).sval + "]");
 																if (Ts.getSimbolo(val_peek(3).sval).getTipo() == 'D')
 																	Al.error((Al.getLinea()+1) + " Variable no definida");}
 break;
 case 82:
-//#line 360 "Gramatica2019.y"
+//#line 368 "Gramatica2019.y"
 {/*Error*/
 																Al.warning("Linea: " + Al.getLinea() + " [ faltante en declaracion de coleccion");}
 break;
 case 83:
-//#line 363 "Gramatica2019.y"
+//#line 371 "Gramatica2019.y"
 {/*Error*/
 																Al.warning("Linea: " + Al.getLinea() + " ] faltante en declaracion de coleccion");}
 break;
 case 84:
-//#line 366 "Gramatica2019.y"
+//#line 374 "Gramatica2019.y"
 {GramLog.println("Se encuentra ID '[' ID ']' reduzco a Factor");
 																Al.addPolaca(val_peek(3).sval + "[" + val_peek(1).sval + "]");
 																if (Ts.getSimbolo(val_peek(3).sval).getTipo() == 'D')
@@ -1279,26 +1286,26 @@ case 84:
 																}
 break;
 case 85:
-//#line 374 "Gramatica2019.y"
+//#line 382 "Gramatica2019.y"
 {GramLog.println("Se encuentra CTE_POS y '-' reduzco a CTE");
 																Ts.setNeg(val_peek(0).sval);
 																Al.addPolaca(val_peek(1).sval + val_peek(0).sval);
 																}
 break;
 case 86:
-//#line 379 "Gramatica2019.y"
+//#line 387 "Gramatica2019.y"
 {GramLog.println("Se encuentra CTE_POS reduzco a CTE");
 																Al.addPolaca(val_peek(0).sval);}
 break;
 case 87:
-//#line 382 "Gramatica2019.y"
+//#line 390 "Gramatica2019.y"
 {GramLog.println("Se encuentra CTE_INT reduzco a CTE_POS");}
 break;
 case 88:
-//#line 384 "Gramatica2019.y"
+//#line 392 "Gramatica2019.y"
 {GramLog.println("Se encuentra CTE_FLOAT reduzco a CTE_POS");}
 break;
-//#line 1225 "Parser.java"
+//#line 1233 "Parser.java"
 //########## END OF USER-SUPPLIED ACTIONS ##########
     }//switch
     //#### Now let's reduce... ####
