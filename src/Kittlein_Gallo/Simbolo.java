@@ -7,7 +7,7 @@ public class Simbolo {
     private Object Valor;
     private int Size;
     private char Uso;
-    private ArrayList<Integer> Valores;
+    private ArrayList<String> Valores;
 
     Simbolo(char tipo, char uso) {
         // Tipo es Float = F, Int = I , String = S, D para IDs no determinadas. Usar D para definir si no es instanciada esta bien
@@ -28,7 +28,7 @@ public class Simbolo {
         this.Tipo = tipo;
     }
 
-    public int getTipo() {
+    public char getTipo() {
         return Tipo;
     }
 
@@ -58,15 +58,6 @@ public class Simbolo {
     }
 
     public void asignarValor(ArrayList<String> entrada){
-        int i = 0;
-        for (String valor:entrada) {
-            if (valor.equals("-")){
-                Valores.add(i,0);
-                i++;
-            } else {
-                Valores.add(i,Integer.parseInt(valor));
-                i++;
-            }
-        }
+       this.Valores = entrada;
     }
 }

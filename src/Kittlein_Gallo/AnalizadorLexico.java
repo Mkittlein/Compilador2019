@@ -29,7 +29,7 @@ public class AnalizadorLexico {
 
     private void cargarMatrices(){
         MTEstados=new int[][]{
-                { 0,  0, -1,  1,  1,  3,  2,  4,  8,  9, -1, 10, 12, 11, 13, 13, 13},
+                { 0,  0, 13,  1,  1,  3,  2,  4,  8,  9, -1, 10, 12, 11, 13, 13, 13},
                 {13, 13,  1,  1,  1,  1, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, 13},
                 { 0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2},
                 {13, 13, -1, -1, -1,  3, -1,  5, -1, -1, -1, -1, -1, -1, 13, -1, 13},
@@ -54,7 +54,7 @@ public class AnalizadorLexico {
         AccionSemantica.AccionConsumeChar ERR= AS.new AccionConsumeChar(this,p);
 
         MASemanticas= new AccionSemantica[][]{
-                {ASCC, ASCC,  ERR,  ASC,  ASC,  ASC, ASCC,  ASC,  ASC, ASCC,  ERR,  ASC,  ASC,  ASC,  ASC,  ASC, ASC},
+                {ASCC, ASCC,  ASC,  ASC,  ASC,  ASC, ASCC,  ASC,  ASC, ASCC,  ERR,  ASC,  ASC,  ASC,  ASC,  ASC, ASC},
                 {ASID, ASID,  ASC,  ASC,  ASC,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASID,  ASID, ASID},
                 {ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC},
                 { ASI,  ASI,  ERR,  ERR,  ERR,  ASC,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASI,  ERR,  ASI},
