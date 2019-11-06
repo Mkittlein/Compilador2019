@@ -11,9 +11,6 @@ public class TablaSimbolos {
         TS = new HashMap<>();
     }
 
-    public void TS(String key, Simbolo value) {
-        TS.put(key, value);
-    }
 
     public void setNeg(String s){
         if (TS.containsKey(s)){

@@ -8,6 +8,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 
 public class Gui extends JFrame implements ActionListener {
+    GeneradorDeCodigo GC;
     private JTextArea textTokens, textCode, textRepIntermedia,textWarnings;
     boolean error;
     private int n=0;
@@ -52,6 +53,7 @@ public class Gui extends JFrame implements ActionListener {
     }
 
     Gui(File Cod) throws IOException {
+        GC = new GeneradorDeCodigo();
         TS=new TablaSimbolos();
         error=false;
         f = Cod;
@@ -129,7 +131,7 @@ public class Gui extends JFrame implements ActionListener {
             if (n!=3) {
                 if(n==1)
                     textWarnings.setText("Codigo compilado sin warnings ni errores");
-                //generarCodigo
+                GC.generarCodigo(AL.getPolaca(),f.getName(),TS.getTablaDeSimbolos());
             }
 
         }
