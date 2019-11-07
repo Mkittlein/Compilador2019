@@ -1066,7 +1066,7 @@ case 44:
 																	Al.error((Al.getLinea()+1) + " Indice de tipo no valido");	
 																Al.addPolaca(val_peek(5).sval);
 																Al.addPolaca(val_peek(3).sval);
-																Al.addPolaca("ACESS");
+																Al.addPolaca("[]");
                                                                 Al.addPolaca(":=");}
 break;
 case 45:
@@ -1096,7 +1096,7 @@ case 47:
 																		Al.error((Al.getLinea()+1) + " Indice de tipo no valido");	
 																Al.addPolaca(val_peek(5).sval);
 																Al.addPolaca(val_peek(3).sval);
-																Al.addPolaca("ACESS");
+																Al.addPolaca("[]");
                                                                 Al.addPolaca(":=");}
 break;
 case 48:
