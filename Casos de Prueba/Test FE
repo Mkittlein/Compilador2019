@@ -4,7 +4,8 @@ int Jose[2,-3,_,5,7.1];  #Coleccion de lista
 float id1,id2,id7,id8; #Declaracion multiple
 int id9; #Declaracion multiple
 begin
-Jose := 3 / 1.0; #DEBERIA SALTAR POR QUERER ASIGNAR A UNA COLECCION
+Jose[id3] := 4 / 1.0; #DEBERIA SALTAR POR QUERER ASIGNAR A UNA COLECCION
+Jose[3] := 4 / 1.0; #DEBERIA SALTAR POR QUERER ASIGNAR A UNA COLECCION
 id2 := 2.0 + 1.5;
 id7 := 1.0 + 6 + 2.0 * 4 + 9.0;
 id3 := id2;#DEBERIA SALTAR ERROR DE ASIGNACION
