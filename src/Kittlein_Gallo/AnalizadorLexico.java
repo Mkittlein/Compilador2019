@@ -224,8 +224,17 @@ public class AnalizadorLexico {
         polaca.clear();
     }
 
+    public void polacaIfSaver(){
+        polaca.remove(polaca.size()-1);
+        polaca.remove(polaca.size()-1);
+        int lastJump = polaca.lastIndexOf("BF");
+        polaca.set((lastJump-1),String.valueOf(polaca.size()-1));
+        this.gui.updatePolaca();
+    }
+
     public  List<String> getPolaca(){
         return polaca;}
+
 
     public String getPolacaToString(){
         StringBuilder out= new StringBuilder();
