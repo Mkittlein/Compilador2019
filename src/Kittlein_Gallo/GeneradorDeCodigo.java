@@ -18,6 +18,71 @@ public class GeneradorDeCodigo {
 
 
     public void generarCodigo(List<String> polaca, String nombre, Map<String, Simbolo> TS) {
+        nombre = nombre.replace(".txt", "");
+        File codigoASM = new File("./" + nombre + ".asm");
+        int i = 0;
+        this.TS = TS;
+        BufferedWriter writer = null;
+        try {
+            writer = new BufferedWriter(new FileWriter(codigoASM));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        pila = new Stack<String>();
+        try {
+            writer.write(".386");
 
+        writer.newLine();
+        writer.write(".model flat, stdcall");
+        writer.newLine();
+        writer.write("option casemap :none");
+        writer.newLine();
+        writer.write("include \\masm32\\include\\windows.inc");
+        writer.newLine();
+        writer.write("include \\masm32\\include\\kernel32.inc");
+        writer.newLine();
+        writer.write("include \\masm32\\include\\user32.inc");
+        writer.newLine();
+        writer.write("includelib \\masm32\\lib\\kernel32.lib");
+        writer.newLine();
+        writer.write("includelib \\masm32\\lib\\user32.lib");
+        writer.newLine();
+        writer.write(".data");
+        writer.newLine();
+        writer.write("LIMITE_ARREGLO"+" DB \"Se quiso acceder a una celda fuera del rango del arreglo\",0");
+        writer.newLine();
+        writer.write("OVERFLOW_MULT"+" DB \"Hubo un overflow en una multiplicacion\",0");
+        writer.newLine();
+        writer.write("DIVISOR_CERO"+" DB \"Se quizo hacer una division por 0\",0");
+        writer.newLine();
+            for (String k : TS.keySet()) {
+                Simbolo aux = TS.get(k);
+                if (aux.getTipo() == 'I') {
+                    writer.write(k + " DW ," + aux.getValor() + ",0");
+                }
+                if (aux.getTipo() == 'F') {
+                    writer.write(k + " DD ," + aux.getValor() + ",0");
+                }
+                if (aux.getTipo() =='S') {
+                    writer.write("STR_"+k + " DB ,\"" + aux.getValor() + "\",0");
+                }
+                writer.newLine();
+            }
+
+
+
+
+
+
+
+
+
+        } catch (IOException e) {}
+        try {
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

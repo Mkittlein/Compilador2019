@@ -74,7 +74,7 @@ public class Gui extends JFrame implements ActionListener {
         textCode = new JTextArea();
         scrollCode = new JScrollPane(textCode);
         TextLineNumber tln = new TextLineNumber(textCode);
-        tln.setBorderGap(0);
+        tln.setBorderGap(5);
         scrollCode.setRowHeaderView(tln);
         textRepIntermedia.setText("Polaca Inversa:");
         textCode.setText(Codigo);
