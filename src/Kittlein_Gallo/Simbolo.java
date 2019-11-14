@@ -58,6 +58,9 @@ public class Simbolo {
     }
 
     public void asignarValor(ArrayList<String> entrada){
-       this.Valores = (ArrayList)entrada.clone();
+        for (String k : entrada){
+            Valores.add(0,k);
+        }
+
     }
 }
