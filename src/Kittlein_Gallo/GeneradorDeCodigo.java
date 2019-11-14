@@ -17,6 +17,7 @@ public class GeneradorDeCodigo {
 
 
 
+
     public void generarCodigo(List<String> polaca, String nombre, Map<String, Simbolo> TS) {
         nombre = nombre.replace(".txt", "");
         File codigoASM = new File("./" + nombre + ".asm");
@@ -57,17 +58,31 @@ public class GeneradorDeCodigo {
         writer.newLine();
             for (String k : TS.keySet()) {
                 Simbolo aux = TS.get(k);
-                if (aux.getTipo() == 'I') {
-                    writer.write(k + " DW ," + aux.getValor() + ",0");
+                if (aux.getTipo() == 'I' && aux.getUso() == 'V') {
+                    writer.write("_" + k + " DW ?");
+                    writer.newLine();
                 }
-                if (aux.getTipo() == 'F') {
-                    writer.write(k + " DD ," + aux.getValor() + ",0");
+                if (aux.getTipo() == 'F' && aux.getUso() == 'V') {
+                    writer.write("_" + k + " DD  ?");
+                    writer.newLine();
                 }
                 if (aux.getTipo() =='S') {
-                    writer.write("STR_"+k + " DB ,\"" + aux.getValor() + "\",0");
+                    writer.write("STR_" + k + " DB ,\"" + k + "\",0");
+                    writer.newLine();
                 }
-                writer.newLine();
+                if (aux.getUso() =='A') {
+                    writer.write(k+" ");
+                    if (aux.getTipo()=='I')
+                        writer.write("DW");
+                    if (aux.getTipo()=='F')
+                        writer.write("DD");
+
+                    writer.newLine();
+                }
             }
+
+
+
 
 
 

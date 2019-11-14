@@ -952,7 +952,7 @@ case 28:
 //#line 150 "Gramatica2019.y"
 {GramLog.println("Se encuentra ElementoColeccion ',' ElementoColeccion reduzco a Lista_Coleccion");
 																tam = 2;
-																if (!val_peek(2).sval.equals("_")){
+																if (!val_peek(2).sval.equals("_") && !val_peek(0).sval.equals("_")){
 																	if (Ts.getSimbolo(val_peek(2).sval).getTipo() == Ts.getSimbolo(val_peek(0).sval).getTipo())
 																			colecTipo = Ts.getSimbolo(val_peek(2).sval).getTipo();
 																			else{
