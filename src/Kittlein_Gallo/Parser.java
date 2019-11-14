@@ -901,7 +901,7 @@ case 22:
 																} else {
 																	if((val_peek(4).sval).equals("float")){
 																		if ((Ts.getSimbolo(val_peek(3).sval).getTipo()) == 'D')
-																			Ts.getSimbolo(val_peek(3).sval).setTipo('I');
+																			Ts.getSimbolo(val_peek(3).sval).setTipo('F');
 																			else
 																			Al.warning("Linea: " + (Al.getLinea()+1) + " variable " + val_peek(3).sval +" ya declarada");
 																		}
@@ -952,7 +952,7 @@ case 28:
 //#line 150 "Gramatica2019.y"
 {GramLog.println("Se encuentra ElementoColeccion ',' ElementoColeccion reduzco a Lista_Coleccion");
 																tam = 2;
-																if (!val_peek(2).sval.equals("_") && !val_peek(0).sval.equals("_")){
+																if ((!val_peek(2).sval.equals("_")) && (!val_peek(0).sval.equals("_"))){
 																	if (Ts.getSimbolo(val_peek(2).sval).getTipo() == Ts.getSimbolo(val_peek(0).sval).getTipo())
 																			colecTipo = Ts.getSimbolo(val_peek(2).sval).getTipo();
 																			else{

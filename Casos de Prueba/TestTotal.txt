@@ -1,5 +1,5 @@
 int id3,id1;  #Declaracion simple
-float Jose[1.0,2.0,3.0];  #Coleccion de lista
+int Jose[1,2,3,_];  #Coleccion de lista
 float Carlos[4];	 #Coleccion por cte
 float id2,id7,id8; #Declaracion multiple
 int id9; #Declaracion multiple
