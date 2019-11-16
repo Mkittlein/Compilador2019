@@ -50,45 +50,74 @@ public class GeneradorDeCodigo {
         writer.newLine();
         writer.write(".data");
         writer.newLine();
+        writer.write("TITULO"+" DB \"ERROR \",0");
+        writer.newLine();
         writer.write("LIMITE_ARREGLO"+" DB \"Se quiso acceder a una celda fuera del rango del arreglo\",0");
         writer.newLine();
         writer.write("OVERFLOW_MULT"+" DB \"Hubo un overflow en una multiplicacion\",0");
         writer.newLine();
         writer.write("DIVISOR_CERO"+" DB \"Se quizo hacer una division por 0\",0");
         writer.newLine();
-            for (String k : TS.keySet()) {
+            for (String k : TS.keySet()) { //DECLARA LAS VARIABLES DE LA TABLA DE SIMBOLOS
                 Simbolo aux = TS.get(k);
-                if (aux.getTipo() == 'I' && aux.getUso() == 'V') {
-                    writer.write("_" + k + " DW ?");
+                if (aux.getTipo() == 'I' && aux.getUso() != 'C') {
+                    writer.write("_" + k + " dw ");
+                    writer.flush();
+                    writer.write(aux.getStringASM());
                     writer.newLine();
                 }
-                if (aux.getTipo() == 'F' && aux.getUso() == 'V') {
-                    writer.write("_" + k + " DD  ?");
+                if (aux.getTipo() == 'F' && aux.getUso() != 'C') {
+                    writer.write("_" + k + " dd  ");
+                    writer.flush();
+                    writer.write(aux.getStringASM());
                     writer.newLine();
                 }
                 if (aux.getTipo() =='S') {
-                    writer.write("STR_" + k + " DB ,\"" + k + "\",0");
+                    writer.write("STR_" + k + " db ,\"" + k + "\",0");
+                    writer.flush();
                     writer.newLine();
                 }
-                if (aux.getUso() =='A') {
-                    writer.write(k+" ");
-                    if (aux.getTipo()=='I')
-                        writer.write("DW");
-                    if (aux.getTipo()=='F')
-                        writer.write("DD");
-
+                if (aux.getUso()=='A'){
+                    writer.write("_"+k+"_MAX dw "+aux.getSize());
                     writer.newLine();
                 }
+                writer.flush();
             }
+            writer.write(".code");
+            writer.newLine();
+            writer.write("_start:");
+            writer.newLine();
+
+            //ACA VA EL CODIGO
+            writer.write("JMP LabelArr");
+            writer.newLine();
 
 
-
-
-
-
-
-
-
+            writer.write("JMP EXIT");
+            writer.newLine();
+            writer.write("EXIT:");
+            writer.newLine();
+            writer.write("invoke ExitProcess, 0");
+            writer.newLine();
+            writer.write("LabelDiv0:");
+            writer.newLine();
+            writer.write("invoke MessageBox, NULL, addr DIVISOR_CERO, addr TITULO , MB_OK ");
+            writer.newLine();
+            writer.write("JMP EXIT");
+            writer.newLine();
+            writer.write("LabelArr:");
+            writer.newLine();
+            writer.write("invoke MessageBox, NULL, addr LIMITE_ARREGLO, addr TITULO , MB_OK " );
+            writer.newLine();
+            writer.write("JMP EXIT");
+            writer.newLine();
+            writer.write("LabelOF:");
+            writer.newLine();
+            writer.write("invoke MessageBox, NULL, addr OVERFLOW_MULT, addr TITULO , MB_OK ");
+            writer.newLine();
+            writer.write("JMP EXIT");
+            writer.newLine();
+            writer.write("end _start");
 
 
 

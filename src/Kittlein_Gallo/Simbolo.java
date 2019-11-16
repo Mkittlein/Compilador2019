@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Simbolo {
     private char Tipo;
     private Object Valor;
-    //private int Size;
     private char Uso;
     private ArrayList<String> Valores;
 
@@ -13,7 +12,6 @@ public class Simbolo {
         // Tipo es Float = F, Int = I , String = S, D para IDs no determinadas. Usar D para definir si no es instanciada esta bien
         // Uso es A para Arreglos/Colecciones, V para variable, C para constante
         this.Tipo = tipo;
-        //this.Size=1;
         this.Uso=uso;
     }
 
@@ -52,12 +50,31 @@ public class Simbolo {
         return Valores.size();
     }
 
+    public String getStringASM(){
+        StringBuilder aux = new StringBuilder("");
+       if (Uso=='A') {
+           for (int i = 0; i != Valores.size(); i++) {
+               if (i ==0)
+                   aux.append(Valores.get(i) );
+               else
+               aux.append(", "+Valores.get(i) );
+           }
+       }
+       else if(Uso=='V'&& Tipo!= 'S'){
+           aux.append("?");
+       }
+        return aux.toString();
+    }
+
     public void setSize(int size) {
-        //this.Size = size;
-        Valores = new ArrayList<>(size);
+        Valores=new ArrayList<String>();
+        for(int i=0;i!=size;i++){
+            Valores.add("?");
+        }
     }
 
     public void asignarValor(ArrayList<String> entrada){
+        Valores.clear();
         for (String k : entrada){
             Valores.add(0,k);
         }
