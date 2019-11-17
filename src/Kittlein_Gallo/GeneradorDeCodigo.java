@@ -88,11 +88,18 @@ public class GeneradorDeCodigo {
             writer.write("_start:");
             writer.newLine();
 
+
+
+
+
             //ACA VA EL CODIGO
+
+
+
+
+
             writer.write("JMP LabelArr");
             writer.newLine();
-
-
             writer.write("JMP EXIT");
             writer.newLine();
             writer.write("EXIT:");

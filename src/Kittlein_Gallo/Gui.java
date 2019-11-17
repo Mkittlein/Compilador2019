@@ -10,7 +10,6 @@ import java.nio.file.Files;
 public class Gui extends JFrame implements ActionListener {
     GeneradorDeCodigo GC;
     private JTextArea textTokens, textCode, textRepIntermedia,textWarnings;
-    boolean error;
     private int n=0;
     TablaSimbolos TS;
     private JButton botonGet;
@@ -55,7 +54,6 @@ public class Gui extends JFrame implements ActionListener {
     Gui(File Cod) throws IOException {
         GC = new GeneradorDeCodigo();
         TS=new TablaSimbolos();
-        error=false;
         f = Cod;
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());

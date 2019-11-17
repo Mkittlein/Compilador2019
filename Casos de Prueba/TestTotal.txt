@@ -1,6 +1,6 @@
 int id3,id1;  #Declaracion simple
 int Jose[1,_,3,4,_,_,_,8,_,10];  #Coleccion de lista
-float JoseF[_,_,_,.4e15,_,7.1];
+float JoseF[_,2.0,_,.4e15,_,535676537653498648743];
 float Carlos[4];	 #Coleccion por cte
 float id2,id7,id8; #Declaracion multiple
 int id9; #Declaracion multiple
