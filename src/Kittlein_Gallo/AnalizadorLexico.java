@@ -36,7 +36,7 @@ public class AnalizadorLexico {
                 {-1, -1, -1, -1, -1,  5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
                 {13, 13, -1, -1,  6,  5, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, 13},
                 {-1, -1, -1, -1, -1,  7, -1, -1, -1, -1, -1, -1, -1, -1, -1,  7, -1},
-                {13, 13, -1, -1, -1,  7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13},
+                {13, 13, -1, -1, -1,  7, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, 13},
                 {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, -1, -1},
                 { 9,  9,  9,  9,  9,  9,  9,  9,  9,  9, 13,  9,  9,  9,  9,  9,  9},
                 {13, 13, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 13, 13, -1, -1, -1},
@@ -51,7 +51,7 @@ public class AnalizadorLexico {
         AccionSemantica.AccionID ASID = AS.new AccionID(this,p);
         AccionSemantica.AccionInt ASI = AS.new AccionInt(this,p);
         AccionSemantica.AccionString ASS = AS.new AccionString(this,p);
-        AccionSemantica.AccionConsumeChar ERR= AS.new AccionConsumeChar(this,p);
+        AccionSemantica.AccionError ERR= AS.new AccionError(this,p);
 
         MASemanticas= new AccionSemantica[][]{
                 {ASCC, ASCC,  ASC,  ASC,  ASC,  ASC, ASCC,  ASC,  ASC, ASCC,  ERR,  ASC,  ASC,  ASC,  ASC,  ASC, ASC},
@@ -61,7 +61,7 @@ public class AnalizadorLexico {
                 { ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR},
                 { ASF,  ASF,  ERR,  ERR,  ASC,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASF,  ERR,  ASF},
                 { ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR},
-                { ASF,  ASF,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASF},
+                { ASF,  ASF,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASF,  ERR,  ASF},
                 { ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR},
                 {ASCC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC, ASS,  ASC,  ASC,  ASC,  ASC,  ASC,  ASC},
                 {ASCC, ASCC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ASC,  ERR,  ERR, ERR},
@@ -198,10 +198,7 @@ public class AnalizadorLexico {
        return 0;
     }
 
-    public void setError(){
-        estadofuturo=-1;
-        gui.error=true;
-    }
+
 
     public void setRollback(char c){
         rollback=true;
@@ -254,7 +251,7 @@ public class AnalizadorLexico {
         while (estadoactual!=13 && estadoactual!=-1){
             if (fis.available()<=0){
                 fis.close();
-                gui.error=true;
+                gui.setColorError(3);
                 return null;}
             if (!rollback){
                 if (fis.available()==0){aux = '\n';}

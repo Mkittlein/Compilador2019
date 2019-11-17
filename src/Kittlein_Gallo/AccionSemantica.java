@@ -194,6 +194,19 @@ public class AccionSemantica {
         }
     }
 
+    public class AccionError extends AccionSemantica {
+
+        AccionError(AnalizadorLexico AL, Parser p) {
+            super(AL, p);
+        }
+
+        public void run(StringBuilder parcial, char last) {
+            AL.error("Error del analizador Léxico en Linea: "+ AL.getLinea()+1);
+            // System.out.println(this.getClass());
+
+        }
+    }
+
     public class AccionString extends AccionSemantica {
         AccionString(AnalizadorLexico AL, Parser p) {
             super(AL, p);
