@@ -14,9 +14,44 @@ public class GeneradorDeCodigo {
     BufferedWriter writer = null;
     private Stack<String> pila;
     Map<String, Simbolo> TS;
+    private int AuxFloat=0;
+    private int AuxInt=0;
 
-
-
+    public void addVarAux(List<String> polaca,  Map<String, Simbolo> TS){ //FALTA AGREGAR A LOS ACCESOS A ARREGLOS COMO TERMINOS
+        int contF=0,contI=0;
+        char Tipo='A';
+        String t ="",p="";
+        boolean nuevaSentencia=true;
+        for(int i=0; i<polaca.size();i++){
+            p=t;
+            t=polaca.get(i);
+            if(TS.containsKey(t)&&nuevaSentencia){
+                Tipo=TS.get(t).getTipo();
+                nuevaSentencia=false;
+            }
+            if (t=="+"||t=="-"||t=="*"||t=="/"){
+                if(Tipo=='I')
+                    contI++;
+                else
+                    contF++;
+            }
+            AuxFloat=Math.max(AuxFloat,contF);
+            AuxInt=Math.max(AuxInt,contI);
+            if(t==":="){
+                nuevaSentencia=true;
+                contI=0;
+                contF=0;
+            }
+        }
+        while(AuxInt!=0){
+            TS.put("@AUXI"+AuxInt,new Simbolo('I','V'));
+            AuxInt--;
+        }
+        while(AuxFloat!=0){
+            TS.put("@AUXF"+AuxFloat,new Simbolo('F','V'));
+            AuxFloat--;
+        }
+    }
 
     public void generarCodigo(List<String> polaca, String nombre, Map<String, Simbolo> TS) {
         nombre = nombre.replace(".txt", "");
@@ -58,6 +93,7 @@ public class GeneradorDeCodigo {
         writer.newLine();
         writer.write("DIVISOR_CERO"+" DB \"Se quizo hacer una division por 0\",0");
         writer.newLine();
+        addVarAux(polaca,TS);
             for (String k : TS.keySet()) { //DECLARA LAS VARIABLES DE LA TABLA DE SIMBOLOS
                 Simbolo aux = TS.get(k);
                 if (aux.getTipo() == 'I' && aux.getUso() != 'C') {
@@ -98,8 +134,6 @@ public class GeneradorDeCodigo {
 
 
 
-            writer.write("JMP LabelArr");
-            writer.newLine();
             writer.write("JMP EXIT");
             writer.newLine();
             writer.write("EXIT:");

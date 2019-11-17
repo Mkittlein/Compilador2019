@@ -9,8 +9,8 @@ if (id1 > -25) 	#If - comparacion
 	id2 := 2.2;	#Asignacion simple
 else			#Else del if
     begin
-	id2 := 2.7;	#Asignacion simple
-	id2 := 2.8;
+	id2 := 2.7 + 2.3;	#Asignacion simple
+	id2 := 2.8 + 14.0;
 	end
 end_if;
 print( {TestMult
