@@ -527,7 +527,7 @@ final static String yyrule[] = {
 "CTE : CTE_FLOAT",
 };
 
-//#line 513 "Gramatica2019.y"
+//#line 516 "Gramatica2019.y"
 Stack<Integer> pilaErrorPtoComa;
 Stack<Integer> pilaPolacaHelper;
 Stack<Character> pilaTipo;
@@ -1362,21 +1362,24 @@ case 79:
 break;
 case 80:
 //#line 468 "Gramatica2019.y"
-{GramLog.println("Se encuentra CTE_POS y '-' reduzco a CTE");
+{GramLog.println("Se encuentra Factor y '-' reduzco a Factor");
 																if (Ts.getSimbolo(val_peek(0).sval).getUso() == 'C')
 																	Ts.setNeg(val_peek(0).sval);
 																yyval.sval = val_peek(1).sval + val_peek(0).sval;
+																Al.borraLastPolaca();
+																Al.borraLastPolaca();
+																Al.addPolaca(yyval.sval);
 																}
 break;
 case 81:
-//#line 474 "Gramatica2019.y"
+//#line 477 "Gramatica2019.y"
 {GramLog.println("Se encuentra CTE reduzco a Factor");
 																Al.addPolaca(val_peek(0).sval);
 																pilaTipo.push(Ts.getSimbolo(val_peek(0).sval).getTipo());
 																System.out.println("Pila Error" + pilaTipo);}
 break;
 case 82:
-//#line 479 "Gramatica2019.y"
+//#line 482 "Gramatica2019.y"
 {GramLog.println("Se encuentra ID'[' CTE ']' reduzco a Factor");
 																Al.addPolaca(val_peek(3).sval);
 																Al.addPolaca(val_peek(1).sval);
@@ -1387,17 +1390,17 @@ case 82:
 																pilaTipo.push(Ts.getSimbolo(val_peek(3).sval).getTipo());}
 break;
 case 83:
-//#line 488 "Gramatica2019.y"
+//#line 491 "Gramatica2019.y"
 {/*Error*/
 																Al.warning("Linea: " + Al.getLinea() + " [ faltante en declaracion de coleccion");}
 break;
 case 84:
-//#line 491 "Gramatica2019.y"
+//#line 494 "Gramatica2019.y"
 {/*Error*/
 																Al.warning("Linea: " + Al.getLinea() + " ] faltante en declaracion de coleccion");}
 break;
 case 85:
-//#line 494 "Gramatica2019.y"
+//#line 497 "Gramatica2019.y"
 {GramLog.println("Se encuentra ID '[' ID ']' reduzco a Factor");
 																Al.addPolaca(val_peek(3).sval);
 																Al.addPolaca(val_peek(1).sval);
@@ -1413,14 +1416,14 @@ case 85:
 																}
 break;
 case 86:
-//#line 508 "Gramatica2019.y"
+//#line 511 "Gramatica2019.y"
 {GramLog.println("Se encuentra CTE_INT reduzco a CTE_POS");}
 break;
 case 87:
-//#line 510 "Gramatica2019.y"
+//#line 513 "Gramatica2019.y"
 {GramLog.println("Se encuentra CTE_FLOAT reduzco a CTE_POS");}
 break;
-//#line 1347 "Parser.java"
+//#line 1350 "Parser.java"
 //########## END OF USER-SUPPLIED ACTIONS ##########
     }//switch
     //#### Now let's reduce... ####

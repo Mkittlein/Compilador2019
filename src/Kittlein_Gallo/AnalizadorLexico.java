@@ -229,6 +229,10 @@ public class AnalizadorLexico {
         this.gui.updatePolaca();
     }
 
+    public void borraLastPolaca(){
+        polaca.remove(polaca.size()-1);
+    }
+
     public  List<String> getPolaca(){
         return polaca;}
 
