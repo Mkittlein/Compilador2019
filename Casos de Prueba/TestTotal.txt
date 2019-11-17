@@ -4,7 +4,7 @@ float Carlos[4];	 #Coleccion por cte
 float id2,id7,id8; #Declaracion multiple
 int id9; #Declaracion multiple
 begin
-if (id1 > 25) 	#If - comparacion
+if (id1 > -25) 	#If - comparacion
 	id2 := 2.2;	#Asignacion simple
 else			#Else del if
     begin
@@ -16,6 +16,6 @@ print( {TestMult
 ilinea} );          #Print Multilinea
 print({TestLinea}) ;	#Print linea simple
 id3 := Jose [1] * id1 ;	#Coleccion usada como operando
-Jose[1] := 2 + 3 ; #Asignacion a coleccion
+Jose[1]:= 2 + 3 / id3; #Asignacion a coleccion
 id8 := 3.0 ;
 end
