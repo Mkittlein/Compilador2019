@@ -5,10 +5,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 public class GeneradorDeCodigo {
     BufferedWriter writer = null;
@@ -51,6 +48,10 @@ public class GeneradorDeCodigo {
             TS.put("@AUXF"+AuxFloat,new Simbolo('F','V'));
             AuxFloat--;
         }
+        TS.put("@AuxARRI",new Simbolo('I','V'));
+        TS.put("@AuxARRF",new Simbolo('F','V'));
+        if (polaca.contains("foreach"))
+            TS.put("@AuxFOREACH",new Simbolo('I','V'));
     }
 
     public void generarCodigo(List<String> polaca, String nombre, Map<String, Simbolo> TS) {
@@ -94,6 +95,7 @@ public class GeneradorDeCodigo {
         writer.write("DIVISOR_CERO"+" DB \"Se quizo hacer una division por 0\",0");
         writer.newLine();
         addVarAux(polaca,TS);
+        //Set<String> auxSet=TS.keySet();
             for (String k : TS.keySet()) { //DECLARA LAS VARIABLES DE LA TABLA DE SIMBOLOS
                 Simbolo aux = TS.get(k);
                 if (aux.getTipo() == 'I' && aux.getUso() != 'C') {
@@ -109,7 +111,7 @@ public class GeneradorDeCodigo {
                     writer.newLine();
                 }
                 if (aux.getTipo() =='S') {
-                    writer.write("STR_" + k + " db ,\"" + k + "\",0");
+                    writer.write("_" + k + " db ,\"" + k + "\",0");
                     writer.flush();
                     writer.newLine();
                 }
