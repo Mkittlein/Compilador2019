@@ -251,7 +251,7 @@ public class AnalizadorLexico {
         while (estadoactual!=13 && estadoactual!=-1){
             if (fis.available()<=0){
                 fis.close();
-                gui.setColorError(3);
+                //gui.setColorError(3);
                 return null;}
             if (!rollback){
                 if (fis.available()==0){aux = '\n';}
