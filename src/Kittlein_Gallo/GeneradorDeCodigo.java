@@ -99,13 +99,19 @@ public class GeneradorDeCodigo {
             for (String k : TS.keySet()) { //DECLARA LAS VARIABLES DE LA TABLA DE SIMBOLOS
                 Simbolo aux = TS.get(k);
                 if (aux.getTipo() == 'I' && aux.getUso() != 'C') {
-                    writer.write("_" + k + " dw ");
+                    if(k.contains("@"))
+                        writer.write( k + " dw ");
+                    else
+                        writer.write("_" + k + " dw ");
                     writer.flush();
                     writer.write(aux.getStringASM());
                     writer.newLine();
                 }
                 if (aux.getTipo() == 'F' && aux.getUso() != 'C') {
-                    writer.write("_" + k + " dd  ");
+                    if(k.contains("@"))
+                        writer.write( k + " dd  ");
+                    else
+                        writer.write("_" + k + " dd  ");
                     writer.flush();
                     writer.write(aux.getStringASM());
                     writer.newLine();
