@@ -95,7 +95,6 @@ public class GeneradorDeCodigo {
         writer.write("DIVISOR_CERO"+" DB \"Se quizo hacer una division por 0\",0");
         writer.newLine();
         addVarAux(polaca,TS);
-        //Set<String> auxSet=TS.keySet();
             for (String k : TS.keySet()) { //DECLARA LAS VARIABLES DE LA TABLA DE SIMBOLOS
                 Simbolo aux = TS.get(k);
                 if (aux.getTipo() == 'I' && aux.getUso() != 'C') {
@@ -131,15 +130,32 @@ public class GeneradorDeCodigo {
             writer.newLine();
             writer.write("_start:");
             writer.newLine();
+            List<Integer> saltos = new ArrayList<>();
+            for (int h = 0; h < polaca.size();h++) {
+                if ((polaca.get(h).equals("BI")) || (polaca.get(h).equals("BF"))) {
+                    saltos.add(Integer.valueOf(polaca.get(h - 1)));
+                }
+            }
+            for (String s : polaca) {
+                if (TS.containsKey(s)){
+                    if (TS.get(s).getUso()=='V')
+                        pila.push("_"+s);
+                    else  pila.push(s);
+                }else{
+                    switch(s){
+                        case "*" :  this.writeMult(pila,writer); System.out.println("MUL");
+                        case "+" :  this.writeSum(pila,writer); System.out.println("SUM");
+                        case "-" :  this.writeSub(pila,writer); System.out.println("SUB");
+                        case "/" :  this.writeDiv(pila,writer); System.out.println("DIV");
+                        case ":=" : this.writeAsig(pila,writer); System.out.println("ASIG");
+                    }
+                }
+                System.out.println(pila);
+                writer.flush();
 
 
 
-
-
-            //ACA VA EL CODIGO
-
-
-
+            }
 
 
             writer.write("JMP EXIT");
@@ -177,5 +193,57 @@ public class GeneradorDeCodigo {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void writeMult(Stack<String> pila, BufferedWriter writer) throws IOException {
+        writer.write("MOV R1, _"+pila.pop());
+        writer.newLine();
+        writer.write("MUL R1, _"+pila.pop());
+        writer.write("MOV @AUXI"+AuxInt);
+        pila.push("@AUXI"+AuxInt);
+        AuxInt++;
+    }
+
+    private void writeDiv(Stack<String> pila, BufferedWriter writer) throws IOException {
+        writer.write("MOV R1, _"+pila.pop());
+        writer.newLine();
+        writer.write("MOV R2, _"+pila.peek());
+        writer.newLine();
+        writer.write("CMP R2, " + 0);
+        writer.newLine();
+        writer.write("JE "+ "LabelDiv0");
+        writer.newLine();
+        writer.write("DIV R1, _"+pila.pop());
+        writer.write("MOV @AUXI"+AuxInt);
+        pila.push("@AUXI"+AuxInt);
+        AuxInt++;
+    }
+
+    private void writeAsig(Stack<String> pila, BufferedWriter writer) throws IOException {
+        String aux=pila.pop();
+        writer.write("MOV R1, "+pila.pop());
+        writer.newLine();
+        writer.write("MOV "+aux+", R1");
+        writer.newLine();
+        AuxInt=0;
+        AuxFloat=0;
+    }
+
+    private void writeSum(Stack<String> pila, BufferedWriter writer) throws IOException {
+        writer.write("MOV R1, _"+pila.pop());
+        writer.newLine();
+        writer.write("ADD R1, _"+pila.pop());
+        writer.write("MOV @AUXI"+AuxInt);
+        pila.push("@AUXI"+AuxInt);
+        AuxInt++;
+    }
+
+    private void writeSub(Stack<String> pila, BufferedWriter writer) throws IOException {
+        writer.write("MOV R1, _"+pila.pop());
+        writer.newLine();
+        writer.write("SUB R1, _"+pila.pop());
+        writer.write("MOV @AUXI"+AuxInt);
+        pila.push("@AUXI"+AuxInt);
+        AuxInt++;
     }
 }
