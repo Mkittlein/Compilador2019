@@ -216,7 +216,7 @@ public class GeneradorDeCodigo {
     private void writeMult(Stack<String> pila, BufferedWriter writer) throws IOException {
         writer.write("MOV ax, "+pila.pop());
         writer.newLine();
-        writer.write("MUL eax, "+pila.pop());
+        writer.write("MUL  "+pila.pop());
         writer.newLine();
         writer.write("MOV @AUXI"+AuxInt+", ax");
         pila.push("@AUXI"+AuxInt);
@@ -232,7 +232,7 @@ public class GeneradorDeCodigo {
         writer.newLine();
         writer.write("JE "+ "LabelDiv0");
         writer.newLine();
-        writer.write("DIV ax, "+pila.pop());
+        writer.write("DIV "+pila.pop());
         writer.newLine();
         writer.write("MOV @AUXI"+AuxInt+", ax");
         pila.push("@AUXI"+AuxInt);
@@ -244,7 +244,6 @@ public class GeneradorDeCodigo {
         writer.write("MOV ax, "+pila.pop());
         writer.newLine();
         writer.write("MOV "+aux+", ax");
-        writer.newLine();
         AuxInt=1;
         AuxFloat=1;
     }
