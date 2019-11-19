@@ -1,6 +1,5 @@
 package Kittlein_Gallo;
 
-import javax.swing.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -13,6 +12,7 @@ public class GeneradorDeCodigo {
     Map<String, Simbolo> TS;
     private int AuxFloat=0;
     private int AuxInt=0;
+    private char T;
 
     public void addVarAux(List<String> polaca,  Map<String, Simbolo> TS){ //FALTA AGREGAR A LOS ACCESOS A ARREGLOS COMO TERMINOS
         int contF=0,contI=0;
@@ -57,6 +57,7 @@ public class GeneradorDeCodigo {
     public void generarCodigo(List<String> polaca, String nombre, Map<String, Simbolo> TS) {
         nombre = nombre.replace(".txt", "");
         File codigoASM = new File("./" + nombre + ".asm");
+
         int i = 0;
         this.TS = TS;
         BufferedWriter writer = null;
@@ -140,42 +141,65 @@ public class GeneradorDeCodigo {
             AuxInt=1;
             for (String s : polaca) {
                 if (TS.containsKey(s)){
+                    if (pila.empty())
+                        T=TS.get(s).getTipo();
                     if (TS.get(s).getUso()=='V')
                         pila.push("_"+s);
                     else  pila.push(s);
                 }else{
-                    switch(s){
-                        case "*" :
-                            this.writeMult(pila,writer);
-                            System.out.println("MUL");
-                            break;
-                        case "+" :
-                            this.writeSum(pila,writer);
-                            System.out.println("SUM");
-                            break;
-                        case "-" :
-                            this.writeSub(pila,writer);
-                            System.out.println("SUB");
-                            break;
-                        case "/" :
-                            this.writeDiv(pila,writer);
-                            System.out.println("DIV");
-                            break;
-                        case ":=" :
-                            this.writeAsig(pila,writer);
-                            System.out.println("ASIG");
-                            break;
+                    if (T == 'I') {
+                        switch (s) {
+                            case "*":
+                                this.writeMulI(pila, writer);
+                                System.out.println("MUL");
+                                break;
+                            case "+":
+                                this.writeSumI(pila, writer);
+                                System.out.println("SUM");
+                                break;
+                            case "-":
+                                this.writeSubI(pila, writer);
+                                System.out.println("SUB");
+                                break;
+                            case "/":
+                                this.writeDivI(pila, writer);
+                                System.out.println("DIV");
+                                break;
+                            case ":=":
+                                this.writeAsigI(pila, writer);
+                                System.out.println("ASIG");
+                                break;
+                        }
+                    }else {
+                        switch (s) {
+                            case "*":
+                                this.writeMulF(pila, writer);
+                                System.out.println("MUL");
+                                break;
+                            case "+":
+                                this.writeSumF(pila, writer);
+                                System.out.println("SUM");
+                                break;
+                            case "-":
+                                this.writeSubF(pila, writer);
+                                System.out.println("SUB");
+                                break;
+                            case "/":
+                                this.writeDivF(pila, writer);
+                                System.out.println("DIV");
+                                break;
+                            case ":=":
+                                this.writeAsigF(pila, writer);
+                                System.out.println("ASIG");
+                                break;
+                        }
+
                     }
                     writer.newLine();
                 }
                 System.out.println(pila);
                 writer.flush();
-
-
-
             }
-
-
             writer.write("JMP EXIT");
             writer.newLine();
             writer.write("EXIT:");
@@ -213,7 +237,27 @@ public class GeneradorDeCodigo {
         }
     }
 
-    private void writeMult(Stack<String> pila, BufferedWriter writer) throws IOException {
+    private void writeMulF(Stack<String> pila, BufferedWriter writer) {
+
+    }
+
+    private void writeSumF(Stack<String> pila, BufferedWriter writer) {
+
+    }
+
+    private void writeSubF(Stack<String> pila, BufferedWriter writer) {
+
+    }
+
+    private void writeDivF(Stack<String> pila, BufferedWriter writer) {
+
+    }
+
+    private void writeAsigF(Stack<String> pila, BufferedWriter writer) {
+
+    }
+
+    private void writeMulI(Stack<String> pila, BufferedWriter writer) throws IOException {
         writer.write("MOV ax, "+pila.pop());
         writer.newLine();
         writer.write("MUL  "+pila.pop());
@@ -223,7 +267,7 @@ public class GeneradorDeCodigo {
         AuxInt++;
     }
 
-    private void writeDiv(Stack<String> pila, BufferedWriter writer) throws IOException {
+    private void writeDivI(Stack<String> pila, BufferedWriter writer) throws IOException {
         writer.write("MOV ax, "+pila.pop());
         writer.newLine();
         writer.write("MOV bx, "+pila.peek());
@@ -239,7 +283,7 @@ public class GeneradorDeCodigo {
         AuxInt++;
     }
 
-    private void writeAsig(Stack<String> pila, BufferedWriter writer) throws IOException {
+    private void writeAsigI(Stack<String> pila, BufferedWriter writer) throws IOException {
         String aux=pila.pop();
         writer.write("MOV ax, "+pila.pop());
         writer.newLine();
@@ -248,7 +292,7 @@ public class GeneradorDeCodigo {
         AuxFloat=1;
     }
 
-    private void writeSum(Stack<String> pila, BufferedWriter writer) throws IOException {
+    private void writeSumI(Stack<String> pila, BufferedWriter writer) throws IOException {
         writer.write("MOV ax, "+pila.pop());
         writer.newLine();
         writer.write("ADD ax, "+pila.pop());
@@ -258,7 +302,7 @@ public class GeneradorDeCodigo {
         AuxInt++;
     }
 
-    private void writeSub(Stack<String> pila, BufferedWriter writer) throws IOException {
+    private void writeSubI(Stack<String> pila, BufferedWriter writer) throws IOException {
         writer.write("MOV ax, "+pila.pop());
         writer.newLine();
         writer.write("SUB ax, "+pila.pop());
