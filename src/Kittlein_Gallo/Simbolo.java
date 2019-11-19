@@ -63,6 +63,9 @@ public class Simbolo {
        else if(Uso=='V'&& Tipo!= 'S'){
            aux.append("?");
        }
+       if ((Uso=='C'&& Tipo== 'F')){
+           aux.append(this.getValor().toString());
+        }
         return aux.toString();
     }
 

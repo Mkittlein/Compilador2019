@@ -107,11 +107,15 @@ public class GeneradorDeCodigo {
                     writer.write(aux.getStringASM());
                     writer.newLine();
                 }
-                if (aux.getTipo() == 'F' && aux.getUso() != 'C') {
+                if (aux.getTipo() == 'F') {
                     if(k.contains("@"))
                         writer.write( k + " dd  ");
-                    else
-                        writer.write("_" + k + " dd  ");
+                    else {
+                        if (aux.getUso()=='C')
+                            writer.write("@" + k.replace('.','p') + " dd  ");
+                        else
+                            writer.write("_" + k + " dd  ");
+                    }
                     writer.flush();
                     writer.write(aux.getStringASM());
                     writer.newLine();
@@ -145,6 +149,8 @@ public class GeneradorDeCodigo {
                         T=TS.get(s).getTipo();
                     if (TS.get(s).getUso()=='V')
                         pila.push("_"+s);
+                    else if (TS.get(s).getUso()=='C' &&TS.get(s).getTipo()=='F')
+                        pila.push("@"+s.replace('.','p'));
                     else  pila.push(s);
                 }else{
                     if (T == 'I') {
@@ -237,30 +243,10 @@ public class GeneradorDeCodigo {
         }
     }
 
-    private void writeMulF(Stack<String> pila, BufferedWriter writer) {
-
-    }
-
-    private void writeSumF(Stack<String> pila, BufferedWriter writer) {
-
-    }
-
-    private void writeSubF(Stack<String> pila, BufferedWriter writer) {
-
-    }
-
-    private void writeDivF(Stack<String> pila, BufferedWriter writer) {
-
-    }
-
-    private void writeAsigF(Stack<String> pila, BufferedWriter writer) {
-
-    }
-
     private void writeMulI(Stack<String> pila, BufferedWriter writer) throws IOException {
         writer.write("MOV ax, "+pila.pop());
         writer.newLine();
-        writer.write("MUL  "+pila.pop());
+        writer.write("FMUL  "+pila.pop());
         writer.newLine();
         writer.write("MOV @AUXI"+AuxInt+", ax");
         pila.push("@AUXI"+AuxInt);
@@ -285,7 +271,7 @@ public class GeneradorDeCodigo {
 
     private void writeAsigI(Stack<String> pila, BufferedWriter writer) throws IOException {
         String aux=pila.pop();
-        writer.write("MOV ax, "+pila.pop());
+        writer.write("MOV eax, "+pila.pop());
         writer.newLine();
         writer.write("MOV "+aux+", ax");
         AuxInt=1;
@@ -293,22 +279,78 @@ public class GeneradorDeCodigo {
     }
 
     private void writeSumI(Stack<String> pila, BufferedWriter writer) throws IOException {
-        writer.write("MOV ax, "+pila.pop());
+        writer.write("MOV eax, "+pila.pop());
         writer.newLine();
-        writer.write("ADD ax, "+pila.pop());
+        writer.write("ADD eax, "+pila.pop());
         writer.newLine();
-        writer.write("MOV @AUXI"+AuxInt+", ax");
+        writer.write("MOV @AUXI"+AuxInt+", eax");
         pila.push("@AUXI"+AuxInt);
         AuxInt++;
     }
 
     private void writeSubI(Stack<String> pila, BufferedWriter writer) throws IOException {
-        writer.write("MOV ax, "+pila.pop());
+        writer.write("MOV eax, "+pila.pop());
         writer.newLine();
-        writer.write("SUB ax, "+pila.pop());
+        writer.write("SUB eax, "+pila.pop());
         writer.newLine();
-        writer.write("MOV @AUXI"+AuxInt+", ax");
+        writer.write("MOV @AUXI"+AuxInt+", eax");
         pila.push("@AUXI"+AuxInt);
         AuxInt++;
     }
+
+    private void writeAsigF(Stack<String> pila, BufferedWriter writer) throws IOException {
+        String aux=pila.pop();
+        writer.write("MOV eax, "+pila.pop());
+        writer.newLine();
+        writer.write("MOV "+aux+", eax");
+        AuxFloat=1;
+        AuxFloat=1;
+    }
+
+    private void writeSumF(Stack<String> pila, BufferedWriter writer) throws IOException {
+        writer.write("MOV eax, "+pila.pop());
+        writer.newLine();
+        writer.write("FADD  "+pila.pop());
+        writer.newLine();
+        writer.write("MOV @AUXF"+AuxFloat+", eax");
+        pila.push("@AUXF"+AuxFloat);
+        AuxFloat++;
+    }
+
+    private void writeSubF(Stack<String> pila, BufferedWriter writer) throws IOException {
+        writer.write("MOV eax, "+pila.pop());
+        writer.newLine();
+        writer.write("FSUB  "+pila.pop());
+        writer.newLine();
+        writer.write("MOV @AUXF"+AuxFloat+", eax");
+        pila.push("@AUXF"+AuxFloat);
+        AuxFloat++;
+    }
+
+    private void writeMulF(Stack<String> pila, BufferedWriter writer) throws IOException {
+        writer.write("MOV eax, "+pila.pop());
+        writer.newLine();
+        writer.write("FMUL  "+pila.pop());
+        writer.newLine();
+        writer.write("MOV @AUXF"+AuxFloat+", eax");
+        pila.push("@AUXF"+AuxFloat);
+        AuxFloat++;
+    }
+
+    private void writeDivF(Stack<String> pila, BufferedWriter writer) throws IOException {
+        writer.write("MOV eax, "+pila.pop());
+        writer.newLine();
+        writer.write("MOV ebx, "+pila.peek());
+        writer.newLine();
+        writer.write("CMP ebx, " + 0);
+        writer.newLine();
+        writer.write("JE "+ "LabelDiv0");
+        writer.newLine();
+        writer.write("FDIV "+pila.pop());
+        writer.newLine();
+        writer.write("MOV @AUXF"+AuxFloat+", eax");
+        pila.push("@AUXF"+AuxFloat);
+        AuxFloat++;
+    }
+
 }
