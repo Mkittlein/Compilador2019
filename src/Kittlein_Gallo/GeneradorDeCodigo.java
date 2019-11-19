@@ -69,32 +69,32 @@ public class GeneradorDeCodigo {
         try {
             writer.write(".386");
 
-        writer.newLine();
-        writer.write(".model flat, stdcall");
-        writer.newLine();
-        writer.write("option casemap :none");
-        writer.newLine();
-        writer.write("include \\masm32\\include\\windows.inc");
-        writer.newLine();
-        writer.write("include \\masm32\\include\\kernel32.inc");
-        writer.newLine();
-        writer.write("include \\masm32\\include\\user32.inc");
-        writer.newLine();
-        writer.write("includelib \\masm32\\lib\\kernel32.lib");
-        writer.newLine();
-        writer.write("includelib \\masm32\\lib\\user32.lib");
-        writer.newLine();
-        writer.write(".data");
-        writer.newLine();
-        writer.write("TITULO"+" DB \"ERROR \",0");
-        writer.newLine();
-        writer.write("LIMITE_ARREGLO"+" DB \"Se quiso acceder a una celda fuera del rango del arreglo\",0");
-        writer.newLine();
-        writer.write("OVERFLOW_MULT"+" DB \"Hubo un overflow en una multiplicacion\",0");
-        writer.newLine();
-        writer.write("DIVISOR_CERO"+" DB \"Se quizo hacer una division por 0\",0");
-        writer.newLine();
-        addVarAux(polaca,TS);
+            writer.newLine();
+            writer.write(".model flat, stdcall");
+            writer.newLine();
+            writer.write("option casemap :none");
+            writer.newLine();
+            writer.write("include \\masm32\\include\\windows.inc");
+            writer.newLine();
+            writer.write("include \\masm32\\include\\kernel32.inc");
+            writer.newLine();
+            writer.write("include \\masm32\\include\\user32.inc");
+            writer.newLine();
+            writer.write("includelib \\masm32\\lib\\kernel32.lib");
+            writer.newLine();
+            writer.write("includelib \\masm32\\lib\\user32.lib");
+            writer.newLine();
+            writer.write(".data");
+            writer.newLine();
+            writer.write("TITULO"+" DB \"ERROR \",0");
+            writer.newLine();
+            writer.write("LIMITE_ARREGLO"+" DB \"Se quiso acceder a una celda fuera del rango del arreglo\",0");
+            writer.newLine();
+            writer.write("OVERFLOW_MULT"+" DB \"Hubo un overflow en una multiplicacion\",0");
+            writer.newLine();
+            writer.write("DIVISOR_CERO"+" DB \"Se quizo hacer una division por 0\",0");
+            writer.newLine();
+            addVarAux(polaca,TS);
             for (String k : TS.keySet()) { //DECLARA LAS VARIABLES DE LA TABLA DE SIMBOLOS
                 Simbolo aux = TS.get(k);
                 if (aux.getTipo() == 'I' && aux.getUso() != 'C') {
@@ -136,6 +136,8 @@ public class GeneradorDeCodigo {
                     saltos.add(Integer.valueOf(polaca.get(h - 1)));
                 }
             }
+            AuxFloat=1;
+            AuxInt=1;
             for (String s : polaca) {
                 if (TS.containsKey(s)){
                     if (TS.get(s).getUso()=='V')
@@ -143,12 +145,28 @@ public class GeneradorDeCodigo {
                     else  pila.push(s);
                 }else{
                     switch(s){
-                        case "*" :  this.writeMult(pila,writer); System.out.println("MUL");
-                        case "+" :  this.writeSum(pila,writer); System.out.println("SUM");
-                        case "-" :  this.writeSub(pila,writer); System.out.println("SUB");
-                        case "/" :  this.writeDiv(pila,writer); System.out.println("DIV");
-                        case ":=" : this.writeAsig(pila,writer); System.out.println("ASIG");
+                        case "*" :
+                            this.writeMult(pila,writer);
+                            System.out.println("MUL");
+                            break;
+                        case "+" :
+                            this.writeSum(pila,writer);
+                            System.out.println("SUM");
+                            break;
+                        case "-" :
+                            this.writeSub(pila,writer);
+                            System.out.println("SUB");
+                            break;
+                        case "/" :
+                            this.writeDiv(pila,writer);
+                            System.out.println("DIV");
+                            break;
+                        case ":=" :
+                            this.writeAsig(pila,writer);
+                            System.out.println("ASIG");
+                            break;
                     }
+                    writer.newLine();
                 }
                 System.out.println(pila);
                 writer.flush();
@@ -196,57 +214,57 @@ public class GeneradorDeCodigo {
     }
 
     private void writeMult(Stack<String> pila, BufferedWriter writer) throws IOException {
-        writer.write("MOV R1, _"+pila.pop());
+        writer.write("MOV ax, "+pila.pop());
         writer.newLine();
-        writer.write("MUL R1, _"+pila.pop());
+        writer.write("MUL eax, "+pila.pop());
         writer.newLine();
-        writer.write("MOV @AUXI"+AuxInt);
+        writer.write("MOV @AUXI"+AuxInt+", ax");
         pila.push("@AUXI"+AuxInt);
         AuxInt++;
     }
 
     private void writeDiv(Stack<String> pila, BufferedWriter writer) throws IOException {
-        writer.write("MOV R1, _"+pila.pop());
+        writer.write("MOV ax, "+pila.pop());
         writer.newLine();
-        writer.write("MOV R2, _"+pila.peek());
+        writer.write("MOV bx, "+pila.peek());
         writer.newLine();
-        writer.write("CMP R2, " + 0);
+        writer.write("CMP bx, " + 0);
         writer.newLine();
         writer.write("JE "+ "LabelDiv0");
         writer.newLine();
-        writer.write("DIV R1, _"+pila.pop());
+        writer.write("DIV ax, "+pila.pop());
         writer.newLine();
-        writer.write("MOV @AUXI"+AuxInt);
+        writer.write("MOV @AUXI"+AuxInt+", ax");
         pila.push("@AUXI"+AuxInt);
         AuxInt++;
     }
 
     private void writeAsig(Stack<String> pila, BufferedWriter writer) throws IOException {
         String aux=pila.pop();
-        writer.write("MOV R1, "+pila.pop());
+        writer.write("MOV ax, "+pila.pop());
         writer.newLine();
-        writer.write("MOV "+aux+", R1");
+        writer.write("MOV "+aux+", ax");
         writer.newLine();
-        AuxInt=0;
-        AuxFloat=0;
+        AuxInt=1;
+        AuxFloat=1;
     }
 
     private void writeSum(Stack<String> pila, BufferedWriter writer) throws IOException {
-        writer.write("MOV R1, _"+pila.pop());
+        writer.write("MOV ax, "+pila.pop());
         writer.newLine();
-        writer.write("ADD R1, _"+pila.pop());
+        writer.write("ADD ax, "+pila.pop());
         writer.newLine();
-        writer.write("MOV @AUXI"+AuxInt);
+        writer.write("MOV @AUXI"+AuxInt+", ax");
         pila.push("@AUXI"+AuxInt);
         AuxInt++;
     }
 
     private void writeSub(Stack<String> pila, BufferedWriter writer) throws IOException {
-        writer.write("MOV R1, _"+pila.pop());
+        writer.write("MOV ax, "+pila.pop());
         writer.newLine();
-        writer.write("SUB R1, _"+pila.pop());
+        writer.write("SUB ax, "+pila.pop());
         writer.newLine();
-        writer.write("MOV @AUXI"+AuxInt);
+        writer.write("MOV @AUXI"+AuxInt+", ax");
         pila.push("@AUXI"+AuxInt);
         AuxInt++;
     }
