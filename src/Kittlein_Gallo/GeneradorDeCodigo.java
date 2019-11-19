@@ -199,6 +199,7 @@ public class GeneradorDeCodigo {
         writer.write("MOV R1, _"+pila.pop());
         writer.newLine();
         writer.write("MUL R1, _"+pila.pop());
+        writer.newLine();
         writer.write("MOV @AUXI"+AuxInt);
         pila.push("@AUXI"+AuxInt);
         AuxInt++;
@@ -214,6 +215,7 @@ public class GeneradorDeCodigo {
         writer.write("JE "+ "LabelDiv0");
         writer.newLine();
         writer.write("DIV R1, _"+pila.pop());
+        writer.newLine();
         writer.write("MOV @AUXI"+AuxInt);
         pila.push("@AUXI"+AuxInt);
         AuxInt++;
@@ -233,6 +235,7 @@ public class GeneradorDeCodigo {
         writer.write("MOV R1, _"+pila.pop());
         writer.newLine();
         writer.write("ADD R1, _"+pila.pop());
+        writer.newLine();
         writer.write("MOV @AUXI"+AuxInt);
         pila.push("@AUXI"+AuxInt);
         AuxInt++;
@@ -242,6 +245,7 @@ public class GeneradorDeCodigo {
         writer.write("MOV R1, _"+pila.pop());
         writer.newLine();
         writer.write("SUB R1, _"+pila.pop());
+        writer.newLine();
         writer.write("MOV @AUXI"+AuxInt);
         pila.push("@AUXI"+AuxInt);
         AuxInt++;
