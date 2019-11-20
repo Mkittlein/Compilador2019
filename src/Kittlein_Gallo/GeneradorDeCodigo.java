@@ -144,7 +144,12 @@ public class GeneradorDeCodigo {
             }
             AuxFloat=1;
             AuxInt=1;
+            int j=0;
             for (String s : polaca) {
+                if (saltos.contains(j)){
+                    writer.write("Label"+ j + ":");
+                    writer.newLine();
+                }
                 if (TS.containsKey(s)){
                     if (pila.empty())
                         T=TS.get(s).getTipo();
@@ -205,6 +210,7 @@ public class GeneradorDeCodigo {
                         writer.write("invoke MessageBox, NULL, addr _"+pila.peek().replace(' ' ,'_')+", addr _"+pila.pop().replace(' ' ,'_')+", MB_OK");
                     }
                     writer.newLine();
+                    j++;
                 }
                 System.out.println(pila);
                 writer.flush();
@@ -256,7 +262,7 @@ public class GeneradorDeCodigo {
     private void writeMulI(Stack<String> pila, BufferedWriter writer) throws IOException {
         writer.write("MOV ax, "+pila.pop());
         writer.newLine();
-        writer.write("MUL  "+pila.pop());
+        writer.write("MUL  ax");
         writer.newLine();
         writer.write("MOV @AUXI"+AuxInt+", ax");
         pila.push("@AUXI"+AuxInt);
@@ -269,11 +275,11 @@ public class GeneradorDeCodigo {
         writer.newLine();
         writer.write("MOV bx, "+aux);
         writer.newLine();
-        writer.write("CMP bx, " + 0);
+        writer.write("ADD bx, " + 0);
         writer.newLine();
-        writer.write("JE "+ "LabelDiv0");
+        writer.write("JZ "+ "LabelDiv0");
         writer.newLine();
-        writer.write("DIV "+aux);
+        writer.write("DIV bx");
         writer.newLine();
         writer.write("MOV @AUXI"+AuxInt+", ax");
         pila.push("@AUXI"+AuxInt);

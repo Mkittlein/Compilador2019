@@ -127,6 +127,7 @@ public class AnalizadorLexico {
             case "==" : return 272;
             case "cte_integer" : return 273;
             case "cte_float" : return 274;
+            case "<>" : return  275;
 
         }
         if (t.length()==1){

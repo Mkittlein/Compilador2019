@@ -19,12 +19,10 @@ fz := fa + fb * fc - fd / fe -20.0;
 
 z := a + b * c - d / e -20;
 
-e := b - c;
-c := e + a ;
+
 
 print( {TESTEANDO EL PRINT } );
 
-f := 5 / c;
 
 
 end
