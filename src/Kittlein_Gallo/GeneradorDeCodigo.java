@@ -121,10 +121,11 @@ public class GeneradorDeCodigo {
                     writer.newLine();
                 }
                 if (aux.getTipo() =='S') {
-                    writer.write("_" + k + " db ,\"" + k + "\",0");
+                    writer.write("_" + k.replace(' ' ,'_') + " db ,\"" + k + "\",0");
                     writer.flush();
                     writer.newLine();
                 }
+
                 if (aux.getUso()=='A'){
                     writer.write("_"+k+"_MAX dw "+aux.getSize());
                     writer.newLine();
@@ -200,6 +201,9 @@ public class GeneradorDeCodigo {
                                 break;
                         }
                     }
+                    if (s.equals("print")){
+                        writer.write("invoke MessageBox, NULL, addr _"+pila.peek().replace(' ' ,'_')+", addr _"+pila.pop().replace(' ' ,'_')+", MB_OK");
+                    }
                     writer.newLine();
                 }
                 System.out.println(pila);
@@ -237,6 +241,13 @@ public class GeneradorDeCodigo {
         try {
             writer.flush();
             writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            System.out.println("C:\\masm32\\bin\\ml.exe /c /coff "+codigoASM.getName());
+            System.out.println("C:\\masm32\\bin\\link.exe /subsystem:windows "+codigoASM.getName().substring(0,codigoASM.getName().length()-4)+".obj");
+            Process p = Runtime.getRuntime().exec("C:\\masm32\\bin\\ml.exe /c /coff "+codigoASM.getName()+ " && C:\\masm32\\bin\\link.exe /subsystem:windows "+codigoASM.getName().substring(0,codigoASM.getName().length()-4)+".obj");
         } catch (IOException e) {
             e.printStackTrace();
         }

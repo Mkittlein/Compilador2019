@@ -30,7 +30,7 @@ public class AnalizadorLexico {
     private void cargarMatrices(){
         MTEstados=new int[][]{
                 { 0,  0, 13,  1,  1,  3,  2,  4,  8,  9, -1, 10, 12, 11, 13, 13, 13},
-                {13, 13,  1,  1,  1,  1, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, 13},
+                {13, 13,  1,  1,  1,  1, -1, -1, 13, -1, -1, -1, -1, -1, 13, -1, 13},
                 { 0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2},
                 {13, 13, -1, -1, -1,  3, -1,  5, -1, -1, -1, -1, -1, 13, 13, -1, 13},
                 {-1, -1, -1, -1, -1,  5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
@@ -55,7 +55,7 @@ public class AnalizadorLexico {
 
         MASemanticas= new AccionSemantica[][]{
                 {ASCC, ASCC,  ASC,  ASC,  ASC,  ASC, ASCC,  ASC,  ASC, ASCC,  ERR,  ASC,  ASC,  ASC,  ASC,  ASC, ASC},
-                {ASID, ASID,  ASC,  ASC,  ASC,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASID,  ASID, ASID},
+                {ASID, ASID,  ASC,  ASC,  ASC,  ASC,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASID,  ASID, ASID},
                 {ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC, ASCC},
                 { ASI,  ASI,  ERR,  ERR,  ERR,  ASC,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ASI,  ERR,  ASI},
                 { ERR,  ERR,  ERR,  ERR,  ERR,  ASC,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR,  ERR},
@@ -215,6 +215,7 @@ public class AnalizadorLexico {
     public void addPolaca(Integer pos, String s){
         System.out.println("Agrego a la polaca de tamaño "+getPosPolaca()+" el string "+s+" en el lugar "+pos);
         polaca.set(pos,s);
+        this.gui.updatePolaca();
     }
 
     public void clearPolaca(){
@@ -231,6 +232,7 @@ public class AnalizadorLexico {
 
     public void borraLastPolaca(){
         polaca.remove(polaca.size()-1);
+        this.gui.updatePolaca();
     }
 
     public  List<String> getPolaca(){

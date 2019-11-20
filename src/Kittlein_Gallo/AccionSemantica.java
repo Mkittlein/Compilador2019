@@ -216,7 +216,6 @@ public class AccionSemantica {
             String valor;
             AL.setTipoToken("string");
             TablaSimbolos Ts = AL.getTablaDeSimbolos();
-            //Cambiar tipo var cuando tengamos valores
             Simbolo S = new Simbolo('S','C');
             S.setValor(parcial);
             Ts.add(parcial.toString(),S);
