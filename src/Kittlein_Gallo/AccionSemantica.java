@@ -201,7 +201,7 @@ public class AccionSemantica {
         }
 
         public void run(StringBuilder parcial, char last) {
-            AL.error("Error del analizador Léxico en Linea: "+ AL.getLinea()+1);
+            //AL.error("Error del analizador Léxico en Linea: "+ AL.getLinea()+1);
             // System.out.println(this.getClass());
 
         }

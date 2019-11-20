@@ -1,4 +1,4 @@
-float z, a, b, c, d, e, f;
+float fz, fa, fb, fc, fd, fe, ff;
 
 begin
 a := 1.0;
@@ -7,6 +7,6 @@ c := 3.0;
 d := 4.0;
 e := 5.0;
 
-z := a + b * c - d / e -20.0;
+fz := fa + fb * fc - fd / fe -f20.0;
 
 end

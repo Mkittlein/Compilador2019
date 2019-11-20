@@ -1,12 +1,29 @@
 int z, a, b, c, d, e, f;
 
+float fz, fa, fb, fc, fd, fe, ff;
+
 begin
+fa := 1.0;
+fb := 2.0;
+fc := 3.0;
+fd := 4.0;
+fe := 5.0;
+
+
 a := 1;
 b := 2;
 c := 3;
 d := 4;
 e := 5;
+fz := fa + fb * fc - fd / fe -20.0;
 
 z := a + b * c - d / e -20;
 
+e:= b - c;
+c:= e + a ;
+
+f := 5 / c;
+
+
 end
+
