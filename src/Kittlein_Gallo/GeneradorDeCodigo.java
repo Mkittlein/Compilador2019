@@ -208,6 +208,19 @@ public class GeneradorDeCodigo {
                                 break;
                         }
                     }
+
+                    /*
+
+                    HAY QUE PONER ESTO PARA LAS OPERACIONES CON FLOAT EL FLD Y FST PARA SACAR DEL COPROCESADOR MATEMATICO
+                    TESTAER BIEN Y MUCHO
+                    FLD @10p0
+                    FADD  @10p0
+                    FST @AUXF1
+                    MOV eax, @AUXF1
+
+
+                    */
+
                     if (s.equals("print")){
                         System.out.println("PRINT :"+pila.peek());
                         writer.write("invoke MessageBox, NULL, addr @"+pila.peek().replace(' ' ,'_')+", addr @"+pila.pop().replace(' ' ,'_')+", MB_OK");
@@ -217,18 +230,50 @@ public class GeneradorDeCodigo {
                         reg="e";
                     }
                     if (s.equals("[]")){
-                        writer.write("MOV cx ,"+pila.pop());
+                        String direccion=pila.pop();
+                        String ArrID=pila.pop();
+                        writer.write("MOV cx ,"+direccion);
                         writer.newLine();
-                        writer.write("MOV dx ,@"+pila.pop()+"_MAX");
+                        writer.write("MOV dx ,@"+ArrID+"_MAX");
                         writer.newLine();
                         writer.write("CMP cx , dx");
                         writer.newLine();
                         writer.write("JG LabelArr");
-                        if (T=='I')
+                        writer.newLine();
+                        if (T=='I'){
+                            writer.write("XOR ebx,ebx");
+                            writer.newLine();
+                            writer.write("XOR eax,eax");
+                            writer.newLine();
+                            writer.write("MOV ax, "+direccion);
+                            writer.newLine();
+                            writer.write("IMUL ax, 2");
+                            writer.newLine();
+                            writer.write("ADD eax, offset _"+ArrID);
+                            writer.newLine();
+                            writer.write("MOV bx, word ptr [eax]");
+                            writer.newLine();
+                            writer.write("MOV @AUXI"+AuxInt+", bx");
                             pila.push("@AUXI"+AuxInt);
-                        else
+                        }
+                        else {
+                            writer.write("XOR ebx,ebx");
+                            writer.newLine();
+                            writer.write("XOR eax,eax");
+                            writer.newLine();
+                            writer.write("MOV ax, "+direccion);
+                            writer.newLine();
+                            writer.write("IMUL ax, 2");
+                            writer.newLine();
+                            writer.write("ADD eax, offset _"+ArrID);
+                            writer.newLine();
+                            writer.write("MOV ebx, dword ptr [eax]");
+                            writer.newLine();
+                            writer.write("MOV @AUXF"+AuxFloat+", ebx");
                             pila.push("@AUXF"+AuxFloat);
-                    } else if(s.contains("[")&&s.contains("]")){
+
+                            pila.push("@AUXF"+AuxFloat);}
+                    } else if(s.contains("[") && s.contains("]")){
                         pila.push(s);
                     }
 
@@ -240,34 +285,33 @@ public class GeneradorDeCodigo {
                         writer.write("CMP "+reg+"dx , "+reg + "cx");
                         writer.newLine();
                         if (s.equals(">")) {
-                            writer.write("JLE Label" + polaca.get(j + 1));
+                            writer.write("JLE Label" + polaca.get(j + 1)+";Se salta por el contrario para no tener que poner las sentencias del else antes");
 
                         }
                         if (s.equals("<")) {
-                            writer.write("JGE Label" + polaca.get(j + 1));
+                            writer.write("JGE Label" + polaca.get(j + 1)+";Se salta por el contrario para no tener que poner las sentencias del else antes");
 
                         }
                         if (s.equals("==")) {
-                            writer.write("JNE Label" + polaca.get(j + 1));
+                            writer.write("JNE Label" + polaca.get(j + 1)+";Se salta por el contrario para no tener que poner las sentencias del else antes");
 
                         }
                         if (s.equals(">=")) {
-                            writer.write("JG Label" + polaca.get(j + 1));
+                            writer.write("JG Label" + polaca.get(j + 1)+";Se salta por el contrario para no tener que poner las sentencias del else antes");
 
                         }
                         if (s.equals("<=")) {
-                            writer.write("JL Label" + polaca.get(j + 1));
+                            writer.write("JL Label" + polaca.get(j + 1)+";Se salta por el contrario para no tener que poner las sentencias del else antes");
 
                         }
 
                         if (s.equals("<>")) {
-                            writer.write("JE Label" + polaca.get(j + 1));
+                            writer.write("JE Label" + polaca.get(j + 1)+";Se salta por el contrario para no tener que poner las sentencias del else antes");
 
                         }
                     }
                     if (s.equals("BI")){
                         writer.write("JMP Label" + polaca.get(j-1));
-
                     }
                     if (s.equals("End")){
                         writer.write("JMP EXIT");
@@ -360,15 +404,27 @@ public class GeneradorDeCodigo {
             String direccion=direccionAux;
             if(TS.get(direccionAux).getUso()=='V')
                 direccion="_"+direccionAux;
+            writer.write("XOR ebx,ebx");
+            writer.newLine();
+            writer.write("XOR eax,eax");
+            writer.newLine();
+            writer.write("MOV cx ,"+direccion);
+            writer.newLine();
+            writer.write("MOV dx ,@"+ArrID+"_MAX");
+            writer.newLine();
+            writer.write("CMP cx , dx");
+            writer.newLine();
+            writer.write("JG LabelArr");
+            writer.newLine();
             writer.write("MOV bx , "+pila.pop());
             writer.newLine();
             writer.write("MOV ax, "+direccion);
             writer.newLine();
-            writer.write("IMUL eax, 2");
+            writer.write("IMUL ax, 2");
             writer.newLine();
             writer.write("ADD eax, offset _"+ArrID);
             writer.newLine();
-            writer.write("MOV dword ptr [eax], ebx");
+            writer.write("MOV word ptr [eax], bx");
         } else {
             writer.write("MOV ax, "+pila.pop());
             writer.newLine();
@@ -407,9 +463,21 @@ public class GeneradorDeCodigo {
             String direccion=direccionAux;
             if(TS.get(direccionAux).getUso()=='V')
                 direccion="_"+direccionAux;
+            writer.write("MOV cx ,"+direccion);
+            writer.newLine();
+            writer.write("MOV dx ,@"+ArrID+"_MAX");
+            writer.newLine();
+            writer.write("CMP cx , dx");
+            writer.newLine();
+            writer.write("JG LabelArr");
+            writer.newLine();
+            writer.write("XOR ebx,ebx");
+            writer.newLine();
+            writer.write("XOR eax,eax");
+            writer.newLine();
             writer.write("MOV ebx , "+pila.pop());
             writer.newLine();
-            writer.write("MOV eax, "+direccion);
+            writer.write("MOV ax, "+direccion);
             writer.newLine();
             writer.write("IMUL eax, 4");
             writer.newLine();

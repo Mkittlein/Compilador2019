@@ -1,20 +1,15 @@
-int id1,id2;
-int Jose[1,2,3,4,5,6];
-float id1f,id2f;
-float JoseF[1.0,2.0,3.0,4.0,5.0,6.0];
+float id2f;
+
 begin
 
-id1 := 1;
-id2 := 20;
-Jose[id1] := id2;
-Jose[4] := id1 * 20;
+id2f := 10.0 + 10.0;
 
-id1f := 1.0;
-id2f := 20.0;
-JoseF[id1] := id2f;
-JoseF[4] := id1f * 20.0;
+if (id2f == 20.0)
+	print( {COMPARACION DE FLOATS OK} );
+else
+	print({ALGO SALIO MAL CON LOS FLOATS});
 
-
+end_if;
 
 
 end
