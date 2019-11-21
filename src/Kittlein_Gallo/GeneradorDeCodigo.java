@@ -85,13 +85,13 @@ public class GeneradorDeCodigo {
             writer.newLine();
             writer.write(".data");
             writer.newLine();
-            writer.write("TITULO"+" DB \"ERROR \",0");
+            writer.write("@TITULO"+" DB \"ERROR \",0");
             writer.newLine();
-            writer.write("LIMITE_ARREGLO"+" DB \"Se quiso acceder a una celda fuera del rango del arreglo\",0");
+            writer.write("@LIMITE_ARREGLO"+" DB \"Se quiso acceder a una celda fuera del rango del arreglo\",0");
             writer.newLine();
-            writer.write("OVERFLOW_MULT"+" DB \"Hubo un overflow en una multiplicacion\",0");
+            writer.write("@OVERFLOW_MULT"+" DB \"Hubo un overflow en una multiplicacion\",0");
             writer.newLine();
-            writer.write("DIVISOR_CERO"+" DB \"Se quizo hacer una division por 0\",0");
+            writer.write("@DIVISOR_CERO"+" DB \"Se quizo hacer una division por 0\",0");
             writer.newLine();
             addVarAux(polaca,TS);
             for (String k : TS.keySet()) { //DECLARA LAS VARIABLES DE LA TABLA DE SIMBOLOS
@@ -125,7 +125,7 @@ public class GeneradorDeCodigo {
                 }
 
                 if (aux.getUso()=='A'){
-                    writer.write("_"+k+"_MAX dw "+aux.getSize());
+                    writer.write("@"+k+"_MAX dw "+aux.getSize());
                     writer.newLine();
                 }
                 writer.flush();
@@ -145,13 +145,14 @@ public class GeneradorDeCodigo {
             AuxInt=1;
             int j=0;
             for (String s : polaca) {
+                System.out.println("PILA: "+pila+" TIPO: "+T);
                 if (saltos.contains(Integer.valueOf(j).toString())){
-                    System.out.println("ENTRO ACA PORQUE J ES "+j+"Y SALTOS ES: "+saltos);
                     writer.newLine();
                     writer.write("Label"+ j + ":");
                     writer.newLine();
                 }
                 if (TS.containsKey(s)){
+
                     if (pila.empty())
                         T=TS.get(s).getTipo();
                     if (TS.get(s).getUso()=='V')
@@ -214,6 +215,21 @@ public class GeneradorDeCodigo {
                     if (T=='F'){
                         reg="e";
                     }
+                    if (s.equals("[]")){
+                        writer.write("MOV cx ,"+pila.pop());
+                        writer.newLine();
+                        writer.write("MOV dx ,@"+pila.pop()+"_MAX");
+                        writer.newLine();
+                        writer.write("CMP cx , dx");
+                        writer.newLine();
+                        writer.write("JG LabelArr");
+                        if (T=='I')
+                            pila.push("@AUXI"+AuxInt);
+                        else
+                            pila.push("@AUXF"+AuxFloat);
+
+                    }
+
                     if (s.equals(">") || s.equals("<") || s.equals(">=") || s.equals("<=") || s.equals("<>") || s.equals("==") ) {
                         writer.write("MOV " + reg + "cx ," + pila.pop());
                         writer.newLine();
@@ -255,7 +271,6 @@ public class GeneradorDeCodigo {
 
                 }
 
-                System.out.println("JOTA ES: "+j);
                 j++;
                 writer.flush();
             }
@@ -267,19 +282,19 @@ public class GeneradorDeCodigo {
             writer.newLine();
             writer.write("LabelDiv0:");
             writer.newLine();
-            writer.write("invoke MessageBox, NULL, addr DIVISOR_CERO, addr TITULO , MB_OK ");
+            writer.write("invoke MessageBox, NULL, addr @DIVISOR_CERO, addr @TITULO , MB_OK ");
             writer.newLine();
             writer.write("JMP EXIT");
             writer.newLine();
             writer.write("LabelArr:");
             writer.newLine();
-            writer.write("invoke MessageBox, NULL, addr LIMITE_ARREGLO, addr TITULO , MB_OK " );
+            writer.write("invoke MessageBox, NULL, addr @LIMITE_ARREGLO, addr @TITULO , MB_OK " );
             writer.newLine();
             writer.write("JMP EXIT");
             writer.newLine();
             writer.write("LabelOF:");
             writer.newLine();
-            writer.write("invoke MessageBox, NULL, addr OVERFLOW_MULT, addr TITULO , MB_OK ");
+            writer.write("invoke MessageBox, NULL, addr @OVERFLOW_MULT, addr @TITULO , MB_OK ");
             writer.newLine();
             writer.write("JMP EXIT");
             writer.newLine();
@@ -306,7 +321,9 @@ public class GeneradorDeCodigo {
     private void writeMulI(Stack<String> pila, BufferedWriter writer) throws IOException {
         writer.write("MOV ax, "+pila.pop());
         writer.newLine();
-        writer.write("MUL  ax");
+        writer.write("MUL "+pila.pop());
+        writer.newLine();
+        writer.write("JO LabelOF");
         writer.newLine();
         writer.write("MOV @AUXI"+AuxInt+", ax");
         pila.push("@AUXI"+AuxInt);
@@ -336,7 +353,6 @@ public class GeneradorDeCodigo {
         writer.newLine();
         writer.write("MOV "+aux+", ax");
         AuxInt=1;
-        AuxFloat=1;
     }
 
     private void writeSumI(Stack<String> pila, BufferedWriter writer) throws IOException {
@@ -366,7 +382,6 @@ public class GeneradorDeCodigo {
         writer.newLine();
         writer.write("MOV "+aux+", eax");
         AuxFloat=1;
-        AuxFloat=1;
     }
 
     private void writeSumF(Stack<String> pila, BufferedWriter writer) throws IOException {
@@ -394,6 +409,8 @@ public class GeneradorDeCodigo {
         writer.write("MOV eax, "+pila.pop());
         writer.newLine();
         writer.write("FMUL  "+pila.pop());
+        writer.newLine();
+        writer.write("JO LabelOF");
         writer.newLine();
         writer.write("MOV @AUXF"+AuxFloat+", eax");
         pila.push("@AUXF"+AuxFloat);

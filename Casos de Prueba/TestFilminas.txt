@@ -2,6 +2,10 @@ int z, a, b, c, d, e, f;
 
 float fz, fa, fb, fc, fd, fe, ff;
 
+int arrI [1,2,3];
+
+float arrF [1.0,2.0,3.0];
+
 begin
 fa := 1.0;
 fb := 2.0;
@@ -9,13 +13,29 @@ fc := 3.0;
 fd := 4.0;
 fe := 5.0;
 
-
 a := 1;
 b := 2;
 c := 3;
-d := 4;
-e := 5;
-fz := fa + fb * fc - fd / fe -20.0;
+d := 4000;
+e := 5000;
+
+fz := fa;
+
+arrI[3] := a+b;
+
+
+
+print( {ACCEDE BIEN AL ARREGLO DE INTS DEBERIA IRSE DE RANGO EN EL DE FLOATS} );
+print( {Ahora deberia saltar el error de overflow en multiplicaciones} );
+
+c :=  d * e;
+
+
+
+arrF[30] := fa + fb ;
+print( {ESTO NO SE DEBERIA MOSTRAR PORQUE ACCEDI MAL AL ARREGLO DE FLOATS} );
+
+fz := fb * fc - fd / fe -20.0;
 
 z := a + b * c - d / e -20;
 
