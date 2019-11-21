@@ -1,0 +1,20 @@
+int id3,id1;  #Declaracion simple
+int Jose[2,-3,5];  #Coleccion de lista
+float Carlos[4];	 #Coleccion por cte
+float id2,id7,id8; #Declaracion multiple
+int id9; #Declaracion multiple
+begin
+# Daria 2 - 4
+id1 := 25;
+if (id1 == 25) 	#If - comparacion
+	print( {1_ESTO DEBERIA VERSE SI ID1 ES IGUAL QUE 25} );
+	else
+	print( {2_ESTO DEBERIA VERSE SI ID1 ES DISTINTO QUE 25} );
+end_if;
+	if (id1 <> 25)
+		print( {3_ESTO DEBERIA VERSE SI ID1 ES DISTINTO QUE 25} );
+	else
+		print( {4_ESTO DEBERIA VERSE SI ID1 E IGUAL QUE 25} );
+	end_if;
+id9 := 9;
+end

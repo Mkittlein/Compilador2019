@@ -235,31 +235,31 @@ public class GeneradorDeCodigo {
                         writer.newLine();
                         writer.write("MOV " + reg + "dx ," + pila.pop());
                         writer.newLine();
-                        writer.write("CMP "+reg+"cx , "+reg + "dx");
+                        writer.write("CMP "+reg+"dx , "+reg + "cx");
                         writer.newLine();
                         if (s.equals(">")) {
-                            writer.write("JG Label" + polaca.get(j + 1));
-
-                        }
-                        if (s.equals("<")) {
-                            writer.write("JL Label" + polaca.get(j + 1));
-
-                        }
-                        if (s.equals("==")) {
-                            writer.write("JE Label" + polaca.get(j + 1));
-
-                        }
-                        if (s.equals(">=")) {
                             writer.write("JLE Label" + polaca.get(j + 1));
 
                         }
-                        if (s.equals("<=")) {
+                        if (s.equals("<")) {
                             writer.write("JGE Label" + polaca.get(j + 1));
+
+                        }
+                        if (s.equals("==")) {
+                            writer.write("JNE Label" + polaca.get(j + 1));
+
+                        }
+                        if (s.equals(">=")) {
+                            writer.write("JG Label" + polaca.get(j + 1));
+
+                        }
+                        if (s.equals("<=")) {
+                            writer.write("JL Label" + polaca.get(j + 1));
 
                         }
 
                         if (s.equals("<>")) {
-                            writer.write("JNE Label" + polaca.get(j + 1));
+                            writer.write("JE Label" + polaca.get(j + 1));
 
                         }
                     }
