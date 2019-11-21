@@ -11,10 +11,10 @@ if (id1 > 25) 	#If - comparacion
 	else
 	print( {2_ESTO DEBERIA VERSE SI ID1 ES MENOR O IGUAL QUE 25} );
 end_if;
-	if (id1 < 25)
-		print( {3_ESTO DEBERIA VERSE SI ID1 ES MENOR QUE 25} );
-	else
-		print( {4_ESTO DEBERIA VERSE SI ID1 ES MAYOR O IGUAL QUE 25} );
-	end_if;
+if (id1 < 25)
+	print( {3_ESTO DEBERIA VERSE SI ID1 ES MENOR QUE 25} );
+else
+	print( {4_ESTO DEBERIA VERSE SI ID1 ES MAYOR O IGUAL QUE 25} );
+end_if;
 id9 := 9; 
 end
