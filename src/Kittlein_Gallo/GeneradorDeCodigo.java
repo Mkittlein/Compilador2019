@@ -26,7 +26,7 @@ public class GeneradorDeCodigo {
                 Tipo=TS.get(t).getTipo();
                 nuevaSentencia=false;
             }
-            if (t=="+"||t=="-"||t=="*"||t=="/"){
+            if (t=="+"||t=="-"||t=="*"||t=="/"||t=="[]"){
                 if(Tipo=='I')
                     contI++;
                 else
@@ -48,8 +48,6 @@ public class GeneradorDeCodigo {
             TS.put("@AUXF"+AuxFloat,new Simbolo('F','V'));
             AuxFloat--;
         }
-        TS.put("@AuxARRI",new Simbolo('I','V'));
-        TS.put("@AuxARRF",new Simbolo('F','V'));
         if (polaca.contains("foreach"))
             TS.put("@AuxFOREACH",new Simbolo('I','V'));
     }
@@ -121,7 +119,7 @@ public class GeneradorDeCodigo {
                     writer.newLine();
                 }
                 if (aux.getTipo() =='S') {
-                    writer.write("_" + k.replace(' ' ,'_') + " db ,\"" + k + "\",0");
+                    writer.write("@" + k.replace(' ' ,'_') + " db \"" + k + "\",0");
                     writer.flush();
                     writer.newLine();
                 }
@@ -136,17 +134,20 @@ public class GeneradorDeCodigo {
             writer.newLine();
             writer.write("_start:");
             writer.newLine();
-            List<Integer> saltos = new ArrayList<>();
+            List<String> saltos = new ArrayList<>();
             for (int h = 0; h < polaca.size();h++) {
                 if ((polaca.get(h).equals("BI")) || (polaca.get(h).equals("BF"))) {
-                    saltos.add(Integer.valueOf(polaca.get(h - 1)));
+                    saltos.add((polaca.get(h - 1)));
                 }
             }
+            System.out.println("ESTOS SON LOS SALTOS: "+saltos);
             AuxFloat=1;
             AuxInt=1;
             int j=0;
             for (String s : polaca) {
-                if (saltos.contains(j)){
+                if (saltos.contains(Integer.valueOf(j).toString())){
+                    System.out.println("ENTRO ACA PORQUE J ES "+j+"Y SALTOS ES: "+saltos);
+                    writer.newLine();
                     writer.write("Label"+ j + ":");
                     writer.newLine();
                 }
@@ -207,12 +208,55 @@ public class GeneradorDeCodigo {
                         }
                     }
                     if (s.equals("print")){
-                        writer.write("invoke MessageBox, NULL, addr _"+pila.peek().replace(' ' ,'_')+", addr _"+pila.pop().replace(' ' ,'_')+", MB_OK");
+                        writer.write("invoke MessageBox, NULL, addr @"+pila.peek().replace(' ' ,'_')+", addr @"+pila.pop().replace(' ' ,'_')+", MB_OK");
+                    }
+                    String reg="";
+                    if (T=='F'){
+                        reg="e";
+                    }
+                    if (s.equals(">") || s.equals("<") || s.equals(">=") || s.equals("<=") || s.equals("<>") || s.equals("==") ) {
+                        writer.write("MOV " + reg + "cx ," + pila.pop());
+                        writer.newLine();
+                        writer.write("MOV " + reg + "dx ," + pila.pop());
+                        writer.newLine();
+                        writer.write("CMP "+reg+"cx , "+reg + "dx");
+                        writer.newLine();
+                        if (s.equals(">")) {
+                            writer.write("JG Label" + polaca.get(j + 1));
+
+                        }
+                        if (s.equals("<")) {
+                            writer.write("JL Label" + polaca.get(j + 1));
+
+                        }
+                        if (s.equals("==")) {
+                            writer.write("JE Label" + polaca.get(j + 1));
+
+                        }
+                        if (s.equals(">=")) {
+                            writer.write("JLE Label" + polaca.get(j + 1));
+
+                        }
+                        if (s.equals("<=")) {
+                            writer.write("JGE Label" + polaca.get(j + 1));
+
+                        }
+
+                        if (s.equals("<>")) {
+                            writer.write("JNE Label" + polaca.get(j + 1));
+
+                        }
+                    }
+                    if (s.equals("BI")){
+                        writer.write("JMP Label" + polaca.get(j-1));
+
                     }
                     writer.newLine();
-                    j++;
+
                 }
-                System.out.println(pila);
+
+                System.out.println("JOTA ES: "+j);
+                j++;
                 writer.flush();
             }
             writer.write("JMP EXIT");
