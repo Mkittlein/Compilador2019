@@ -188,27 +188,28 @@ public class GeneradorDeCodigo {
                         switch (s) {
                             case "*":
                                 this.writeMulF(pila, writer);
-                                System.out.println("MUL");
+                                System.out.println("MULF");
                                 break;
                             case "+":
                                 this.writeSumF(pila, writer);
-                                System.out.println("SUM");
+                                System.out.println("SUMF");
                                 break;
                             case "-":
                                 this.writeSubF(pila, writer);
-                                System.out.println("SUB");
+                                System.out.println("SUBF");
                                 break;
                             case "/":
                                 this.writeDivF(pila, writer);
-                                System.out.println("DIV");
+                                System.out.println("DIVF");
                                 break;
                             case ":=":
                                 this.writeAsigF(pila, writer);
-                                System.out.println("ASIG");
+                                System.out.println("ASIGF");
                                 break;
                         }
                     }
                     if (s.equals("print")){
+                        System.out.println("PRINT :"+pila.peek());
                         writer.write("invoke MessageBox, NULL, addr @"+pila.peek().replace(' ' ,'_')+", addr @"+pila.pop().replace(' ' ,'_')+", MB_OK");
                     }
                     String reg="";
