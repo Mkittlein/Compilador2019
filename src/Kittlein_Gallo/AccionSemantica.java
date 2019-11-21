@@ -49,7 +49,7 @@ public class AccionSemantica {
                 case "in":
                     esPalabra = true;
             }
-            AL.setRollback(last);//Creo que esto no hace falta, porque sólo llamamos a AccionID con caracteres de espacio o salto de linea
+            AL.setRollback(last);
             AL.setTipoToken(parcial.toString());
             if (!esPalabra) {
                 AL.setTipoToken("id");
@@ -92,8 +92,6 @@ public class AccionSemantica {
             }
             BigInteger valor = new BigInteger(parcial.toString());
             if (valor.compareTo(BigInteger.valueOf(32768)) == 1) {
-
-                //TO DO: si se va de rango pasa a ser float
                 AL.warning("Integer mayor al rango convertido a float");
                 Float valorF = Float.valueOf(parcial.toString());
                 parcial.setLength(0);
@@ -101,8 +99,9 @@ public class AccionSemantica {
                 TablaSimbolos Ts = AL.getTablaDeSimbolos();
                 //Cambiar tipo var cuando tengamos valores
                 Simbolo S = new Simbolo('F','C');
+                S.setValor(valorF);
                 AL.setTipoToken("cte_float");
-                Ts.add(parcial.toString(),S);
+
             }else{
             parcial.setLength(0);
             parcial.append(valor.toString());}

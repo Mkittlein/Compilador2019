@@ -4,7 +4,7 @@ float Carlos[4];	 #Coleccion por cte
 float id2,id7,id8; #Declaracion multiple
 int id9; #Declaracion multiple
 begin
-# Daria 2 - 4
+# Daria 1 - 2
 id1 := 25;
 if (id1 >= 25) 	#If - comparacion
     begin

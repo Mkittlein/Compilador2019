@@ -228,7 +228,8 @@ public class GeneradorDeCodigo {
                             pila.push("@AUXI"+AuxInt);
                         else
                             pila.push("@AUXF"+AuxFloat);
-
+                    } else if(s.contains("[")&&s.contains("]")){
+                        pila.push(s);
                     }
 
                     if (s.equals(">") || s.equals("<") || s.equals(">=") || s.equals("<=") || s.equals("<>") || s.equals("==") ) {
@@ -268,6 +269,9 @@ public class GeneradorDeCodigo {
                         writer.write("JMP Label" + polaca.get(j-1));
 
                     }
+                    if (s.equals("End")){
+                        writer.write("JMP EXIT");
+                    }
                     writer.newLine();
 
                 }
@@ -275,8 +279,6 @@ public class GeneradorDeCodigo {
                 j++;
                 writer.flush();
             }
-            writer.write("JMP EXIT");
-            writer.newLine();
             writer.write("EXIT:");
             writer.newLine();
             writer.write("invoke ExitProcess, 0");
@@ -314,6 +316,7 @@ public class GeneradorDeCodigo {
             System.out.println("C:\\masm32\\bin\\ml.exe /c /coff "+codigoASM.getName());
             System.out.println("C:\\masm32\\bin\\link.exe /subsystem:windows "+codigoASM.getName().substring(0,codigoASM.getName().length()-4)+".obj");
             Process p = Runtime.getRuntime().exec("C:\\masm32\\bin\\ml.exe /c /coff "+codigoASM.getName()+ " && C:\\masm32\\bin\\link.exe /subsystem:windows "+codigoASM.getName().substring(0,codigoASM.getName().length()-4)+".obj");
+            p.getOutputStream();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -350,9 +353,27 @@ public class GeneradorDeCodigo {
 
     private void writeAsigI(Stack<String> pila, BufferedWriter writer) throws IOException {
         String aux=pila.pop();
-        writer.write("MOV ax, "+pila.pop());
-        writer.newLine();
-        writer.write("MOV "+aux+", ax");
+        if(aux.contains("[")&&aux.contains("]")){
+            int i = aux.indexOf('[');
+            String ArrID=aux.substring(0,i);
+            String direccionAux=aux.substring(i+1,aux.length()-1);
+            String direccion=direccionAux;
+            if(TS.get(direccionAux).getUso()=='V')
+                direccion="_"+direccionAux;
+            writer.write("MOV bx , "+pila.pop());
+            writer.newLine();
+            writer.write("MOV ax, "+direccion);
+            writer.newLine();
+            writer.write("IMUL eax, 2");
+            writer.newLine();
+            writer.write("ADD eax, offset _"+ArrID);
+            writer.newLine();
+            writer.write("MOV dword ptr [eax], ebx");
+        } else {
+            writer.write("MOV ax, "+pila.pop());
+            writer.newLine();
+            writer.write("MOV "+aux+", ax");
+        }
         AuxInt=1;
     }
 
@@ -379,9 +400,26 @@ public class GeneradorDeCodigo {
 
     private void writeAsigF(Stack<String> pila, BufferedWriter writer) throws IOException {
         String aux=pila.pop();
+        if(aux.contains("[")&&aux.contains("]")){
+            int i = aux.indexOf('[');
+            String ArrID=aux.substring(0,i);
+            String direccionAux=aux.substring(i+1,aux.length()-1);
+            String direccion=direccionAux;
+            if(TS.get(direccionAux).getUso()=='V')
+                direccion="_"+direccionAux;
+            writer.write("MOV ebx , "+pila.pop());
+            writer.newLine();
+            writer.write("MOV eax, "+direccion);
+            writer.newLine();
+            writer.write("IMUL eax, 4");
+            writer.newLine();
+            writer.write("ADD eax, offset _"+ArrID);
+            writer.newLine();
+            writer.write("MOV dword ptr [eax], ebx");
+        }else{
         writer.write("MOV eax, "+pila.pop());
         writer.newLine();
-        writer.write("MOV "+aux+", eax");
+        writer.write("MOV "+aux+", eax");}
         AuxFloat=1;
     }
 
