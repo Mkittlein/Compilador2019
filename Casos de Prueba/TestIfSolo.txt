@@ -1,0 +1,13 @@
+int id3,id1;  #Declaracion simple
+int Jose[2,-3,5];  #Coleccion de lista
+float Carlos[4];	 #Coleccion por cte
+float id2,id7,id8; #Declaracion multiple
+int id9; #Declaracion multiple
+begin
+id1 := 25;
+if (id1 > 25) 	#If - comparacion
+	id1 := 25;
+	else
+	id1 := 26;
+end_if;
+end

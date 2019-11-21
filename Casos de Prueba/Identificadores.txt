@@ -1,8 +1,0 @@
-TestLexic0
-Ident1ficadorTest
-Id8524205e_55d
-EsteIdentificadortienemasdeveinticincochars
-EsteNo
-Con_EnElMedio2
-_IdInvalido
-
