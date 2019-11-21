@@ -2,7 +2,7 @@
 import java.io.IOException;
 import java.util.*;
 import java.io.*;%}
-%token BEGIN END ';' '[' ']' ',' '_' ID T_int T_float Print CADENA '(' ')' ASIG FOREACH IN IF END_IF ELSE '<' '>' MENOI MAYOI IGUAL '+' '-' '*' '/' CTE_INT CTE_FLOAT
+%token BEGIN END ';' '[' ']' ',' '_' ID T_int T_float Print CADENA '(' ')' ASIG FOREACH IN IF END_IF ELSE '<' '>' MENOI MAYOI IGUAL '+' '-' '*' '/' CTE_INT CTE_FLOAT DIST
 %start PROGRAMA
 
 %%
@@ -181,6 +181,11 @@ Lista_Coleccion: ElementoColeccion ',' Lista_Coleccion			{GramLog.println("Se en
 ElementoColeccion: '_'											{GramLog.println("Se encuentra _ reduzco a ElementoColeccion");}
 
 				 | CTE											{GramLog.println("Se encuentra CTE reduzco a ElementoColeccion");}
+				 
+				 | '-' CTE										{GramLog.println("Se encuentra '-' y CTE reduzco a ElementoColeccion");
+																if (Ts.getSimbolo($2.sval).getUso() == 'C')
+																	Ts.setNeg($2.sval);
+																$$.sval = $1.sval + $2.sval;}
 
 ListaID : ListaID ',' ID										{GramLog.println("Se encuentra ListaID ',' ID reduzco a ListaID");
 																ListaIds.add($3.sval);}
@@ -195,7 +200,12 @@ Tipo: 	T_int													{GramLog.println("Se encuentra T_int reduzco a Tipo");}
 EjecutableSimple    : BloqueIF									{GramLog.println("Se encuentra BloqueIF reduzco a EjecutableSimple");
 																EstrucLog.println("Sentencia IF en linea " + (Al.getLinea()+1));
 																pilaErrorPtoComa.push(Al.getLinea()+1);
-																Al.addPolaca(pilaPolacaHelper.pop(),Integer.valueOf(Al.getPosPolaca()).toString());}
+																
+																//PREGUNTAR
+																
+																System.out.println("Abuela: "+pilaPolacaHelper.peek());
+																System.out.println("Abuela: "+Al.getPosPolaca().toString());
+																Al.addPolaca(pilaPolacaHelper.pop(),(Al.getPosPolaca()).toString());}
 
 					| BloqueForeach								{GramLog.println("Se encuentra BloqueForeach reduzco a EjecutableSimple");
 																EstrucLog.println("Sentencia ForEach en linea " + (Al.getLinea()+1));
@@ -239,7 +249,7 @@ Asignacion: ID ASIG Expresion									{GramLog.println("Se encuentra ID ASIG Exp
 																if (Ts.getSimbolo($1.sval).getTipo() == 'D')
 																	Al.error((Al.getLinea()+1) + " Variable no definida");
 																	else
-																	if ((Ts.getSimbolo($3.sval).getTipo() != pilaTipo.peek().charValue()) && (pilaTipo.pop().charValue() != 'E'))
+																	if ((Ts.getSimbolo($1.sval).getTipo() != pilaTipo.peek().charValue()) && (pilaTipo.pop().charValue() != 'E'))
 																		Al.error((Al.getLinea()+1) + " Tipos incompatibles en la asignacion");
 																if (Ts.getSimbolo($3.sval).getTipo() != 'I')
 																	Al.error((Al.getLinea()+1) + " Indice de tipo no valido");	
@@ -325,7 +335,9 @@ BloqueIF : IfSinElse END_IF										{GramLog.println("Se encuentra IfSinElse EN
 																pilaPolacaHelper.push(Al.getPosPolaca()-1);
 																}
 		
-		 | IfConElse END_IF										{GramLog.println("Se encuentra IfConElse END_IF reduzco a BloqueIF");}
+		 | IfConElse END_IF										{GramLog.println("Se encuentra IfConElse END_IF reduzco a BloqueIF");
+													
+																}
 
 IfSinElse: IF '(' Comparacion ')' BEGIN ListaEjecutables END	{GramLog.println("Se encuentra IF '(' Comparacion ')' BEGIN ListaEjecutables END reduzco a IfSinElse");
 																Al.addPolaca("");
@@ -360,7 +372,8 @@ IfSinElse: IF '(' Comparacion ')' BEGIN ListaEjecutables END	{GramLog.println("S
 																Al.warning("Linea: " + Al.getLinea() + " ) faltante en la comparacion");
 																pilaErrorPtoComa.pop();}
 	
-IfConElse: IfSinElse ELSE BEGIN ListaEjecutables END			{GramLog.println("Se encuentra IfSinElse ELSE BEGIN ListaEjecutables END reduzco a IfConElse");}
+IfConElse: IfSinElse ELSE BEGIN ListaEjecutables END			{GramLog.println("Se encuentra IfSinElse ELSE BEGIN ListaEjecutables END reduzco a IfConElse");
+																Al.addPolaca(pilaPolacaHelper.pop(),Integer.valueOf(Al.getPosPolaca()+1).toString());}
 
 		 | IfSinElse ELSE ListaEjecutables END					{//Error 
 																Al.warning("Linea: " + Al.getLinea() + " Begin faltante en la lista de sentencias");}
@@ -393,6 +406,8 @@ Comparador : '<' 												{GramLog.println("Se encuentra < reduzco a Comparad
 		   | MAYOI 												{GramLog.println("Se encuentra MayorIgual reduzco a Comparador");}
 		   
 		   | IGUAL												{GramLog.println("Se encuentra Igual reduzco a Comparador");}
+		   
+		   | DIST												{GramLog.println("Se encuentra Dist reduzco a Comparador");}
 	
 	
 Expresion   : Expresion '+' Termino								{GramLog.println("Se encuentra Expresion '+' Termino reduzco a Expresion");
@@ -465,10 +480,12 @@ Factor  : ID													{GramLog.println("Se encuentra ID reduzco a Factor");
 																	Al.error((Al.getLinea()+1) + " Variable no definida");
 																pilaTipo.push(Ts.getSimbolo($1.sval).getTipo());}
 		| '-' Factor																
-																{GramLog.println("Se encuentra CTE_POS y '-' reduzco a CTE");
+																{GramLog.println("Se encuentra Factor y '-' reduzco a Factor");
 																if (Ts.getSimbolo($2.sval).getUso() == 'C')
 																	Ts.setNeg($2.sval);
 																$$.sval = $1.sval + $2.sval;
+																Al.borraLastPolaca();
+																Al.addPolaca($$.sval);
 																}
 
 		| CTE													{GramLog.println("Se encuentra CTE reduzco a Factor");
@@ -524,11 +541,6 @@ int tam;
 Character c1,c2;
 Character ErrorChar;
 char colecTipo;
-
-
-// Verificar que en colecciones todos los componenetes sean del mismo tipo
-
-//Variables no declaradas, como es mejor? Cada vez que encuentro una? SI, sad soup
 
 public Parser(AnalizadorLexico AL){
                 this.Al= AL;
