@@ -1113,7 +1113,7 @@ case 48:
 																if (Ts.getSimbolo(val_peek(5).sval).getTipo() == 'D')
 																	Al.error((Al.getLinea()+1) + " Variable no definida");
 																	else
-																	if ((Ts.getSimbolo(val_peek(3).sval).getTipo() != pilaTipo.peek().charValue()) && (pilaTipo.pop().charValue() != 'E'))
+																	if ((Ts.getSimbolo(val_peek(5).sval).getTipo() != pilaTipo.peek().charValue()) && (pilaTipo.pop().charValue() != 'E'))
 																		Al.error((Al.getLinea()+1) + " Tipos incompatibles en la asignacion");
 																if (Ts.getSimbolo(val_peek(3).sval).getTipo() == 'D')
 																	Al.error((Al.getLinea()+1) + " Variable no definida");
