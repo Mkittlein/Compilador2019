@@ -1,0 +1,9 @@
+int id1,id2,id3;
+begin
+
+id1 := 10000;
+id2 := 800;
+
+id3 := id1 * id2 ;
+
+end

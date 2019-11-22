@@ -316,7 +316,7 @@ CondColec: ID IN ID												{GramLog.println("Se encuentra ID IN ID reduzco a
 																	Al.addPolaca("IN");																
 																	Al.addPolaca("");
 																	pilaPolacaHelper.push(Al.getPosPolaca()-1);
-																	Al.addPolaca("BF");
+																	Al.addPolaca("BFF");
 																} else {
 																	Al.error(Al.getLinea() + " Tipos incompatibles en el foreach");
 																}
