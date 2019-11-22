@@ -1,11 +1,17 @@
 int id1,id2,id3;
-int Jose[1,2,3,4,5,6];
+int Jose[1,2,3,2,5,2];
 begin
 
 id1 := 1;
 id2 := 20;
 
 foreach id3 in Jose
-    id1 := id3;
-
+begin
+    	if(id3 == 2)
+    		print({2_ESTO DEBERIA APARECER 3 VECES ALTERNADO});
+	else
+		print( {1_ESTO DEBERIA APARECER 3 VECES ALTERNADO} );
+	end_if;
+	id3 := 4;
+end;
 end

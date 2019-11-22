@@ -16,6 +16,7 @@ public class GeneradorDeCodigo {
 
     public void addVarAux(List<String> polaca,  Map<String, Simbolo> TS){ //FALTA AGREGAR A LOS ACCESOS A ARREGLOS COMO TERMINOS
         int contF=0,contI=0;
+        int contForeach=0;
         char Tipo='A';
         String t ="",p="";
         boolean nuevaSentencia=true;
@@ -34,11 +35,15 @@ public class GeneradorDeCodigo {
             }
             AuxFloat=Math.max(AuxFloat,contF);
             AuxInt=Math.max(AuxInt,contI);
-            if(t==":="){
+            if(t==":="||t=="<"||t=="<="||t==">"||t==">="||t=="<>"||t=="=="||t=="IN"){
                 nuevaSentencia=true;
                 contI=0;
                 contF=0;
             }
+            if (t=="IN"){
+                contForeach++;
+                TS.put("@AuxFOREACH"+contForeach,new Simbolo('I','V'));
+                TS.get("@AuxFOREACH"+contForeach).setValor(Integer.valueOf(0));}
         }
         while(AuxInt!=0){
             TS.put("@AUXI"+AuxInt,new Simbolo('I','V'));
@@ -48,14 +53,12 @@ public class GeneradorDeCodigo {
             TS.put("@AUXF"+AuxFloat,new Simbolo('F','V'));
             AuxFloat--;
         }
-        if (polaca.contains("foreach"))
-            TS.put("@AuxFOREACH",new Simbolo('I','V'));
     }
 
     public void generarCodigo(List<String> polaca, String nombre, Map<String, Simbolo> TS) {
         nombre = nombre.replace(".txt", "");
         File codigoASM = new File("./" + nombre + ".asm");
-
+        int countForEach=1;
         int i = 0;
         this.TS = TS;
         BufferedWriter writer = null;
@@ -67,7 +70,6 @@ public class GeneradorDeCodigo {
         pila = new Stack<String>();
         try {
             writer.write(".386");
-
             writer.newLine();
             writer.write(".model flat, stdcall");
             writer.newLine();
@@ -136,7 +138,7 @@ public class GeneradorDeCodigo {
             writer.newLine();
             List<String> saltos = new ArrayList<>();
             for (int h = 0; h < polaca.size();h++) {
-                if ((polaca.get(h).equals("BI")) || (polaca.get(h).equals("BF"))) {
+                if ((polaca.get(h).equals("BI")) || (polaca.get(h).equals("BF"))|| (polaca.get(h).equals("BIF"))) {
                     saltos.add((polaca.get(h - 1)));
                 }
             }
@@ -303,6 +305,55 @@ public class GeneradorDeCodigo {
                     if (s.equals("BI")){
                         writer.write("JMP Label" + polaca.get(j-1));
                     }
+                    if(s.equals("BIF")){
+                        writer.write("ADD @AuxFOREACH"+countForEach+", 1");
+                        writer.newLine();
+                        writer.write("JMP Label" + polaca.get(j-1));
+                        writer.newLine();
+                        writer.write("LabelForeach"+countForEach+":");
+
+                        countForEach++;
+                    }
+
+                    if (s.equals("IN")){
+                        String ArrID=pila.pop();
+                        String VAR=pila.pop();
+                        writer.write("MOV cx, @AuxFOREACH"+countForEach);
+                        writer.newLine();
+                        writer.write("MOV dx, @"+ArrID+"_MAX");
+                        writer.newLine();
+                        writer.write("CMP cx, dx");
+                        writer.newLine();
+                        writer.write("JGE LabelForeach"+countForEach);
+                        writer.newLine();
+                        writer.write("XOR ebx,ebx");
+                        writer.newLine();
+                        writer.write("XOR eax,eax");
+                        writer.newLine();
+                        writer.write("MOV ax, @AuxFOREACH"+countForEach);
+                        writer.newLine();
+                        if(T=='I'){
+                            writer.write("IMUL ax, 2");
+                            writer.newLine();
+                            writer.write("ADD eax, offset _"+ArrID);
+                            writer.newLine();
+                            writer.write("MOV bx, word ptr [eax]");
+                            writer.newLine();
+                            writer.write("MOV  "+VAR+", bx");
+                        }
+                        else{
+                            writer.write("IMUL ax, 4");
+                            writer.newLine();
+                            writer.write("ADD eax, offset _"+ArrID);
+                            writer.newLine();
+                            writer.write("MOV ebx, dword ptr [eax]");
+                            writer.newLine();
+                            writer.write("MOV "+VAR+", ebx");
+
+                        }
+                    }
+
+
                     if (s.equals("End")){
                         writer.write("JMP EXIT");
                     }
