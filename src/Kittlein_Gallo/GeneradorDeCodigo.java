@@ -399,16 +399,19 @@ public class GeneradorDeCodigo {
             e.printStackTrace();
         }
         //No logramos hacer que el linker genere el exe
-/*
+
         try {
-            Process p = Runtime.getRuntime().exec("C:\\masm32\\bin\\ml.exe /c /coff "+codigoASM.getName());
-            ProcessBuilder qB = new ProcessBuilder("\\masm32\\bin\\link.exe /subsystem:windows "+nombre+".obj");
-            qB.directory(Paths.get("").toAbsolutePath().toFile());
-            p = qB.start();
-            p.getOutputStream();
+            ProcessBuilder PB = new ProcessBuilder();
+            String path=Paths.get("").toAbsolutePath().toFile().toString();
+            String c="dir "+path+" && "+Paths.get("").toAbsolutePath().toFile().toString()+"\\bin\\ml.exe /c /coff "+codigoASM.getName()+" && "+Paths.get("").toAbsolutePath().toFile().toString()+"\\bin\\link.exe /subsystem:windows "+Paths.get("").toAbsolutePath().toFile()+"\\"+nombre+".obj";
+            System.out.println("COMANDO EJECUTADO: "+c);
+            PB.command("cmd.exe","/c",c);
+            //PB.directory(Paths.get("").toAbsolutePath().toFile());
+            PB.start();
+
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
     }
 
     //=================================================================OPERACIONES CON INTS==============================================================================
