@@ -10,6 +10,8 @@ import java.io.*;%}
 PROGRAMA : ListaDeclarativas BEGIN ListaEjecutables END 	   {GramLog.println("Se encuentra ListaDeclarativas BEGIN ListaEjecutables END reduzco a PROGRAMA");
 																GramLog.close();
 																EstrucLog.close();
+																//Este es nuevo
+																Al.addPolaca("End");
 																}
 
 		 | ListaDeclarativas ListaEjecutables END				{//Error 
@@ -253,16 +255,14 @@ Asignacion: ID ASIG Expresion									{GramLog.println("Se encuentra ID ASIG Exp
 																		Al.error((Al.getLinea()+1) + " Tipos incompatibles en la asignacion");
 																if (Ts.getSimbolo($3.sval).getTipo() != 'I')
 																	Al.error((Al.getLinea()+1) + " Indice de tipo no valido");	
-																Al.addPolaca($1.sval);
-																Al.addPolaca($3.sval);
-																Al.addPolaca("[]");
-                                                                Al.addPolaca(":=");}
+																Al.addPolaca($1.sval+ "["+ $3.sval +"]");
+																Al.addPolaca(":=");}
 		  
 		  | ID  CTE ']' ASIG Expresion							{//Error 
 																Al.warning("Linea: " + Al.getLinea() + " [ faltante en la asignacion de coleccion");
 																pilaTipo.pop();}
 			
-		  | ID ,'[' CTE  ASIG Expresion							{//Error 
+		  | ID '[' CTE  ASIG Expresion							{//Error 
 																Al.warning("Linea: " + Al.getLinea() + " ] faltante en la asignacion de coleccion");
 																pilaTipo.pop();}
 		  	
@@ -270,16 +270,14 @@ Asignacion: ID ASIG Expresion									{GramLog.println("Se encuentra ID ASIG Exp
 																if (Ts.getSimbolo($1.sval).getTipo() == 'D')
 																	Al.error((Al.getLinea()+1) + " Variable no definida");
 																	else
-																	if ((Ts.getSimbolo($3.sval).getTipo() != pilaTipo.peek().charValue()) && (pilaTipo.pop().charValue() != 'E'))
+																	if ((Ts.getSimbolo($1.sval).getTipo() != pilaTipo.peek().charValue()) && (pilaTipo.pop().charValue() != 'E'))
 																		Al.error((Al.getLinea()+1) + " Tipos incompatibles en la asignacion");
 																if (Ts.getSimbolo($3.sval).getTipo() == 'D')
 																	Al.error((Al.getLinea()+1) + " Variable no definida");
 																	else
 																	if (Ts.getSimbolo($3.sval).getTipo() != 'I')
 																		Al.error((Al.getLinea()+1) + " Indice de tipo no valido");	
-																Al.addPolaca($1.sval);
-																Al.addPolaca($3.sval);
-																Al.addPolaca("[]");
+																Al.addPolaca($1.sval+ "["+ $3.sval +"]");
                                                                 Al.addPolaca(":=");}
 		  
 		  | ID  ID ']' ASIG Expresion							{//Error 
@@ -292,7 +290,7 @@ Asignacion: ID ASIG Expresion									{GramLog.println("Se encuentra ID ASIG Exp
 	
 BloqueForeach: FOREACH CondColec BEGIN ListaEjecutables END		{GramLog.println("Se encuentra FOREACH ID IN ID BEGIN ListaEjecutables END reduzco a BloqueForeach");
 																Al.addPolaca("");
-																Al.addPolaca("BI");
+																Al.addPolaca("BIF");
 																Al.addPolaca(pilaPolacaHelper.pop(),Integer.valueOf(Al.getPosPolaca()).toString());
 																Al.addPolaca((Al.getPosPolaca()-2),pilaPolacaHelper.pop().toString());
                                                                 }
@@ -300,7 +298,7 @@ BloqueForeach: FOREACH CondColec BEGIN ListaEjecutables END		{GramLog.println("S
 			 | FOREACH CondColec EjecutableSimple				{GramLog.println("Se encuentra FOREACH ID IN ID EjecutableSimple reduzco a BloqueForeach");
 																//pilaErrorPtoComa.pop();
 																Al.addPolaca("");
-																Al.addPolaca("BI");
+																Al.addPolaca("BIF");
                                                                 Al.addPolaca(pilaPolacaHelper.pop(),Integer.valueOf(Al.getPosPolaca()).toString());
 																Al.addPolaca((Al.getPosPolaca()-2),pilaPolacaHelper.pop().toString());
                                                                 }
