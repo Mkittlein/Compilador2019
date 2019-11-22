@@ -1,15 +1,48 @@
-float id2f;
-
+int id1,id2;
+int Jose[1,2,3,4,5,6];
+float id1f,id2f;
+float JoseF[1.0,2.0,3.0,4.0,5.0,6.0];
 begin
 
-id2f := 10.0 + 10.0;
+id1 := 1;
+id2 := 20;
+Jose[id1] := id2;
+Jose[4] := id1 * 20;
 
-if (id2f == 20.0)
-	print( {COMPARACION DE FLOATS OK} );
+id1f := 1.0;
+id2f := 20.0;
+JoseF[id1] := id2f;
+JoseF[4] := id1f * 20.0;
+
+if (Jose[1] == id2)
+    print({1_OK});
 else
-	print({ALGO SALIO MAL CON LOS FLOATS});
+    print({1_MAL});
+end_if;
+
+id2 := 4;
+
+if (Jose[id2] == 20)
+    print({2_OK});
+else
+    print({2_MAL});
+end_if;
+
+if (JoseF[1] == id2f)
+    print({3_OK});
+else
+    print({3_MAL});
+end_if;
+
+
+if (JoseF[id2] == 20.0)
+    print({4_OK});
+else
+    print({4_MAL});
 
 end_if;
+
+
 
 
 end

@@ -208,27 +208,11 @@ public class GeneradorDeCodigo {
                                 break;
                         }
                     }
-
-                    /*
-
-                    HAY QUE PONER ESTO PARA LAS OPERACIONES CON FLOAT EL FLD Y FST PARA SACAR DEL COPROCESADOR MATEMATICO
-                    TESTAER BIEN Y MUCHO
-                    FLD @10p0
-                    FADD  @10p0
-                    FST @AUXF1
-                    MOV eax, @AUXF1
-
-
-                    */
-
                     if (s.equals("print")){
                         System.out.println("PRINT :"+pila.peek());
                         writer.write("invoke MessageBox, NULL, addr @"+pila.peek().replace(' ' ,'_')+", addr @"+pila.pop().replace(' ' ,'_')+", MB_OK");
                     }
-                    String reg="";
-                    if (T=='F'){
-                        reg="e";
-                    }
+
                     if (s.equals("[]")){
                         String direccion=pila.pop();
                         String ArrID=pila.pop();
@@ -240,13 +224,13 @@ public class GeneradorDeCodigo {
                         writer.newLine();
                         writer.write("JG LabelArr");
                         writer.newLine();
+                        writer.write("XOR ebx,ebx");
+                        writer.newLine();
+                        writer.write("XOR eax,eax");
+                        writer.newLine();
+                        writer.write("MOV ax, "+direccion);
+                        writer.newLine();
                         if (T=='I'){
-                            writer.write("XOR ebx,ebx");
-                            writer.newLine();
-                            writer.write("XOR eax,eax");
-                            writer.newLine();
-                            writer.write("MOV ax, "+direccion);
-                            writer.newLine();
                             writer.write("IMUL ax, 2");
                             writer.newLine();
                             writer.write("ADD eax, offset _"+ArrID);
@@ -257,13 +241,7 @@ public class GeneradorDeCodigo {
                             pila.push("@AUXI"+AuxInt);
                         }
                         else {
-                            writer.write("XOR ebx,ebx");
-                            writer.newLine();
-                            writer.write("XOR eax,eax");
-                            writer.newLine();
-                            writer.write("MOV ax, "+direccion);
-                            writer.newLine();
-                            writer.write("IMUL ax, 2");
+                            writer.write("IMUL ax, 4");
                             writer.newLine();
                             writer.write("ADD eax, offset _"+ArrID);
                             writer.newLine();
@@ -278,11 +256,23 @@ public class GeneradorDeCodigo {
                     }
 
                     if (s.equals(">") || s.equals("<") || s.equals(">=") || s.equals("<=") || s.equals("<>") || s.equals("==") ) {
-                        writer.write("MOV " + reg + "cx ," + pila.pop());
+                        writer.write("XOR ecx, ecx");
                         writer.newLine();
-                        writer.write("MOV " + reg + "dx ," + pila.pop());
+                        writer.write("XOR edx, edx");
                         writer.newLine();
-                        writer.write("CMP "+reg+"dx , "+reg + "cx");
+                        if (T=='I'){
+                        writer.write("MOV  cx ," + pila.pop());
+                        writer.newLine();
+                        writer.write("MOV dx ," + pila.pop());
+                        writer.newLine();
+                        writer.write("CMP dx , cx");}
+                        else{
+                            writer.write("MOV ecx ," + pila.pop());
+                            writer.newLine();
+                            writer.write("MOV edx ," + pila.pop());
+                            writer.newLine();
+                            writer.write("CMP edx , ecx");
+                        }
                         writer.newLine();
                         if (s.equals(">")) {
                             writer.write("JLE Label" + polaca.get(j + 1)+";Se salta por el contrario para no tener que poner las sentencias del else antes");
@@ -365,6 +355,8 @@ public class GeneradorDeCodigo {
             e.printStackTrace();
         }
     }
+
+    //=================================================================OPERACIONES CON INTS==============================================================================
 
     private void writeMulI(Stack<String> pila, BufferedWriter writer) throws IOException {
         writer.write("MOV ax, "+pila.pop());
@@ -454,6 +446,9 @@ public class GeneradorDeCodigo {
         AuxInt++;
     }
 
+    //=================================================================OPERACIONES CON FLOATS==============================================================================
+
+
     private void writeAsigF(Stack<String> pila, BufferedWriter writer) throws IOException {
         String aux=pila.pop();
         if(aux.contains("[")&&aux.contains("]")){
@@ -492,51 +487,55 @@ public class GeneradorDeCodigo {
     }
 
     private void writeSumF(Stack<String> pila, BufferedWriter writer) throws IOException {
-        writer.write("MOV eax, "+pila.pop());
+        String aux=pila.pop();
+        writer.write("FLD "+pila.pop());
         writer.newLine();
-        writer.write("FADD  "+pila.pop());
+        writer.write("FADD  "+aux);
         writer.newLine();
-        writer.write("MOV @AUXF"+AuxFloat+", eax");
+        writer.write("FST @AUXF"+AuxFloat);
         pila.push("@AUXF"+AuxFloat);
         AuxFloat++;
     }
 
     private void writeSubF(Stack<String> pila, BufferedWriter writer) throws IOException {
         String aux=pila.pop();
-        writer.write("MOV eax, "+pila.pop());
+        writer.write("FLD "+pila.pop());
         writer.newLine();
         writer.write("FSUB  "+aux);
         writer.newLine();
-        writer.write("MOV @AUXF"+AuxFloat+", eax");
+        writer.write("FST @AUXF"+AuxFloat);
         pila.push("@AUXF"+AuxFloat);
         AuxFloat++;
     }
 
     private void writeMulF(Stack<String> pila, BufferedWriter writer) throws IOException {
-        writer.write("MOV eax, "+pila.pop());
+        String aux=pila.pop();
+        writer.write("FLD "+pila.pop());
         writer.newLine();
-        writer.write("FMUL  "+pila.pop());
+        writer.write("FMUL  "+aux);
         writer.newLine();
         writer.write("JO LabelOF");
         writer.newLine();
-        writer.write("MOV @AUXF"+AuxFloat+", eax");
+        writer.write("FST @AUXF"+AuxFloat);
         pila.push("@AUXF"+AuxFloat);
         AuxFloat++;
     }
 
     private void writeDivF(Stack<String> pila, BufferedWriter writer) throws IOException {
         String aux=pila.pop();
-        writer.write("MOV eax, "+pila.pop());
-        writer.newLine();
         writer.write("MOV ebx, "+aux);
         writer.newLine();
-        writer.write("CMP ebx, " + 0);
+        writer.write("XOR ecx, ecx");
+        writer.newLine();
+        writer.write("CMP ebx, ecx");
         writer.newLine();
         writer.write("JE "+ "LabelDiv0");
         writer.newLine();
+        writer.write("FLD "+pila.pop());
+        writer.newLine();
         writer.write("FDIV "+aux);
         writer.newLine();
-        writer.write("MOV @AUXF"+AuxFloat+", eax");
+        writer.write("FST @AUXF"+AuxFloat);
         pila.push("@AUXF"+AuxFloat);
         AuxFloat++;
     }
