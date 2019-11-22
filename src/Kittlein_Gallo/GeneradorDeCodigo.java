@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class GeneradorDeCodigo {
@@ -57,7 +58,7 @@ public class GeneradorDeCodigo {
 
     public void generarCodigo(List<String> polaca, String nombre, Map<String, Simbolo> TS) {
         nombre = nombre.replace(".txt", "");
-        File codigoASM = new File("./" + nombre + ".asm");
+        File codigoASM = new File( Paths.get("").toAbsolutePath().toString()+"\\"+nombre+".asm");
         int countForEach=1;
         int i = 0;
         this.TS = TS;
@@ -397,14 +398,20 @@ public class GeneradorDeCodigo {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //No logramos hacer que el linker genere el exe
+        /*
         try {
             System.out.println("C:\\masm32\\bin\\ml.exe /c /coff "+codigoASM.getName());
             System.out.println("C:\\masm32\\bin\\link.exe /subsystem:windows "+codigoASM.getName().substring(0,codigoASM.getName().length()-4)+".obj");
-            Process p = Runtime.getRuntime().exec("C:\\masm32\\bin\\ml.exe /c /coff "+codigoASM.getName()+ " && C:\\masm32\\bin\\link.exe /subsystem:windows "+codigoASM.getName().substring(0,codigoASM.getName().length()-4)+".obj");
+
+            Process p = Runtime.getRuntime().exec("C:\\masm32\\bin\\ml.exe /c /coff "+codigoASM.getName());
+            ProcessBuilder qB = new ProcessBuilder("C:\\masm32\\bin\\link.exe /subsystem:windows "+nombre+".obj");
+            qB.directory(Paths.get("").toAbsolutePath().toFile());
+            p = qB.start();
             p.getOutputStream();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     //=================================================================OPERACIONES CON INTS==============================================================================
