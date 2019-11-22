@@ -399,13 +399,10 @@ public class GeneradorDeCodigo {
             e.printStackTrace();
         }
         //No logramos hacer que el linker genere el exe
-        /*
+/*
         try {
-            System.out.println("C:\\masm32\\bin\\ml.exe /c /coff "+codigoASM.getName());
-            System.out.println("C:\\masm32\\bin\\link.exe /subsystem:windows "+codigoASM.getName().substring(0,codigoASM.getName().length()-4)+".obj");
-
             Process p = Runtime.getRuntime().exec("C:\\masm32\\bin\\ml.exe /c /coff "+codigoASM.getName());
-            ProcessBuilder qB = new ProcessBuilder("C:\\masm32\\bin\\link.exe /subsystem:windows "+nombre+".obj");
+            ProcessBuilder qB = new ProcessBuilder("\\masm32\\bin\\link.exe /subsystem:windows "+nombre+".obj");
             qB.directory(Paths.get("").toAbsolutePath().toFile());
             p = qB.start();
             p.getOutputStream();
