@@ -1,0 +1,7 @@
+int Jose[1,2,3,4,5,6];
+int id3;
+begin
+
+id3 := Jose[12];
+
+end
